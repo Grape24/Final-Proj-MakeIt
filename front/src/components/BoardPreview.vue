@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h1>proj preview</h1>
+    <h1>Board preview</h1>
   </section>
 </template>
 
