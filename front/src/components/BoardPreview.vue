@@ -14,13 +14,11 @@ export default {
     board: Object
   },
   data() {
-    return {
-      id: this.$route.params._id
-    };
+    return {};
   },
   computed: {
     currBoardId() {
-      return `/board/${this.id}`;
+      return `/board/${this.board._id}`;
     }
   }
 };
