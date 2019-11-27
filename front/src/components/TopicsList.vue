@@ -7,6 +7,11 @@
 <script>
 import TopicsPreview from "./TopicsPreview";
 export default {
+  data() {
+    return {
+      topics: [{ todo: ["task1", "task2"] }]
+    };
+  },
   components: {
     TopicsPreview
   }
