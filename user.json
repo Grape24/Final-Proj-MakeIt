@@ -1,27 +1,11 @@
 {
     "_id": "u101",
-    "userName": "Adi",
-    "fullName": "Adi Amdadi",
+    "userName": "adishu",
     "password": "tinkerbell",
-    "userAvatar": "http://ww.url.com",
-    "Email": "adiadiadi@gmail.com",
+    "fullName": "Adi Amdadi",
+    "imgUrl": "http://www.url.com",
     "isAdmin": false,
     "joinedAt": "153216554512",
-    "lastLogin": "15412255565",
-    "boards": [
-        {
-            "id": "5c09",
-            "boardName": "board name"
-        },
-        {
-            "id": "5c08",
-            "boardName": "board name"
-        }
-    ],
-    "boardsAdmin": [
-        {
-            "id": "5c07",
-            "boardName": "board name"
-        }
-    ]
+    "lastLogin": "15412255565"
+   
 }
