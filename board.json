@@ -1,7 +1,7 @@
 {
     "_id": 489384,
     "name": "final sprint",
-    "createdBy": {_id, name, pofileImg},
+    "createdBy": {"_id" : "kkxj", "name" : "ddjdj", "pofileImg": "http//"},
     "members": "[{userId: 94kjf9445},{userId: 8943kje45},{uderId: 958jkre48}]",
     "dueDate": 154085038503,
     "activites": "[{txt: 'Edited by Shlomo' ,byUserId: 4832kn43, doneAt: 43492789487]",
