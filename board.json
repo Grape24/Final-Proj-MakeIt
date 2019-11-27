@@ -1,0 +1,36 @@
+{
+    "id": 489384,
+    "name": "final sprint",
+    "createdByUserId": "vfjk",
+    "boardMembers": "[{puki},{muki},{kuki}]",
+    "boardDueDate": 154085038503,
+    "log": "[{text:lorem lorem ,byUserName : adi ,time:}]",
+    "topicTasksMap": {
+        "thing to do": [
+            {
+                "title": "do this",
+                "id": "s1001",
+                "description": "lorem lorem lorem",
+                "createdBy": " adi",
+                "style": {
+                    "bgc": "yellow",
+                    "color": "blue"
+                },
+                "taskDueDate": 154085038503
+            }
+        ]
+    },
+    "doing": [ //KeyColoumn
+        {
+            "title": "do this",
+            "id": "s1001",
+            "description": "lorem lorem lorem",
+            "createdBy": " adi",
+            "style": {
+                "bgc": "yellow",
+                "color": "blue"
+            },
+            "taskDueDate": 154085038503
+        }
+    ]
+}
