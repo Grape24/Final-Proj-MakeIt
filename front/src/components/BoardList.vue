@@ -9,6 +9,11 @@
 import boardPreview from "./BoardPreview.vue";
 
 export default {
+  data() {
+    return {
+      boards: [{ name: "noonon", _id: 189 }]
+    };
+  },
   components: {
     boardPreview
   }
