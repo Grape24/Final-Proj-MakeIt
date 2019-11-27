@@ -1,6 +1,21 @@
 <template>
   <section>
-    <h1>Topic preview</h1>
-    <pre>name:{{topic.name}}</pre>
+    <li>
+      {{topic}}
+      <button @click="edit">Edit</button>
+    </li>
   </section>
 </template>
+
+<script>
+export default {
+  props: {
+    topic: Object
+  },
+  methods: {
+    edit() {
+      console.log(this.topic);
+    }
+  }
+};
+</script>
