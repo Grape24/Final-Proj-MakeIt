@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue' /* V*/
+import Home from '../views/Home.vue'
 import Board from '../views/BoardDetails.vue'
 import EditTask from '../views/EditTask.vue'
-import Login from '../views/EditTask.vue' /* V*/
-import Signup from '../views/Signup.vue'  /* V*/
+import Login from '../views/EditTask.vue'
+import Signup from '../views/Signup.vue'
 
 
 Vue.use(VueRouter)
