@@ -1,16 +1,16 @@
 <template>
   <div class="home">
-    <Proj-list></Proj-list>
+    <board-list></board-list>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import ProjList from "../components/ProjList.vue";
+import boardList from "../components/BoardList.vue";
 
 export default {
   components: {
-    ProjList
+    boardList
   }
 };
 </script>
