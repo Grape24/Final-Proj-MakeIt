@@ -1,17 +1,17 @@
 {
-    "id": 489384,
+    "_id": 489384,
     "name": "final sprint",
-    "createdByUserId": "vfjk",
-    "boardMembers": "[{puki},{muki},{kuki}]",
-    "boardDueDate": 154085038503,
-    "log": "[{text:lorem lorem ,byUserName : adi ,time:}]",
+    "createdBy": {_id, name, pofileImg},
+    "members": "[{userId: 94kjf9445},{userId: 8943kje45},{uderId: 958jkre48}]",
+    "dueDate": 154085038503,
+    "activites": "[{txt: 'Edited by Shlomo' ,byUserId: 4832kn43, doneAt: 43492789487]",
     "topicTasksMap": {
         "thing to do": [
             {
-                "title": "do this",
                 "id": "s1001",
+                "title": "do this",
                 "description": "lorem lorem lorem",
-                "createdBy": " adi",
+                "createdById": "4jbkbf454",
                 "style": {
                     "bgc": "yellow",
                     "color": "blue"
@@ -25,7 +25,7 @@
             "title": "do this",
             "id": "s1001",
             "description": "lorem lorem lorem",
-            "createdBy": " adi",
+            "createdByUserId": "8749jnfnn3454",
             "style": {
                 "bgc": "yellow",
                 "color": "blue"
