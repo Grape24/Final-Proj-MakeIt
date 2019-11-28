@@ -1,12 +1,12 @@
-// import axios from 'axios'
-// axios.defaults.withCredentials=true
+import axios from 'axios'
+axios.defaults.withCredentials=true
 
 export default {
     query,
     add,
     remove,
     getById,
-    edit
+    
 }
 
 const BASE_URL = (process.env.NODE_ENV !== 'development') ?
@@ -20,22 +20,19 @@ function query() {
     });
 }
 
-function add(toy) {
-    return axios.post(BASE_URL, toy)
+function add(board) {
+    return axios.post(BASE_URL, board)
         .then(res => res.data)
 }
 
-function remove(todoId) {
-    return axios.delete(`${BASE_URL}/${todoId}`)
+function remove(boardId) {
+    return axios.delete(`${BASE_URL}/${boardId}`)
 }
 
 function getById(id) {
     return axios.get(`${BASE_URL}/${id}`)
-        .then(toys => {
-            return toys.data
+        .then(boards => {
+            return boards.data
         })
 }
 
-function edit(toyToEdit) {
-    return axios.put(`${BASE_URL}/${toyToEdit.toy.id}`, toyToEdit.toy)
-}
