@@ -1,6 +1,6 @@
 <template>
-  <section>
-    <topics-list :topics="topics"></topics-list>
+  <section v-if="topics">
+    <topics-list :topics="topics" :currBoardId="currBoard._id"></topics-list>
   </section>
 </template>
  
@@ -13,13 +13,15 @@ export default {
     TopicsList
   },
   data() {
-    return {};
+    return {
+      currBoard: null
+    };
   },
   computed: {
     topics() {
-      const currBoard = this.$store.getters.currBoard;
-      if (currBoard) {
-        return currBoard.topicTasksMap;
+      this.currBoard = this.$store.getters.currBoard;
+      if (this.currBoard) {
+        return this.currBoard.topicTasksMap;
       }
     }
   },

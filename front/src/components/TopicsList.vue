@@ -1,16 +1,26 @@
 <template>
-  <h1>
-    <ul class="flex">
-      <topics-preview v-for="(key ,val) in topics" :key="val.id" :topicList="key" :topicName="val"></topics-preview>
-    </ul>
-  </h1>
+  <section>
+    <h1>
+      <ul class="flex">
+        <topics-preview
+          v-for="(key ,val) in topics"
+          :key="val.id"
+          :topicList="key"
+          :topicName="val"
+          :currBoardId="currBoardId"
+        ></topics-preview>
+      </ul>
+    </h1>
+    <router-view></router-view>
+  </section>
 </template>
 
 <script>
 import TopicsPreview from "./TopicsPreview";
 export default {
   props: {
-    topics: Object
+    topics: Object,
+    currBoardId: Number
   },
    watch:{
     topics() {
@@ -22,6 +32,6 @@ export default {
   },
   components: {
     TopicsPreview
-  }
+  },
 };
 </script>

@@ -6,7 +6,8 @@ export default {
     add,
     remove,
     getById,
-    edit
+    edit,
+    getTaskById
 
 }
 
@@ -30,6 +31,7 @@ function edit(board) {
     return axios.put(`${BASE_URL}/${board._id}`, board)
 }
 
+
 function remove(boardId) {
     return axios.delete(`${BASE_URL}/${boardId}`)
 }
@@ -41,3 +43,15 @@ function getById(id) {
         })
 }
 
+function getTaskById(boardId, taskId) {
+    return getById(boardId)
+        .then(board => {
+            const mat = Object.values(board.topicTasksMap)
+            for (let i = 0; i < mat.length; i++) {
+                for (let j = 0; j < mat[i].length; j++) {
+                    let task = (mat[i][j])
+                    if (task.id === taskId) return task
+                }
+            }
+        })
+}
