@@ -6,7 +6,7 @@
 <script>
 export default {
     created(){
-        this.$route.params._id
+        console.log(this.$route.params._id)
     }
 }
 </script>
