@@ -21,7 +21,7 @@ const routes = [
     component: Board,
     children: [
       {
-        path: 'task/edit/:jj?',
+        path: 'task/edit/:taskId?',
         component: EditTask,
       },
     ]
