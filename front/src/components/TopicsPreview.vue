@@ -1,6 +1,5 @@
 <template>
   <section>
-    {{currBoardId}}
     <div class="topic-list-container column">
       <pre>{{topicName}}</pre>
       <draggable
@@ -56,6 +55,6 @@ export default {
     push(id) {
       this.$router.push(`${this.currBoardId}/task/edit/${id}`);
     }
-  },
+  }
 };
 </script>

@@ -46,7 +46,10 @@ export default new Vuex.Store({
           context.commit({ type: 'setCurrBoard', board })
           return board;
         })
-    }
+    },
+    // updateTask(context, { task }){
+    //   return BoardService.
+    // }
 
   },
   modules: {
