@@ -1,6 +1,5 @@
 <template>
   <section>
-    <h1>details</h1>
     <topics-list></topics-list>
   </section>
 </template>

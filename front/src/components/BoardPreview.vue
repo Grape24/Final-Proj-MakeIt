@@ -1,7 +1,7 @@
 <template>
   <section>
     <router-link :to="currboardLink">
-      <h1>{{board}}</h1>
+      <h1>{{board.name}}</h1>
     </router-link>
   </section>
 </template>
@@ -14,7 +14,7 @@ export default {
   },
   computed: {
     currboardLink() {
-      return `/board/${this.board.id}`;
+      return `/board/${this.board._id}`;
     }
   }
 };

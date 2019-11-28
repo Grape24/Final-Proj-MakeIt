@@ -1,0 +1,56 @@
+{
+    "boards": [
+        {
+            "_id": 489384,
+            "name": "final sprint",
+            "createdBy": {
+                "_id": "kkxj",
+                "name": "ddjdj",
+                "pofileImg": "http//"
+            },
+            "members": "[{userId: 94kjf9445},{userId: 8943kje45},{uderId: 958jkre48}]",
+            "dueDate": 154085038503,
+            "activites": "[{txt: 'Edited by Shlomo' ,byUserId: 4832kn43, doneAt: 43492789487]",
+            "topicTasksMap": {
+                "thing to do": [
+                    {
+                        "id": "s1001",
+                        "title": "do this",
+                        "description": "lorem lorem lorem",
+                        "createdById": "4jbkbf454",
+                        "style": {
+                            "bgc": "yellow",
+                            "color": "blue"
+                        },
+                        "taskDueDate": 154085038503
+                    }
+                ]
+            },
+            "doing": [
+                {
+                    "title": "do this",
+                    "id": "s1001",
+                    "description": "lorem lorem lorem",
+                    "createdByUserId": "8749jnfnn3454",
+                    "style": {
+                        "bgc": "yellow",
+                        "color": "blue"
+                    },
+                    "taskDueDate": 154085038503
+                }
+            ]
+        }
+    ],
+    "users" : [{
+        "_id": "u101",
+        "userName": "adishu",
+        "password": "tinkerbell",
+        "fullName": "Adi Amdadi",
+        "imgUrl": "http://www.url.com",
+        "isAdmin": false,
+        "joinedAt": "153216554512",
+        "lastLogin": "15412255565"
+       
+    }]
+
+}
