@@ -1,8 +1,7 @@
 <template>
   <h1>
-    <pre>{{topics}}</pre>
     <ul class="flex">
-      <topics-preview v-for="topic in topics" :key="topic.name" :topic="topic"></topics-preview>
+      <topics-preview v-for="(key ,val) in topics" :key="val.id" :topicList="key" :topicName="val"></topics-preview>
     </ul>
   </h1>
 </template>
