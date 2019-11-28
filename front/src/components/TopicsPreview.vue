@@ -1,7 +1,9 @@
 <template>
 
       <div class="topic-list-container column">
-        <h3>{{topic}}</h3>
+
+        <h3>{{Object.keys(topic)}}</h3>
+        <pre>{{topic}}</pre>
         <draggable
           class="dragArea list-group"
           :list="list1"
@@ -9,7 +11,7 @@
           :group="{ name: 'people', pull: pullFunction }"
           @start="start"
         >
-          <div class="list-group-item column" v-for="element in list1" :key="element.id">{{ element.name }}</div>
+          <div class="list-group-item column" v-for="element in topic" :key="element">{{ element}}</div>
         </draggable>
       </div>
 </template>
