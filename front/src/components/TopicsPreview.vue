@@ -1,5 +1,7 @@
 <template>
   <div class="topic-list-container column">
+    <pre>{{topicName}}</pre>
+
     <draggable
       class="dragArea list-group"
       :list="list1"
@@ -7,7 +9,7 @@
       :group="{ name: 'people', pull: pullFunction }"
       @start="start"
     >
-      <!-- <div class="list-group-item column" v-for="task in topic">{{ task.title }}</div> -->
+      <div class="list-group-item column" v-for="task in topicList" :key="task.id">{{ task.title }}</div>
     </draggable>
   </div>
 </template>
@@ -19,7 +21,8 @@ import rawDisplayer from "vuedraggable";
 let idGlobal = 8;
 export default {
   props: {
-    topic: Array
+    topicName: String,
+    topicList: Array
   },
   name: "clone-on-control",
   display: "Clone on Control",
@@ -53,11 +56,6 @@ export default {
     },
     start({ originalEvent }) {
       this.controlOnStart = originalEvent.ctrlKey;
-    }
-  },
-  computed: {
-    topicsKeys() {
-      return Object.keys(this.topic)[0];
     }
   }
 };
