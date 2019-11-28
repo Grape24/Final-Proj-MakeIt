@@ -16,13 +16,15 @@ const routes = [
     component: Home
   },
   {
-    path: '/board/:_id',
+    path: '/board/:_id/',
     name: 'board',
     component: Board,
-  },
-  {
-    path: '/board/:_id/task/edit/:_id?',
-    component: EditTask,
+    children: [
+      {
+        path: 'task/edit/:taskId?',
+        component: EditTask,
+      },
+    ]
   },
   {
     path: '/login',
