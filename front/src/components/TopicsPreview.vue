@@ -4,19 +4,19 @@
 
     <draggable
       class="dragArea list-group"
-      :list="list1"
-      :clone="clone"
-      :group="{ name: 'people', pull: pullFunction }"
+      :list="topicList"
+      :group="{ name: 'tasks', pull: pullFunction }"
       @start="start"
     >
       <div class="list-group-item column" v-for="task in topicList" :key="task.id">{{ task.title }}</div>
     </draggable>
+    <rawDisplayer class="col-3" :value="topicList" title="List 1" />
   </div>
 </template>
 
 <script>
 import draggable from "vuedraggable";
-import rawDisplayer from "vuedraggable"; 
+import rawDisplayer from "vuedraggable";
 
 let idGlobal = 8;
 export default {
@@ -38,9 +38,6 @@ export default {
     };
   },
   methods: {
-    clone({ name }) {
-      return { name, id: idGlobal++ };
-    },
     pullFunction() {
       return this.controlOnStart ? "clone" : true;
     },
