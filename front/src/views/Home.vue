@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <board-list :boards="boards"></board-list>
-    
   </div>
 </template>
 
