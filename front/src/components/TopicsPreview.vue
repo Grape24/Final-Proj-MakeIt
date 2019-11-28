@@ -34,16 +34,6 @@ export default {
   },
   data() {
     return {
-      list1: [
-        { name: "Jesus", id: 1 },
-        { name: "Paul", id: 2 },
-        { name: "Peter", id: 3 }
-      ],
-      list2: [
-        { name: "Luc", id: 5 },
-        { name: "Thomas", id: 6 },
-        { name: "John", id: 7 }
-      ],
       controlOnStart: true
     };
   },
