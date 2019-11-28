@@ -7,7 +7,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     boards: [],
-    currBoard: null
+    currBoard: null,
   },
   getters: {
     boards(state) {
