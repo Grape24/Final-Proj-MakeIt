@@ -16,7 +16,7 @@
 
 <script>
 import draggable from "vuedraggable";
-import rawDisplayer from "vuedraggable";
+import rawDisplayer from "vuedraggable"; 
 
 let idGlobal = 8;
 export default {
