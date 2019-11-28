@@ -49,6 +49,14 @@ export default new Vuex.Store({
           context.commit({ type: 'setCurrBoard', board })
           return board;
         })
+    },
+    setBoard(context){
+      
+      const id = context.getters.currBoard._id
+      // console.log('id :',id)
+      BoardService.edit(context.getters.currBoard)
+
+
     }
 
   },

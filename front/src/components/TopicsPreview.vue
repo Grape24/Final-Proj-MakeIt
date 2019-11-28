@@ -34,7 +34,9 @@ export default {
   },
   data() {
     return {
-      controlOnStart: true
+      controlOnStart: true,
+      topic:null
+
     };
   },
   methods: {
@@ -44,6 +46,15 @@ export default {
     start({ originalEvent }) {
       this.controlOnStart = originalEvent.ctrlKey;
     }
+  },
+  watch:{
+    topicList(topicList) {
+    console.log('topicsWatch:',this.topicList)
+    topicList = this.topicList
+    this.$store.dispatch({type :'setBoard', topicList});
+
+    }
+
   }
 };
 </script>

@@ -12,6 +12,14 @@ export default {
   props: {
     topics: Object
   },
+   watch:{
+    topics() {
+      console.log(this.topics)
+      // this.$store.dispatch({type :'setBoards', topic});
+
+    }
+
+  },
   components: {
     TopicsPreview
   }
