@@ -24,21 +24,22 @@
                         },
                         "taskDueDate": 154085038503
                     }
+                ],
+                "doing": [
+                    {
+                        "title": "do this",
+                        "id": "s1001",
+                        "description": "lorem lorem lorem",
+                        "createdByUserId": "8749jnfnn3454",
+                        "style": {
+                            "bgc": "yellow",
+                            "color": "blue"
+                        },
+                        "taskDueDate": 154085038503
+                    }
                 ]
-            },
-            "doing": [
-                {
-                    "title": "do this",
-                    "id": "s1001",
-                    "description": "lorem lorem lorem",
-                    "createdByUserId": "8749jnfnn3454",
-                    "style": {
-                        "bgc": "yellow",
-                        "color": "blue"
-                    },
-                    "taskDueDate": 154085038503
-                }
-            ]
+            }
+           
         }
     ],
     "users" : [{
