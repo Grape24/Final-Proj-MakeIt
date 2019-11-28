@@ -1,7 +1,6 @@
 <template>
-  <section>
-    <div class="row">
-      <div class="col-3">
+
+      <div class="topic-list-container column">
         <h3>{{topic}}</h3>
         <draggable
           class="dragArea list-group"
@@ -10,22 +9,14 @@
           :group="{ name: 'people', pull: pullFunction }"
           @start="start"
         >
-          <div class="list-group-item" v-for="element in list1" :key="element.id">{{ element.name }}</div>
+          <div class="list-group-item column" v-for="element in list1" :key="element.id">{{ element.name }}</div>
         </draggable>
       </div>
-
-     
-
-      <rawDisplayer class="col-3" :value="list1" title="List 1" />
-
-      <rawDisplayer class="col-3" :value="list2" title="List 2" />
-    </div>
-  </section>
 </template>
 
 <script>
 import draggable from "vuedraggable";
-import rawDisplayer from "vuedraggable";
+import rawDisplayer from "vuedraggable"; 
 
 let idGlobal = 8;
 export default {

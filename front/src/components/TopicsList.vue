@@ -1,6 +1,6 @@
 <template>
   <h1>
-    <ul>
+    <ul class="flex">
       <topics-preview v-for="topic in topics" :key="topic.name" :topic="topic"></topics-preview>
     </ul>
   </h1>
