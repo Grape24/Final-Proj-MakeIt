@@ -1,22 +1,21 @@
 <template>
   <section>
+    {{currBoardId}}
     <div class="topic-list-container column">
       <pre>{{topicName}}</pre>
-      <router-link :to="currTaskLink">
-        <draggable
-          class="dragArea list-group"
-          :list="topicList"
-          :group="{ name: 'tasks', pull: pullFunction }"
-          @start="start"
-        >
-          <div
-            class="list-group-item column"
-            v-for="task in topicList"
-            :key="task.id"
-            @mousedown="currTaskId = task.id"
-          >{{ task.title }}</div>
-        </draggable>
-      </router-link>
+      <draggable
+        class="dragArea list-group"
+        :list="topicList"
+        :group="{ name: 'tasks', pull: pullFunction }"
+        @start="start"
+      >
+        <div
+          class="list-group-item column"
+          v-for="task in topicList"
+          :key="task.id"
+          @click="push(task.id)"
+        >{{ task.title }}</div>
+      </draggable>
       <rawDisplayer class="col-3" :value="topicList" title="List 1" />
     </div>
   </section>
@@ -30,7 +29,8 @@ let idGlobal = 8;
 export default {
   props: {
     topicName: String,
-    topicList: Array
+    topicList: Array,
+    currBoardId: Number
   },
   name: "clone-on-control",
   display: "Clone on Control",
@@ -52,12 +52,10 @@ export default {
     },
     start({ originalEvent }) {
       this.controlOnStart = originalEvent.ctrlKey;
+    },
+    push(id) {
+      this.$router.push(`${this.currBoardId}/task/edit/${id}`);
     }
   },
-  computed: {
-    currTaskLink() {
-      return `/task/edit/${this.currTaskId}`;
-    }
-  }
 };
 </script>

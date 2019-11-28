@@ -7,6 +7,7 @@
           :key="val.id"
           :topicList="key"
           :topicName="val"
+          :currBoardId="currBoardId"
         ></topics-preview>
       </ul>
     </h1>
@@ -18,10 +19,11 @@
 import TopicsPreview from "./TopicsPreview";
 export default {
   props: {
-    topics: Object
+    topics: Object,
+    currBoardId: Number
   },
   components: {
     TopicsPreview
-  }
+  },
 };
 </script>
