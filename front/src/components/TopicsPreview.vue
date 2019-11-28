@@ -42,6 +42,8 @@ export default {
   data() {
     return {
       controlOnStart: true,
+      topic:null,
+
       currTaskId: null
     };
   },
@@ -55,6 +57,15 @@ export default {
     push(id) {
       this.$router.push(`${this.currBoardId}/task/edit/${id}`);
     }
+  },
+  watch:{
+    topicList(topicList) {
+    console.log('topicsWatch:',this.topicList)
+    topicList = this.topicList
+    this.$store.dispatch({type :'setBoard', topicList});
+
+    }
+
   }
 };
 </script>

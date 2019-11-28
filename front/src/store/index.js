@@ -31,6 +31,8 @@ export default new Vuex.Store({
 
 
 
+
+
   },
   actions: {
     loadBoards(context) {
@@ -47,9 +49,14 @@ export default new Vuex.Store({
           return board;
         })
     },
-    // updateTask(context, { task }){
-    //   return BoardService.
-    // }
+    setBoard(context){
+      
+      const id = context.getters.currBoard._id
+      // console.log('id :',id)
+      BoardService.edit(context.getters.currBoard)
+
+
+    }
 
   },
   modules: {

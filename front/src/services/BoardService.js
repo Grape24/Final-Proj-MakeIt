@@ -6,6 +6,7 @@ export default {
     add,
     remove,
     getById,
+    edit,
     getTaskById
 
 }
@@ -22,8 +23,12 @@ function query() {
 }
 
 function add(board) {
-    return axios.post(BASE_URL, board)
-        .then(res => res.data)
+    console.log('mama',board)
+    // return axios.post(BASE_URL, board)
+        // .then(res => res.data)
+}
+function edit(board) {
+    return axios.put(`${BASE_URL}/${board._id}`, board)
 }
 
 
