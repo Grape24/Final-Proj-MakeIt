@@ -1,5 +1,6 @@
 <template>
   <h1>
+    <pre>{{topics}}</pre>
     <ul class="flex">
       <topics-preview v-for="topic in topics" :key="topic.name" :topic="topic"></topics-preview>
     </ul>
@@ -9,10 +10,8 @@
 <script>
 import TopicsPreview from "./TopicsPreview";
 export default {
-  data() {
-    return {
-      topics: [{ todo: ["task1", "task2"] }, { done: ["task3"] }]
-    };
+  props: {
+    topics: Object
   },
   components: {
     TopicsPreview

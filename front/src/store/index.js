@@ -6,32 +6,28 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    boards:[],
-    currBoard:null
+    boards: [],
+    currBoard: null
   },
-  getters:{
-    boards(state){
+  getters: {
+    boards(state) {
       return state.boards
     },
-    currBoard(state){
+    currBoard(state) {
       return state.currBoard
     }
   },
   mutations: {
     setCurrBoard(state, { board }) {
-      state.currboard = board;
-  },
-  setBoards(state, { boards }) {
-
-    state.boards = boards;
-},
-
-  
-  addBoard(state, {board}) {
-    const addedBoard = BoardService.add(board)
-    state.boards.push(addedBoard)
-  },
- 
+      state.currBoard = board;
+    },
+    setBoards(state, { boards }) {
+      state.boards = boards;
+    },
+    addBoard(state, { board }) {
+      const addedBoard = BoardService.add(board)
+      state.boards.push(addedBoard)
+    },
 
 
 
@@ -39,11 +35,18 @@ export default new Vuex.Store({
   actions: {
     loadBoards(context) {
       return BoardService.query()
-          .then(boards => {
-              context.commit({type: 'setBoards', boards})
-              return boards;
-          })
-  },
+        .then(boards => {
+          context.commit({ type: 'setBoards', boards })
+          return boards;
+        })
+    },
+    getCurrBoard(context, { id }) {
+      return BoardService.getById(id)
+        .then(board => {
+          context.commit({ type: 'setCurrBoard', board })
+          return board;
+        })
+    }
 
   },
   modules: {

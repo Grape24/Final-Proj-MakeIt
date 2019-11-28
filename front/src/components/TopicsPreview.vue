@@ -3,7 +3,6 @@
       <div class="topic-list-container column">
 
         <h3>{{Object.keys(topic)}}</h3>
-        <pre>{{topic}}</pre>
         <draggable
           class="dragArea list-group"
           :list="list1"
