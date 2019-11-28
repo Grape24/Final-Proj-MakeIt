@@ -4,7 +4,7 @@
             "_id": 489384,
             "name": "final sprint",
             "createdBy": {
-                "_id": "kkxj",
+                "_id": "u101",
                 "name": "ddjdj",
                 "pofileImg": "http//"
             },
@@ -17,7 +17,7 @@
                         "id": "s1001",
                         "title": "do this",
                         "description": "lorem lorem lorem",
-                        "createdById": "4jbkbf454",
+                        "createdById": "u101",
                         "style": {
                             "bgc": "yellow",
                             "color": "blue"
@@ -30,7 +30,7 @@
                         "title": "do this",
                         "id": "s19904",
                         "description": "lorem lorem lorem",
-                        "createdByUserId": "8749jnfnn3454",
+                        "createdByUserId": "u101",
                         "style": {
                             "bgc": "yellow",
                             "color": "green"
@@ -41,7 +41,7 @@
                         "title": "do jjj",
                         "id": "990",
                         "description": "lorem lorem lorem",
-                        "createdByUserId": "8749jnfnn3454",
+                        "createdByUserId": "u101",
                         "style": {
                             "bgc": "yellow",
                             "color": "green"
