@@ -7,7 +7,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     boards:[],
-    currBoard:null
+    currBoard:null,
+    currTask:null
   },
   getters:{
     boards(state){
@@ -22,8 +23,10 @@ export default new Vuex.Store({
       state.currboard = board;
   },
   setBoards(state, { boards }) {
-
     state.boards = boards;
+},
+setCurrTask(state, {task}){
+  state.currTask = task
 },
 
   
@@ -32,6 +35,8 @@ export default new Vuex.Store({
     state.boards.push(addedBoard)
   },
  
+
+
 
 
 
@@ -44,6 +49,11 @@ export default new Vuex.Store({
               return boards;
           })
   },
+    
+
+  // 
+  
+  
 
   },
   modules: {
