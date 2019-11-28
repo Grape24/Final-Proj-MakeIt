@@ -1,12 +1,12 @@
 import axios from 'axios'
-axios.defaults.withCredentials=true
+axios.defaults.withCredentials = true
 
 export default {
     query,
     add,
     remove,
     getById,
-    
+
 }
 
 const BASE_URL = (process.env.NODE_ENV !== 'development') ?
@@ -31,8 +31,8 @@ function remove(boardId) {
 
 function getById(id) {
     return axios.get(`${BASE_URL}/${id}`)
-        .then(boards => {
-            return boards.data
+        .then(board => {
+            return board.data
         })
 }
 

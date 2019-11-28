@@ -1,27 +1,30 @@
 <template>
-
-      <div class="topic-list-container column">
-        <h3>{{topic}}</h3>
-        <draggable
-          class="dragArea list-group"
-          :list="list1"
-          :clone="clone"
-          :group="{ name: 'people', pull: pullFunction }"
-          @start="start"
-        >
-          <div class="list-group-item column" v-for="element in list1" :key="element.id">{{ element.name }}</div>
-        </draggable>
-      </div>
+  <div class="topic-list-container column">
+    <h3>{{topicsKeys}}</h3>
+    <draggable
+      class="dragArea list-group"
+      :list="list1"
+      :clone="clone"
+      :group="{ name: 'people', pull: pullFunction }"
+      @start="start"
+    >
+      <div
+        class="list-group-item column"
+        v-for="element in list1"
+        :key="element.id"
+      >{{ element.name }}</div>
+    </draggable>
+  </div>
 </template>
 
 <script>
 import draggable from "vuedraggable";
-import rawDisplayer from "vuedraggable"; 
+import rawDisplayer from "vuedraggable";
 
 let idGlobal = 8;
 export default {
   props: {
-    topic: Object
+    topic: Array
   },
   name: "clone-on-control",
   display: "Clone on Control",
@@ -55,6 +58,11 @@ export default {
     },
     start({ originalEvent }) {
       this.controlOnStart = originalEvent.ctrlKey;
+    }
+  },
+  computed: {
+    topicsKeys() {
+      return Object.keys(this.topic)[0];
     }
   }
 };

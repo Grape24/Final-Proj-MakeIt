@@ -9,10 +9,8 @@
 <script>
 import TopicsPreview from "./TopicsPreview";
 export default {
-  data() {
-    return {
-      topics: [{ todo: ["task1", "task2"] }, { done: ["task3"] }]
-    };
+  props: {
+    topics: Object
   },
   components: {
     TopicsPreview
