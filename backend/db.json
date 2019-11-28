@@ -26,7 +26,7 @@
                     }
                 ]
             },
-            "doing": [ //KeyColoumn
+            "doing": [
                 {
                     "title": "do this",
                     "id": "s1001",
@@ -40,5 +40,17 @@
                 }
             ]
         }
-    ]
+    ],
+    "users" : [{
+        "_id": "u101",
+        "userName": "adishu",
+        "password": "tinkerbell",
+        "fullName": "Adi Amdadi",
+        "imgUrl": "http://www.url.com",
+        "isAdmin": false,
+        "joinedAt": "153216554512",
+        "lastLogin": "15412255565"
+       
+    }]
+
 }
