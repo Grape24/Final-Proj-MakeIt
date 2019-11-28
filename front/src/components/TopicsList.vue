@@ -1,9 +1,17 @@
 <template>
-  <h1>
-    <ul class="flex">
-      <topics-preview v-for="(key ,val) in topics" :key="val.id" :topicList="key" :topicName="val"></topics-preview>
-    </ul>
-  </h1>
+  <section>
+    <h1>
+      <ul class="flex">
+        <topics-preview
+          v-for="(key ,val) in topics"
+          :key="val.id"
+          :topicList="key"
+          :topicName="val"
+        ></topics-preview>
+      </ul>
+    </h1>
+    <router-view></router-view>
+  </section>
 </template>
 
 <script>
