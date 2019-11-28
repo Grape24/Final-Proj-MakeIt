@@ -1,7 +1,7 @@
 <template>
   <h1>
     <ul>
-      <topics-preview v-for="topic in topics" :key="topic.name" :topic="topic"></topics-preview>
+      <topics-preview class="flex" v-for="topic in topics" :key="topic.name" :topic="topic"></topics-preview>
     </ul>
   </h1>
 </template>
