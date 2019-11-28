@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Board from '../views/BoardDetails.vue'
 import EditTask from '../views/EditTask.vue'
-import Login from '../views/EditTask.vue'
+import Login from '../views/Login.vue'
 import Signup from '../views/Signup.vue'
 
 
@@ -19,12 +19,10 @@ const routes = [
     path: '/board/:_id',
     name: 'board',
     component: Board,
-    children: [
-      {
-        path: '/task/edit/:_id?',
-        component: EditTask,
-      },
-    ]
+  },
+  {
+    path: '/board/:_id/task/edit/:_id?',
+    component: EditTask,
   },
   {
     path: '/login',
