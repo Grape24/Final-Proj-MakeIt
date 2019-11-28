@@ -28,30 +28,40 @@
                 "doing": [
                     {
                         "title": "do this",
-                        "id": "s1001",
+                        "id": "s19904",
                         "description": "lorem lorem lorem",
                         "createdByUserId": "8749jnfnn3454",
                         "style": {
                             "bgc": "yellow",
-                            "color": "blue"
+                            "color": "green"
+                        },
+                        "taskDueDate": 154085038503
+                    },
+                    {
+                        "title": "do jjj",
+                        "id": "990",
+                        "description": "lorem lorem lorem",
+                        "createdByUserId": "8749jnfnn3454",
+                        "style": {
+                            "bgc": "yellow",
+                            "color": "green"
                         },
                         "taskDueDate": 154085038503
                     }
                 ]
             }
-           
         }
     ],
-    "users" : [{
-        "_id": "u101",
-        "userName": "adishu",
-        "password": "tinkerbell",
-        "fullName": "Adi Amdadi",
-        "imgUrl": "http://www.url.com",
-        "isAdmin": false,
-        "joinedAt": "153216554512",
-        "lastLogin": "15412255565"
-       
-    }]
-
+    "users": [
+        {
+            "_id": "u101",
+            "userName": "adishu",
+            "password": "tinkerbell",
+            "fullName": "Adi Amdadi",
+            "imgUrl": "http://www.url.com",
+            "isAdmin": false,
+            "joinedAt": "153216554512",
+            "lastLogin": "15412255565"
+        }
+    ]
 }
