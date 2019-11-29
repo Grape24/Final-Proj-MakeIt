@@ -12,8 +12,7 @@
       "dueDate": 154085038503,
       "activites": "[{txt: 'Edited by Shlomo' ,byUserId: 4832kn43, doneAt: 43492789487]",
       "topicTasksMap": {
-        "thing to do": [],
-        "doing": [
+        "thing to do": [
           {
             "title": "do this",
             "id": "s19904",
@@ -47,7 +46,8 @@
             },
             "taskDueDate": 154085038503
           }
-        ]
+        ],
+        "doing": []
       }
     }
   ],
