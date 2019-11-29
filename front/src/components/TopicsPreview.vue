@@ -60,7 +60,6 @@ export default {
   },
   watch:{
     topicList(topicList) {
-    console.log('topicsWatch:',this.topicList)
     topicList = this.topicList
     this.$store.dispatch({type :'setBoard', topicList});
 

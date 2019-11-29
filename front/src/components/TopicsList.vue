@@ -22,14 +22,6 @@ export default {
     topics: Object,
     currBoardId: Number
   },
-   watch:{
-    topics() {
-      console.log(this.topics)
-      // this.$store.dispatch({type :'setBoards', topic});
-
-    }
-
-  },
   components: {
     TopicsPreview
   },
