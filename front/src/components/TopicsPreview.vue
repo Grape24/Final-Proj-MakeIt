@@ -2,6 +2,7 @@
   <section>
     <div class="topic-list-container column">
       <pre>{{topicName}}</pre>
+      <pre>{{topicList}}</pre>
       <draggable
         class="dragArea list-group"
         :list="topicList"
@@ -15,7 +16,6 @@
           @click="push(task.id)"
         >{{ task.title }}</div>
       </draggable>
-      <rawDisplayer class="col-3" :value="topicList" title="List 1" />
     </div>
   </section>
 </template>
@@ -29,7 +29,7 @@ export default {
   props: {
     topicName: String,
     topicList: Array,
-    currBoardId: Number
+    currBoardId: Number,
   },
   name: "clone-on-control",
   display: "Clone on Control",
@@ -43,7 +43,6 @@ export default {
     return {
       controlOnStart: true,
       topic:null,
-
       currTaskId: null
     };
   },
