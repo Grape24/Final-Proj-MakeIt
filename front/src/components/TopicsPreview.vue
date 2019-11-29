@@ -55,7 +55,7 @@ export default {
       this.controlOnStart = originalEvent.ctrlKey;
     },
     push(id) {
-      this.$router.push(`${this.currBoardId}/task/edit/${id}`);
+      this.$router.push(`${this.currBoardId}/task/edit/${id}/${this.topicName}`);
     }
   },
   watch:{

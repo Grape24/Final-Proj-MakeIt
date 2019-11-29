@@ -12,18 +12,8 @@
       "dueDate": 154085038503,
       "activites": "[{txt: 'Edited by Shlomo' ,byUserId: 4832kn43, doneAt: 43492789487]",
       "topicTasksMap": {
-        "thing to do": [
-          {
-            "id": "s1001",
-            "title": "do this",
-            "description": "lorem lorem lorem",
-            "createdById": "4jbkbf454",
-            "style": {
-              "bgc": "yellow",
-              "color": "blue"
-            },
-            "taskDueDate": 154085038503
-          },
+        "thing to do": [],
+        "doing": [
           {
             "title": "do this",
             "id": "s19904",
@@ -34,17 +24,15 @@
               "color": "green"
             },
             "taskDueDate": 154085038503
-          }
-        ],
-        "doing": [
+          },
           {
-            "title": "do jjj",
-            "id": "990",
+            "id": "s1001",
+            "title": "do this",
             "description": "lorem lorem lorem",
-            "createdByUserId": "8749jnfnn3454",
+            "createdById": "4jbkbf454",
             "style": {
               "bgc": "yellow",
-              "color": "green"
+              "color": "blue"
             },
             "taskDueDate": 154085038503
           }
