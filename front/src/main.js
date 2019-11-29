@@ -6,6 +6,7 @@ import store from './store'
 import '@/styles/global.scss'
 
 
+
 Vue.config.productionTip = false
 
 new Vue({

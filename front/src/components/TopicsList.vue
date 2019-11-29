@@ -25,5 +25,6 @@ export default {
   components: {
     TopicsPreview
   },
+  
 };
 </script>

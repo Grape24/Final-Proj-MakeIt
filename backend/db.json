@@ -12,29 +12,22 @@
       "dueDate": 154085038503,
       "activites": "[{txt: 'Edited by Shlomo' ,byUserId: 4832kn43, doneAt: 43492789487]",
       "topicTasksMap": {
-        "thing to do": [],
+        "thing to do": [
+          {
+            "title": "vsfvf",
+            "description": "fsssssssssss",
+            "dueDate": 1575030569302,
+            "id": "9SWYGS",
+            "createdById": null
+          }
+        ],
         "doing": [
           {
-            "title": "do this",
-            "id": "s19904",
-            "description": "lorem lorem lorem",
-            "createdByUserId": "8749jnfnn3454",
-            "style": {
-              "bgc": "yellow",
-              "color": "green"
-            },
-            "taskDueDate": 154085038503
-          },
-          {
-            "id": "s1001",
-            "title": "do this",
-            "description": "lorem lorem lorem",
-            "createdById": "4jbkbf454",
-            "style": {
-              "bgc": "yellow",
-              "color": "blue"
-            },
-            "taskDueDate": 154085038503
+            "title": "d;lkf כ",
+            "description": "1 3",
+            "dueDate": 1575030648227,
+            "id": "O87hyr",
+            "createdById": null
           }
         ]
       }

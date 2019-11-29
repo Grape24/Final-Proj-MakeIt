@@ -16,6 +16,7 @@
         >{{ task.title }}</div>
       </draggable>
       <rawDisplayer class="col-3" :value="topicList" title="List 1" />
+      <button @click="push(null)">+</button>
     </div>
   </section>
 </template>
@@ -42,7 +43,7 @@ export default {
   data() {
     return {
       controlOnStart: true,
-      topic:null,
+      topic: null,
 
       currTaskId: null
     };
@@ -55,16 +56,16 @@ export default {
       this.controlOnStart = originalEvent.ctrlKey;
     },
     push(id) {
-      this.$router.push(`${this.currBoardId}/task/edit/${id}/${this.topicName}`);
+      this.$router.push(
+        `${this.currBoardId}/task/edit/${id}/${this.topicName}`
+      );
     }
   },
-  watch:{
+  watch: {
     topicList(topicList) {
-    topicList = this.topicList
-    this.$store.dispatch({type :'setBoard', topicList});
-
+      topicList = this.topicList;
+      this.$store.dispatch({ type: "setBoard", topicList });
     }
-
   }
 };
 </script>

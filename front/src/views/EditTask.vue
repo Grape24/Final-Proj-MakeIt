@@ -1,9 +1,11 @@
 <template>
   <section>
-    <router-link class="modal-mask" :to="'/board/' + this.currBoardId">X</router-link>
+    {{task}}
+    <button class="modal-mask" @click="closeEdit">X</button>
     <div class="edit-modal">
       <router-link :to="'/board/' + this.currBoardId">X</router-link>
 
+      <h2>Topic : {{topicName}}</h2>
       <form class="edit-form flex column" @submit.prevent="saveTask">
         <input class="task-title" type="text" v-model="task.title" placeholder="Enter the title" />
         <input
@@ -26,6 +28,8 @@
   </section>
 </template>
 
+
+
 <script>
 import BoadService from "../services/BoardService.js";
 import TaskService from "../services/TaskService.js";
@@ -35,39 +39,52 @@ import "vue2-datepicker/index.css";
 export default {
   data() {
     return {
-      task: {},
-      currBoardId: null
+      task: { title: "", description: "", dueDate: Date.now() },
+      currBoardId: null,
+      topicName: ""
     };
   },
   methods: {
-    saveTask() {
+    async saveTask() {
       if (this.task.id) {
-        this.$store
-          .dispatch({ type: "updateTask", task: this.task })
-          .then(() => closeEdit());
+        await this.$store.dispatch({
+          type: "updateTask",
+          boardId: this.currBoardId,
+          task: this.task,
+          topic: this.topicName
+        });
+        this.closeEdit();
       } else {
-        this.$store
-          .dispatch({ type: "addTask", task: this.task })
-          .then(() => closeEdit());
+        console.log('?')
+        await this.$store.dispatch({
+          type: "addTask",
+          boardId: this.currBoardId,
+          task: this.task,
+          topic: this.topicName
+        });
+        this.closeEdit();
       }
     },
-    closeEdit() {
-      this.$router.push("/board" + this.currBoardId);
+    async remove() {
+      await this.$store.dispatch({
+        type: "removeTask",
+        boardId: this.currBoardId,
+        taskId: this.task.id,
+        topic: this.topicName
+      });
+      this.closeEdit();
     },
-    remove() {
-      const topicName = this.$route.params.topic;
-      TaskService.remove(this.currBoardId, this.task.id, topicName);
+    closeEdit() {
+      this.$router.push("/board/" + this.currBoardId);
     }
   },
-  created() {
-    const boardId = this.$route.params._id;
-    console.log(boardId);
-    this.currBoardId = boardId;
+  async created() {
+    this.topicName = this.$route.params.topic;
+    this.currBoardId = this.$route.params._id;
     const taskId = this.$route.params.taskId;
     if (taskId) {
-      BoadService.getTaskById(boardId, taskId).then(task => {
-        this.task = JSON.parse(JSON.stringify(task));
-      });
+      var task = await TaskService.getTaskById(this.currBoardId, taskId);
+      this.task = JSON.parse(JSON.stringify(task));
     }
   },
   components: {
