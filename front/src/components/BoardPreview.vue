@@ -14,7 +14,7 @@ export default {
   },
   computed: {
     currboardLink() {
-      return `/board/${this.board._id}`;
+      return "/board/" + this.board._id;
     }
   }
 };

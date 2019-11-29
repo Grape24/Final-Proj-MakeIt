@@ -1,8 +1,7 @@
 <template>
   <section>
         <draggable 
-          class="flex"
-          :list="topics">
+          class="flex">
         <topics-preview
           v-for="(key ,val) in topics"
           :key="val.id"
@@ -36,8 +35,6 @@ export default {
     TopicsPreview,
     draggable
   },
-  created(){
-    console.log(this.topics)
-  }
+  
 };
 </script>
