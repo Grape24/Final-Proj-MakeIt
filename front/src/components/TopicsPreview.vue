@@ -8,7 +8,8 @@
         :group="{ name: 'tasks', pull: pullFunction }"
         @start="start"
       >
-        <div
+        <div 
+          v-if="task"
           class="list-group-item column"
           v-for="task in topicList"
           :key="task.id"
@@ -55,7 +56,7 @@ export default {
       this.controlOnStart = originalEvent.ctrlKey;
     },
     push(id) {
-      this.$router.push(`${this.currBoardId}/task/edit/${id}`);
+      this.$router.push(`${this.currBoardId}/task/edit/${id}/${this.topicName}`);
     }
   },
   watch:{

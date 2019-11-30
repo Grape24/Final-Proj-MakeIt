@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import BoardService from '../services/BoardService'
+import TaskService from '../services/TaskService'
 
 Vue.use(Vuex)
 
@@ -54,9 +55,18 @@ export default new Vuex.Store({
       const id = context.getters.currBoard._id
       // console.log('id :',id)
       BoardService.edit(context.getters.currBoard)
-
+    },
+    updateTask(context ,{task ,topicName}){
+      console.log('store:',task)
+      console.log('currboard :' ,context.getters.currBoard)
+      console.log('top',topicName)
+      TaskService.edit(task,context.getters.currBoard,topicName)
+        .then(board =>{
+          context.commit({ type: 'setCurrBoard', board })
+        })
 
     }
+    
 
   },
   modules: {

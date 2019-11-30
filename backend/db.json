@@ -14,17 +14,6 @@
       "topicTasksMap": {
         "thing to do": [
           {
-            "title": "do jjj",
-            "id": "990",
-            "description": "lorem lorem lorem",
-            "createdByUserId": "8749jnfnn3454",
-            "style": {
-              "bgc": "yellow",
-              "color": "green"
-            },
-            "taskDueDate": 154085038503
-          },
-          {
             "id": "s1001",
             "title": "do this",
             "description": "lorem lorem lorem",
@@ -37,17 +26,8 @@
           }
         ],
         "doing": [
-          {
-            "title": "do this",
-            "id": "s19904",
-            "description": "lorem lorem lorem",
-            "createdByUserId": "8749jnfnn3454",
-            "style": {
-              "bgc": "yellow",
-              "color": "green"
-            },
-            "taskDueDate": 154085038503
-          }
+          null,
+          null
         ]
       }
     }
