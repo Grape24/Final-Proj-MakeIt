@@ -14,33 +14,19 @@
       "topicTasksMap": {
         "thing to do": [
           {
-            "id": "s1001",
-            "title": "do this",
-            "description": "lorem lorem lo",
-            "createdById": "4jbkbf454",
-            "style": {
-              "bgc": "yellow",
-              "color": "blue"
-            },
-            "taskDueDate": 154085038503
-          },
-          {
-            "title": "do jjj",
-            "id": "990",
-            "description": "lorem lorem lorem",
-            "createdByUserId": "8749jnfnn3454",
-            "style": {
-              "bgc": "yellow",
-              "color": "green"
-            },
-            "taskDueDate": 154085038503
-          },
-          {
             "title": "kejgnkrjng",
             "description": "krjgkrjng",
             "dueDate": 1575043836904,
             "taskDueDate": 1575064800000,
             "id": "HXYLU1",
+            "createdById": null
+          },
+          {
+            "title": "jjnjnj",
+            "description": "kjnjnjnjn",
+            "dueDate": 1575041444093,
+            "taskDueDate": 1604613600000,
+            "id": "ds4KhN",
             "createdById": null
           },
           {
@@ -60,29 +46,11 @@
             "createdById": null
           },
           {
-            "title": "Enav",
-            "description": "Enav Enav Enav",
-            "dueDate": 1575044083037,
-            "taskDueDate": 1575064800000,
-            "id": "Cx79gO",
-            "createdById": null
-          },
-          {
-            "title": "Enav",
-            "description": "Enav",
-            "dueDate": 1575044097865,
-            "taskDueDate": 1575064800000,
-            "id": "baoB5r",
-            "createdById": null
-          }
-        ],
-        "doing": [
-          {
-            "title": "lkm",
-            "description": "lvdkmlmm",
-            "dueDate": 1575040836722,
-            "taskDueDate": 1577484000000,
-            "id": "5d1Srj",
+            "title": "rfgetgr",
+            "description": "rgrgt",
+            "dueDate": 1575043696693,
+            "taskDueDate": 1574978400000,
+            "id": "3PLF4n",
             "createdById": null
           },
           {
@@ -94,20 +62,26 @@
             "createdById": null
           },
           {
-            "title": "Noam",
-            "description": "",
-            "dueDate": 1575041034395,
-            "id": "T8KpPu",
-            "createdById": null
+            "id": "s1001",
+            "title": "do this",
+            "description": "lorem lorem lo",
+            "createdById": "4jbkbf454",
+            "style": {
+              "bgc": "yellow",
+              "color": "blue"
+            },
+            "taskDueDate": 154085038503
           },
           {
-            "title": "jjnjnj",
-            "description": "kjnjnjnjn",
-            "dueDate": 1575041444093,
-            "taskDueDate": 1604613600000,
-            "id": "ds4KhN",
+            "title": "Enav",
+            "description": "Enav Enav Enav",
+            "dueDate": 1575044083037,
+            "taskDueDate": 1575064800000,
+            "id": "Cx79gO",
             "createdById": null
-          },
+          }
+        ],
+        "doing": [
           {
             "title": "rktgnrktg",
             "description": "rkngtkrtmtglkmrlkkmtglkrkmg",
@@ -117,11 +91,37 @@
             "createdById": null
           },
           {
-            "title": "rfgetgr",
-            "description": "rgrgt",
-            "dueDate": 1575043696693,
-            "taskDueDate": 1574978400000,
-            "id": "3PLF4n",
+            "title": "Enav",
+            "description": "Enav",
+            "dueDate": 1575044097865,
+            "taskDueDate": 1575064800000,
+            "id": "baoB5r",
+            "createdById": null
+          },
+          {
+            "title": "Noam",
+            "description": "",
+            "dueDate": 1575041034395,
+            "id": "T8KpPu",
+            "createdById": null
+          },
+          {
+            "title": "do jjj",
+            "id": "990",
+            "description": "lorem lorem lorem",
+            "createdByUserId": "8749jnfnn3454",
+            "style": {
+              "bgc": "yellow",
+              "color": "green"
+            },
+            "taskDueDate": 154085038503
+          },
+          {
+            "title": "lkm",
+            "description": "lvdkmlmm",
+            "dueDate": 1575040836722,
+            "taskDueDate": 1577484000000,
+            "id": "5d1Srj",
             "createdById": null
           }
         ]

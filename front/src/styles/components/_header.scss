@@ -1,10 +1,15 @@
 .header {
- background-color: $clr4;
- height: rem(70px);
+ background-color: $clr1;
 }
 
 .nav-links-container{
     a{
         padding: rem(20px);
+        color: white;
+        align-self: center;
     }
+}
+.logo{
+    width: 150px;
+    padding: rem(20px);
 }
