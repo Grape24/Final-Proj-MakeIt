@@ -2,7 +2,6 @@
   <section>
         <draggable 
           class="flex"
-          :list="list"
           ghost-class="ghost"
           :move="checkMove"
           @start="dragging = true"
@@ -16,7 +15,6 @@
         ></topics-preview>
         </draggable>
     
-    <pre>{{topics}}</pre>
     <router-view></router-view>
   </section>
 </template>
