@@ -7,7 +7,6 @@ export default {
     remove,
     getById,
     edit,
-    getTaskById
 
 }
 
@@ -16,17 +15,19 @@ const BASE_URL = (process.env.NODE_ENV !== 'development') ?
     '//localhost:3000/boards';
 
 
-function query() {
-    return axios.get(BASE_URL).then(res => {
-        return res.data;
-    });
+
+async function query() {
+    const res = await axios.get(BASE_URL)
+    return res.data
 }
 
 function add(board) {
-    console.log('mama',board)
+    console.log('mama', board)
     // return axios.post(BASE_URL, board)
-        // .then(res => res.data)
+    // .then(res => res.data)
 }
+
+
 function edit(board) {
     return axios.put(`${BASE_URL}/${board._id}`, board)
 }
@@ -36,6 +37,7 @@ function remove(boardId) {
     return axios.delete(`${BASE_URL}/${boardId}`)
 }
 
+<<<<<<< HEAD
 function getById(id) {
     return axios.get(`${BASE_URL}/${id}`)
         .then(board => {
@@ -55,4 +57,9 @@ function getTaskById(boardId, taskId) {
                 }
             }
         })
+=======
+async function getById(id) {
+    const board = await axios.get(`${BASE_URL}/${id}`)
+    return board.data
+>>>>>>> 925daaae11f92754876b7938a88b940faf73af72
 }

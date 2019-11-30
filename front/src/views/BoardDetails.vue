@@ -1,6 +1,9 @@
 <template>
-  <section v-if="topics">
+  <section>
+  <h2 v-if="currBoard">{{currBoard.name}}</h2>
+  <div v-if="topics">
     <topics-list :topics="topics" :currBoardId="currBoard._id"></topics-list>
+  </div>
   </section>
 </template>
  

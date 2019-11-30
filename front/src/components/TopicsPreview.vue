@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="topic-list-container column">
-      <pre>{{topicName}}</pre>
+      <div>{{topicName}}</div>
       <draggable
         class="dragArea list-group"
         :list="topicList"
@@ -17,6 +17,7 @@
         >{{ task.title }}</div>
       </draggable>
       <rawDisplayer class="col-3" :value="topicList" title="List 1" />
+      <button @click="push(null)">+</button>
     </div>
   </section>
 </template>
@@ -30,7 +31,7 @@ export default {
   props: {
     topicName: String,
     topicList: Array,
-    currBoardId: Number
+    currBoardId: Number,
   },
   name: "clone-on-control",
   display: "Clone on Control",
@@ -43,7 +44,7 @@ export default {
   data() {
     return {
       controlOnStart: true,
-      topic:null,
+      topic: null,
 
       currTaskId: null
     };
@@ -56,16 +57,16 @@ export default {
       this.controlOnStart = originalEvent.ctrlKey;
     },
     push(id) {
-      this.$router.push(`${this.currBoardId}/task/edit/${id}/${this.topicName}`);
+      this.$router.push(
+        `${this.currBoardId}/task/edit/${id}/${this.topicName}`
+      );
     }
   },
-  watch:{
+  watch: {
     topicList(topicList) {
-    topicList = this.topicList
-    this.$store.dispatch({type :'setBoard', topicList});
-
+      topicList = this.topicList;
+      this.$store.dispatch({ type: "setBoard", topicList });
     }
-
   }
 };
 </script>
