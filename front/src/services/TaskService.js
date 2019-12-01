@@ -8,18 +8,12 @@ export default {
     edit
 }
 
-
 async function remove(boardId, taskId, topicName) {
     let board = await BoardService.getById(boardId)
     board.topicTasksMap[topicName] = board.topicTasksMap[topicName].filter(task => task.id !== taskId)
     board = await BoardService.edit(board)
     return board.data
 }
-
-
-
-
-
 
 async function edit(boardId, task, topicName) {
     let board = await BoardService.getById(boardId)

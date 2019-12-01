@@ -3,7 +3,6 @@
         <draggable 
           class="flex"
           ghost-class="ghost"
-          :move="checkMove"
           :list="list"
           @start="dragging = true"
           @end="dragging = false">
@@ -36,10 +35,15 @@ export default {
   data(){
     return {
       list:[
-        this.topics
+        this.topicsChanged
       ],
       isAddingTopic:false,
       createdTopicName:''
+    }
+  },
+  computed:{
+    topicsChanged(){
+      return this.topics;
     }
   },
   methods: {
@@ -49,6 +53,7 @@ export default {
     addTopic(){
       const topic = this.createdTopicName
       this.$store.dispatch({ type: "addTopic", topic });
+      this.list.splice()
       this.isAddingTopic=false
     },
       checkMove: function(e) {
@@ -76,8 +81,9 @@ export default {
         map[keys[i]] = values[i].flat();
       }
       this.$emit('topicsChanged', map)
-    }
-  }
+    },
+
+  },
   
 }
 </script>
