@@ -14,52 +14,11 @@
       "topicTasksMap": {
         "thing to do": [
           {
-<<<<<<< HEAD
-            "id": "s1001",
-            "title": "do this",
-            "description": "lorem lorem lo",
-            "createdById": "4jbkbf454",
-            "style": {
-              "bgc": "yellow",
-              "color": "blue"
-            },
-            "taskDueDate": 154085038503
-          },
-          {
-            "title": "lkm",
-            "description": "lvdkmlmm",
-            "dueDate": 1575040836722,
-            "taskDueDate": 1577484000000,
-            "id": "5d1Srj",
-            "createdById": null
-          },
-          {
-            "title": "do jjj",
-            "id": "990",
-            "description": "lorem lorem lorem",
-            "createdByUserId": "8749jnfnn3454",
-            "style": {
-              "bgc": "yellow",
-              "color": "green"
-            },
-            "taskDueDate": 154085038503
-          },
-          {
-=======
->>>>>>> dfc64129fc081e1444bc2e687dfe17cc57a93725
             "title": "kejgnkrjng",
             "description": "krjgkrjng",
             "dueDate": 1575043836904,
             "taskDueDate": 1575064800000,
             "id": "HXYLU1",
-            "createdById": null
-          },
-          {
-            "title": "jjnjnj",
-            "description": "kjnjnjnjn",
-            "dueDate": 1575041444093,
-            "taskDueDate": 1604613600000,
-            "id": "ds4KhN",
             "createdById": null
           },
           {
@@ -93,8 +52,6 @@
             "taskDueDate": 1573768800000,
             "id": "8XN33A",
             "createdById": null
-<<<<<<< HEAD
-=======
           },
           {
             "id": "s1001",
@@ -114,32 +71,15 @@
             "taskDueDate": 1575064800000,
             "id": "Cx79gO",
             "createdById": null
->>>>>>> dfc64129fc081e1444bc2e687dfe17cc57a93725
           }
         ],
         "doing": [
-          {
-<<<<<<< HEAD
-            "title": "Enav LOOOO",
-            "description": "lerkmgle ",
-            "dueDate": 1575040852925,
-            "taskDueDate": 1573768800000,
-            "id": "8XN33A",
-=======
-            "title": "rktgnrktg",
-            "description": "rkngtkrtmtglkmrlkkmtglkrkmg",
-            "dueDate": 1575043405908,
-            "taskDueDate": 1606514400000,
-            "id": "aNxWqo",
-            "createdById": null
-          },
           {
             "title": "Enav",
             "description": "Enav",
             "dueDate": 1575044097865,
             "taskDueDate": 1575064800000,
             "id": "baoB5r",
->>>>>>> dfc64129fc081e1444bc2e687dfe17cc57a93725
             "createdById": null
           },
           {
@@ -155,22 +95,6 @@
             "dueDate": 1575041444093,
             "taskDueDate": 1604613600000,
             "id": "ds4KhN",
-            "createdById": null
-          },
-          {
-            "title": "Enav",
-            "description": "Enav",
-            "dueDate": 1575044097865,
-            "taskDueDate": 1575064800000,
-            "id": "baoB5r",
-            "createdById": null
-          },
-          {
-            "title": "rktgnrktg",
-            "description": "rkngtkrtmtglkmrlkkmtglkrkmg",
-            "dueDate": 1575043405908,
-            "taskDueDate": 1606514400000,
-            "id": "aNxWqo",
             "createdById": null
           },
           {
