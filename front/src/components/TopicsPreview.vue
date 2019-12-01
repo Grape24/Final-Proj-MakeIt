@@ -8,7 +8,7 @@
         :group="{ name: 'tasks', pull: pullFunction }"
         @start="start"
       >
-        <div 
+        <div
           v-if="task"
           class="list-group-item column"
           v-for="task in topicList"
@@ -19,7 +19,7 @@
         </div>
       </draggable>
       <rawDisplayer class="col-3" :value="topicList" title="List 1" />
-      <button @click="onDeleteList()">Delete list</button>
+      <button @click="deleteList()">Delete list</button>
       <button class="add-task-btn" @click="push(null)">+ Add another task</button>
     </div>
   </section>
@@ -34,7 +34,7 @@ export default {
   props: {
     topicName: String,
     topicList: Array,
-    currBoardId: Number,
+    currBoardId: String
   },
   name: "clone-on-control",
   display: "Clone on Control",
@@ -63,13 +63,11 @@ export default {
         `${this.currBoardId}/task/edit/${id}/${this.topicName}`
       );
     },
-    onDeleteList(){
-      const topicName=this.topicName
-      this.$store.dispatch({ type: "removeList", topicName });
-      
-    },
+    deleteList() {
+      this.$store.dispatch({ type: "removeList", topicName: this.topicName });
+    }
   },
- 
+
   watch: {
     topicList(topicList) {
       topicList = this.topicList;

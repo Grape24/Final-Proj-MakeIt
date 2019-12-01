@@ -16,10 +16,10 @@
         </draggable>
     
     <router-view></router-view>
-    <button @click="onAddTopic()">+ add topic</button>
+    <button @click="openModal()">+ add topic</button>
     <div v-if="isAddingTopic">
       <input type="text" placeholder="Add new list" v-model="createdTopicName" />
-    <button @click="addTopic">V</button>
+      <button @click="addTopic">V</button>
     </div>
   </section>
 </template>
@@ -30,16 +30,14 @@ import draggable from "vuedraggable";
 export default {
   props: {
     topics: Object,
-    currBoardId: Number,
+    currBoardId: String
   },
-  data(){
+  data() {
     return {
-      list:[
-        this.topicsChanged
-      ],
-      isAddingTopic:false,
-      createdTopicName:''
-    }
+      list: [this.topics],
+      isAddingTopic: false,
+      createdTopicName: ""
+    };
   },
   computed:{
     topicsChanged(){
@@ -47,16 +45,16 @@ export default {
     }
   },
   methods: {
-    onAddTopic(){
-      this.isAddingTopic=true
+    openModal() {
+      this.isAddingTopic = true;
     },
-    addTopic(){
-      const topic = this.createdTopicName
+    addTopic() {
+      const topic = this.createdTopicName;
       this.$store.dispatch({ type: "addTopic", topic });
       this.list.splice()
       this.isAddingTopic=false
     },
-      checkMove: function(e) {
+    checkMove: function(e) {
       window.console.log("Future index: " + e.draggedContext.futureIndex);
     },
   
