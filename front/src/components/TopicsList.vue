@@ -4,6 +4,7 @@
           class="flex"
           ghost-class="ghost"
           :move="checkMove"
+          :list="list"
           @start="dragging = true"
           @end="dragging = false">
         <topics-preview
@@ -30,7 +31,7 @@ export default {
   data(){
     return {
       list:[
-        this.topics
+       
       ]
     }
   },
@@ -43,6 +44,14 @@ export default {
     TopicsPreview,
     draggable
   },
+  created(){
+    console.log(this.topics)
+    var result = Object.keys(this.topics).map(key => {
+                return {[key]: this.topics[key]}
+    })
+    this.list = result
+    console.log(this.list)
+  }
 
 };
 </script>
