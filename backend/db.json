@@ -14,46 +14,26 @@
       "topicTasksMap": {
         "thing to do": [
           {
-            "title": "kejgnkrjng",
-            "description": "krjgkrjng",
-            "dueDate": 1575043836904,
-            "taskDueDate": 1575064800000,
-            "id": "HXYLU1",
+            "title": "koko2",
+            "description": "",
+            "dueDate": 1575186469906,
+            "id": "y0O3oc",
+            "createdById": null
+          }
+        ],
+        "enavvvvvvvvvv": [
+          {
+            "title": "ewm fe ",
+            "description": "",
+            "dueDate": 1575186352411,
+            "id": "0RgMU7",
             "createdById": null
           },
           {
-            "title": "ekgjnkn",
-            "description": "rkgntjkrg",
-            "dueDate": 1575043946353,
-            "taskDueDate": 1575064800000,
-            "id": "WbrJqr",
-            "createdById": null
-          },
-          {
-            "title": "rfgetgr",
-            "description": "rgrgt",
-            "dueDate": 1575043696693,
-            "taskDueDate": 1574978400000,
-            "id": "3PLF4n",
-            "createdById": null
-          },
-          {
-            "id": "s1001",
-            "title": "do this",
-            "description": "lorem lorem lo",
-            "createdById": "4jbkbf454",
-            "style": {
-              "bgc": "yellow",
-              "color": "blue"
-            },
-            "taskDueDate": 154085038503
-          },
-          {
-            "title": "Enav",
-            "description": "Enav Enav Enav",
-            "dueDate": 1575044083037,
-            "taskDueDate": 1575064800000,
-            "id": "Cx79gO",
+            "title": "koko",
+            "description": "",
+            "dueDate": 1575186460084,
+            "id": "vajxXC",
             "createdById": null
           }
         ]

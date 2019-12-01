@@ -50,14 +50,14 @@ export default {
       const topic = this.createdTopicName
       this.$store.dispatch({ type: "addTopic", topic });
       this.isAddingTopic=false
-    }
+    },
 
-  },
-  methods:{
       checkMove: function(e) {
       window.console.log("Future index: " + e.draggedContext.futureIndex);
-    }
+    },
+  
   },
+  
   components: {
     TopicsPreview,
     draggable

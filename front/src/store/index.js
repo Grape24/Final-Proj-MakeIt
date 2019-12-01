@@ -59,8 +59,12 @@ export default new Vuex.Store({
       const id = context.getters.currBoard._id
       BoardService.edit(context.getters.currBoard)
     },
-    addTopic(context,{topic}){
-      BoardService.addTopic(topic,context.getters.currBoard)
+    async addTopic(context,{topic}){
+      const board =await BoardService.addTopic(topic,context.getters.currBoard)
+      console.log('index:',board)
+      context.commit({ type: 'setCurrBoard', board })
+
+      
     },
     async removeList(context,{topicName}){
         const board = await BoardService.removeList(topicName,context.getters.currBoard)
