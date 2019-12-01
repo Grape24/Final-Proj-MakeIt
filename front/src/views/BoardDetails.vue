@@ -22,16 +22,26 @@ export default {
   },
   computed: {
     topics() {
-      this.currBoard = this.$store.getters.currBoard;
+    this.currBoard = this.$store.getters.currBoard;
       if (this.currBoard) {
         return this.currBoard.topicTasksMap;
       }
     }
   },
+  methods:{
+    updateBoard(map){
+      this.currBoard = this.$store.getters.currBoard;
+      let board = this.currBoard;
+      board.topicTasksMap = map
+      this.$store.dispatch({type: 'setBoard', board})
+
+    }
+  },
   created() {
+
     const id = this.$route.params._id;
     this.currBoard = this.$store.getters.currBoard;
     this.$store.dispatch({ type: "getCurrBoard", id });
-  }
+  },
 };
 </script>
