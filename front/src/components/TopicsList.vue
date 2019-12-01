@@ -48,7 +48,8 @@ export default {
     },
     addTopic(){
       const topic = this.createdTopicName
-      this.$store.dispatch({ type: "addTopic", topic });
+      // this.$store.dispatch({ type: "addTopic", topic });
+        this.$emit('addTopic',topic)
       this.isAddingTopic=false
     },
 

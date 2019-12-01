@@ -31,6 +31,7 @@ export default {
   created() {
     const id = this.$route.params._id;
     this.$store.dispatch({ type: "getCurrBoard", id });
+    this.$on('addTopic',topic)
   }
 };
 </script>

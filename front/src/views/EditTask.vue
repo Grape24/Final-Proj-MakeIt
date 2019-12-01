@@ -18,7 +18,7 @@
         <div>
           <h3>Due date:</h3>
           <date-picker value-type="timestamp" v-model.number="task.taskDueDate">{{task.taskDueDate}}</date-picker>
-          <div></div>
+          <div>pick-color</div>
         </div>
 
         <div @click="remove">Delete</div>
