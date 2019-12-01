@@ -14,46 +14,33 @@
       "topicTasksMap": {
         "thing to do": [
           {
-            "title": "kejgnkrjng",
-            "description": "krjgkrjng",
-            "dueDate": 1575043836904,
-            "taskDueDate": 1575064800000,
-            "id": "HXYLU1",
+            "title": "rtgrgrg",
+            "description": "rtgrgt",
+            "dueDate": 1575187770626,
+            "id": "LedsBv",
+            "createdById": null
+          }
+        ],
+        "enavvvvvvvvvv": [
+          {
+            "title": "rtgrgrg",
+            "description": "rtgrtg",
+            "dueDate": 1575187794092,
+            "id": "4IVCuh",
             "createdById": null
           },
           {
-            "title": "ekgjnkn",
-            "description": "rkgntjkrg",
-            "dueDate": 1575043946353,
-            "taskDueDate": 1575064800000,
-            "id": "WbrJqr",
+            "title": "regerg",
+            "description": "ergerg",
+            "dueDate": 1575187815362,
+            "id": "wHFOhD",
             "createdById": null
           },
           {
-            "title": "rfgetgr",
-            "description": "rgrgt",
-            "dueDate": 1575043696693,
-            "taskDueDate": 1574978400000,
-            "id": "3PLF4n",
-            "createdById": null
-          },
-          {
-            "id": "s1001",
-            "title": "do this",
-            "description": "lorem lorem lo",
-            "createdById": "4jbkbf454",
-            "style": {
-              "bgc": "yellow",
-              "color": "blue"
-            },
-            "taskDueDate": 154085038503
-          },
-          {
-            "title": "Enav",
-            "description": "Enav Enav Enav",
-            "dueDate": 1575044083037,
-            "taskDueDate": 1575064800000,
-            "id": "Cx79gO",
+            "title": "rfefef",
+            "description": "erfef",
+            "dueDate": 1575187822626,
+            "id": "vKQpxp",
             "createdById": null
           }
         ]

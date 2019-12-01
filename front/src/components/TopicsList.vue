@@ -42,19 +42,15 @@ export default {
       createdTopicName:''
     }
   },
-  methods :{
+  methods: {
     onAddTopic(){
       this.isAddingTopic=true
-      
     },
     addTopic(){
       const topic = this.createdTopicName
       this.$store.dispatch({ type: "addTopic", topic });
       this.isAddingTopic=false
-    }
-
-  },
-  methods:{
+    },
       checkMove: function(e) {
       window.console.log("Future index: " + e.draggedContext.futureIndex);
     }
@@ -64,13 +60,22 @@ export default {
     draggable
   },
   created(){
-    console.log(this.topics)
     var result = Object.keys(this.topics).map(key => {
                 return {[key]: this.topics[key]}
     })
     this.list = result
-    console.log(this.list)
+  },
+  watch: {
+    list(){
+      console.log(this.list);
+      var keys = this.list.map((topic) => Object.keys(topic))
+      var values = this.list.map((task) => Object.values(task))
+      var map = {}
+      for (var i = 0; i < keys.length; i++){
+        map[keys[i]] = values[i]
+      }
+    }
   }
-
-};
+  
+}
 </script>
