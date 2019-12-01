@@ -18,6 +18,7 @@
       </draggable>
       <rawDisplayer class="col-3" :value="topicList" title="List 1" />
       <button @click="push(null)">+</button>
+      <button @click="onDeleteList()">Delete list</button>
     </div>
   </section>
 </template>
@@ -60,8 +61,14 @@ export default {
       this.$router.push(
         `${this.currBoardId}/task/edit/${id}/${this.topicName}`
       );
-    }
+    },
+    onDeleteList(){
+      const topicName=this.topicName
+      this.$store.dispatch({ type: "removeList", topicName });
+      
+    },
   },
+ 
   watch: {
     topicList(topicList) {
       topicList = this.topicList;

@@ -3,11 +3,8 @@ import BoardService from './BoardService.js'
 
 export default {
     remove,
-<<<<<<< HEAD
-=======
     getTaskById,
     add,
->>>>>>> 925daaae11f92754876b7938a88b940faf73af72
     edit
 }
 
@@ -19,21 +16,11 @@ async function remove(boardId, taskId, topicName) {
     return board.data
 }
 
-<<<<<<< HEAD
-async function edit (currTask,currBoard,topicName){
-    console.log('currTask',currTask)
-    currBoard.topicTasksMap[topicName] = currBoard.topicTasksMap[topicName].map(task => {
-        if(task.id===currTask.id){
-            task=currTask
-        }
-        
-    });
-    console.log('servi',currBoard)
-    BoardService.edit(currboard)
 
-}
 
-=======
+
+
+
 async function edit(boardId, task, topicName) {
     let board = await BoardService.getById(boardId)
     let idx = board.topicTasksMap[topicName].findIndex(todo => todo.id === task.id)
@@ -70,4 +57,3 @@ function _makeId(length = 6) {
     }
     return txt;
 }
->>>>>>> 925daaae11f92754876b7938a88b940faf73af72

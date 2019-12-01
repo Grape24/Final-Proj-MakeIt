@@ -45,19 +45,8 @@ export default {
     };
   },
   methods: {
-<<<<<<< HEAD
-    saveTask() {
-      console.log('edit task:',this.task)
 
-
-      const topicName = this.$route.params.topic;
-        if (this.task.id) {
-        console.log('cmp: ',this.task.id)
-        console.log('cmp: ',topicName)
-        this.$store.dispatch({ type: "updateTask", task:this.task,topicName })
-          
-          .then(() => closeEdit());
-=======
+   
     async saveTask() {
       if (this.task.id) {
         await this.$store.dispatch({
@@ -67,7 +56,7 @@ export default {
           topic: this.topicName
         });
         this.closeEdit();
->>>>>>> 925daaae11f92754876b7938a88b940faf73af72
+
       } else {
         await this.$store.dispatch({
           type: "addTask",

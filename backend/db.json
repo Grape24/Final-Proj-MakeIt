@@ -14,30 +14,37 @@
       "topicTasksMap": {
         "thing to do": [
           {
-            "title": "do jjj",
-            "id": "990",
-            "description": "lorem lorem lorem",
-            "createdByUserId": "8749jnfnn3454",
+            "id": "s1001",
+            "title": "do this",
+            "description": "lorem lorem lo",
+            "createdById": "4jbkbf454",
             "style": {
               "bgc": "yellow",
-              "color": "green"
+              "color": "blue"
             },
             "taskDueDate": 154085038503
           },
           {
-            "title": "kejgnkrjng",
-            "description": "krjgkrjng",
-            "dueDate": 1575043836904,
-            "taskDueDate": 1575064800000,
-            "id": "HXYLU1",
+            "title": "jjnjnj",
+            "description": "kjnjnjnjn",
+            "dueDate": 1575041444093,
+            "taskDueDate": 1604613600000,
+            "id": "ds4KhN",
             "createdById": null
           },
           {
-            "title": "rkgnrkjngtr",
-            "description": "krjngkrngt",
-            "dueDate": 1575043846931,
+            "title": "kokokok",
+            "description": "",
+            "dueDate": 1575095302391,
+            "id": "xZjzuK",
+            "createdById": null
+          },
+          {
+            "title": "Enav",
+            "description": "Enav",
+            "dueDate": 1575044097865,
             "taskDueDate": 1575064800000,
-            "id": "fEy0Ls",
+            "id": "baoB5r",
             "createdById": null
           },
           {
@@ -49,75 +56,21 @@
             "createdById": null
           },
           {
-            "title": "Enav",
-            "description": "Enav Enav Enav",
-            "dueDate": 1575044083037,
-            "taskDueDate": 1575064800000,
-            "id": "Cx79gO",
-            "createdById": null
-          },
-          {
-            "title": "Enav",
-            "description": "Enav",
-            "dueDate": 1575044097865,
-            "taskDueDate": 1575064800000,
-            "id": "baoB5r",
-            "createdById": null
-          }
-        ],
-        "doing": [
-          {
-            "title": "lkm",
-            "description": "lvdkmlmm",
-            "dueDate": 1575040836722,
-            "taskDueDate": 1577484000000,
-            "id": "5d1Srj",
-            "createdById": null
-          },
-          {
-            "title": "Enav",
-            "description": "lerkmgle",
-            "dueDate": 1575040852925,
-            "taskDueDate": 1573768800000,
-            "id": "8XN33A",
-            "createdById": null
-          },
-          {
-            "title": "Noam",
+            "title": "l led,l,",
             "description": "",
-            "dueDate": 1575041034395,
-            "id": "T8KpPu",
+            "dueDate": 1575127885521,
+            "id": "us74au",
             "createdById": null
           },
           {
-            "title": "jjnjnj",
-            "description": "kjnjnjnjn",
-            "dueDate": 1575041444093,
-            "taskDueDate": 1604613600000,
-            "id": "ds4KhN",
-            "createdById": null
-          },
-          {
-            "title": "rktgnrktg",
-            "description": "rkngtkrtmtglkmrlkkmtglkrkmg",
-            "dueDate": 1575043405908,
-            "taskDueDate": 1606514400000,
-            "id": "aNxWqo",
-            "createdById": null
-          },
-          {
-            "title": "rfgetgr",
-            "description": "rgrgt",
-            "dueDate": 1575043696693,
-            "taskDueDate": 1574978400000,
-            "id": "3PLF4n",
+            "title": "drfer",
+            "description": "",
+            "dueDate": 1575136287346,
+            "id": "0eqLHb",
             "createdById": null
           }
         ],
-        "doing": [
-          null,
-          null
-        ]
+        "kzejrkmdnfm ": []
       }
     }
   ],

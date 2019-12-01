@@ -20,6 +20,7 @@ export default new Vuex.Store({
   },
   mutations: {
     setCurrBoard(state, { board }) {
+      console.log('mutations:::',board)
       state.currBoard = board;
     },
     setBoards(state, { boards }) {
@@ -57,24 +58,20 @@ export default new Vuex.Store({
     },
     setBoard(context) {
       const id = context.getters.currBoard._id
-      // console.log('id :',id)
       BoardService.edit(context.getters.currBoard)
     },
-<<<<<<< HEAD
-    updateTask(context ,{task ,topicName}){
-      console.log('store:',task)
-      console.log('currboard :' ,context.getters.currBoard)
-      console.log('top',topicName)
-      TaskService.edit(task,context.getters.currBoard,topicName)
-        .then(board =>{
-          context.commit({ type: 'setCurrBoard', board })
-        })
-
+    addTopic(context,{topic}){
+      BoardService.addTopic(topic,context.getters.currBoard)
+    },
+    async removeList(context,{topicName}){
+        const board = await BoardService.removeList(topicName,context.getters.currBoard)
+        console.log('index',board)
+        context.commit({ type: 'setCurrBoard', board })
     }
     
 
-=======
->>>>>>> 925daaae11f92754876b7938a88b940faf73af72
+
+
   },
   modules: {
   }

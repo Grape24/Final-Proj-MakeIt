@@ -7,6 +7,8 @@ export default {
     remove,
     getById,
     edit,
+    addTopic,
+    removeList
 
 }
 
@@ -27,8 +29,16 @@ function add(board) {
     // .then(res => res.data)
 }
 
+function addTopic(topic,board){
+    // console.log('topbo:', topic)
+    // console.log('topbo:', board)
+    board.topicTasksMap[topic]=[]
+    edit(board)
+
+}
 
 function edit(board) {
+    console.log('edit ::::',board)
     return axios.put(`${BASE_URL}/${board._id}`, board)
 }
 
@@ -37,7 +47,16 @@ function remove(boardId) {
     return axios.delete(`${BASE_URL}/${boardId}`)
 }
 
-<<<<<<< HEAD
+async function removeList(topic,board){
+
+    delete board.topicTasksMap[topic]
+    const newBoard = await edit(board)
+    // console.log(newBoard.data)
+    console.log('boardservice',newBoard.data)
+    return newBoard.data
+}
+
+
 function getById(id) {
     return axios.get(`${BASE_URL}/${id}`)
         .then(board => {
@@ -57,9 +76,10 @@ function getTaskById(boardId, taskId) {
                 }
             }
         })
-=======
+
+
 async function getById(id) {
     const board = await axios.get(`${BASE_URL}/${id}`)
     return board.data
->>>>>>> 925daaae11f92754876b7938a88b940faf73af72
+}
 }
