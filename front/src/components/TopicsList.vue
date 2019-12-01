@@ -53,8 +53,10 @@ export default {
     },
       checkMove: function(e) {
       window.console.log("Future index: " + e.draggedContext.futureIndex);
-    }
+    },
+  
   },
+  
   components: {
     TopicsPreview,
     draggable
@@ -67,13 +69,13 @@ export default {
   },
   watch: {
     list(){
-      console.log(this.list);
       var keys = this.list.map((topic) => Object.keys(topic))
       var values = this.list.map((task) => Object.values(task))
       var map = {}
       for (var i = 0; i < keys.length; i++){
-        map[keys[i]] = values[i]
+        map[keys[i]] = values[i].flat();
       }
+      this.$emit('topicsChanged', map)
     }
   }
   

@@ -29,10 +29,10 @@ function add(board) {
     // .then(res => res.data)
 }
 
-function addTopic(topic,board){
-   
+ async function addTopic(topic,board){
     board.topicTasksMap[topic]=[]
-    edit(board)
+    const newBoard = await edit(board)
+    return newBoard.data
 
 }
 
