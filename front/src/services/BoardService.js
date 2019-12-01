@@ -7,6 +7,8 @@ export default {
     remove,
     getById,
     edit,
+    addTopic,
+    removeList
 
 }
 
@@ -22,11 +24,17 @@ async function query() {
 }
 
 function add(board) {
-    console.log('mama', board)
+    
     // return axios.post(BASE_URL, board)
     // .then(res => res.data)
 }
 
+function addTopic(topic,board){
+   
+    board.topicTasksMap[topic]=[]
+    edit(board)
+
+}
 
 function edit(board) {
     return axios.put(`${BASE_URL}/${board._id}`, board)
@@ -37,7 +45,36 @@ function remove(boardId) {
     return axios.delete(`${BASE_URL}/${boardId}`)
 }
 
+async function removeList(topic,board){
+    delete board.topicTasksMap[topic]
+    const newBoard = await edit(board)
+    return newBoard.data
+}
+
+
+function getById(id) {
+    return axios.get(`${BASE_URL}/${id}`)
+        .then(board => {
+            return board.data
+        })
+}
+
+function getTaskById(boardId, taskId) {
+    return getById(boardId)
+        .then(board => {
+            const mat = Object.values(board.topicTasksMap)
+            console.log('mat',mat)
+            for (let i = 0; i < mat.length; i++) {
+                for (let j = 0; j < mat[i].length; j++) {
+                    let task = (mat[i][j])
+                    if (task.id === taskId) return task
+                }
+            }
+        })
+
+
 async function getById(id) {
     const board = await axios.get(`${BASE_URL}/${id}`)
     return board.data
+}
 }

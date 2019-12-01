@@ -17,6 +17,11 @@
         </draggable>
     
     <router-view></router-view>
+    <button @click="onAddTopic()">+ add topic</button>
+    <div v-if="isAddingTopic">
+      <input type="text" placeholder="Add new list" v-model="createdTopicName" />
+    <button @click="addTopic">V</button>
+    </div>
   </section>
 </template>
 
@@ -31,9 +36,23 @@ export default {
   data(){
     return {
       list:[
-       
-      ]
+        this.topics
+      ],
+      isAddingTopic:false,
+      createdTopicName:''
     }
+  },
+  methods :{
+    onAddTopic(){
+      this.isAddingTopic=true
+      
+    },
+    addTopic(){
+      const topic = this.createdTopicName
+      this.$store.dispatch({ type: "addTopic", topic });
+      this.isAddingTopic=false
+    }
+
   },
   methods:{
       checkMove: function(e) {

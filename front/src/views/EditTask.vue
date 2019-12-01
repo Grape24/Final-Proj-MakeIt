@@ -45,6 +45,8 @@ export default {
     };
   },
   methods: {
+
+   
     async saveTask() {
       if (this.task.id) {
         await this.$store.dispatch({
@@ -54,6 +56,7 @@ export default {
           topic: this.topicName
         });
         this.closeEdit();
+
       } else {
         await this.$store.dispatch({
           type: "addTask",
