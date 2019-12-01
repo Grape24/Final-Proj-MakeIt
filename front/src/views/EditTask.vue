@@ -20,6 +20,8 @@
           <date-picker value-type="timestamp" v-model.number="task.taskDueDate">{{task.taskDueDate}}</date-picker>
           <div></div>
         </div>
+        <div>Add img attachment</div>
+        <input type="file" @change="uploadImgfunc">
 
         <div @click="remove">Delete</div>
         <button type="submit">Done</button>
@@ -35,23 +37,29 @@ import BoadService from "../services/BoardService.js";
 import TaskService from "../services/TaskService.js";
 import DatePicker from "vue2-datepicker";
 import "vue2-datepicker/index.css";
+import {uploadImg} from '../services/CloudinaryService.js'
 
 export default {
   data() {
     return {
-      task: { title: "", description: "", dueDate: Date.now() },
+      task: { title: "", description: "", dueDate: Date.now(), imgUrl: "" },
       currBoardId: null,
       topicName: ""
     };
   },
   methods: {
+   async uploadImgfunc(ev){
+      var res = await uploadImg(ev)
+      this.task.imgUrl = res.url
+    },
     async saveTask() {
       if (this.task.id) {
         await this.$store.dispatch({
           type: "updateTask",
           boardId: this.currBoardId,
           task: this.task,
-          topic: this.topicName
+          topic: this.topicName,
+          imgUrl: this.imgUrl
         });
         this.closeEdit();
       } else {
@@ -59,7 +67,8 @@ export default {
           type: "addTask",
           boardId: this.currBoardId,
           task: this.task,
-          topic: this.topicName
+          topic: this.topicName,
+          imgUrl: this.imgUrl
         });
         this.closeEdit();
       }
@@ -69,7 +78,8 @@ export default {
         type: "removeTask",
         boardId: this.currBoardId,
         taskId: this.task.id,
-        topic: this.topicName
+        topic: this.topicName,
+        imgUrl: this.imgUrl
       });
       this.closeEdit();
     },

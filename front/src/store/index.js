@@ -55,24 +55,26 @@ export default new Vuex.Store({
       context.commit({ type: 'setCurrBoard', board })
 
     },
-    async setBoard(context, {board}) {
-      if(board){
-       await BoardService.edit(board)
-       context.commit({type: 'setCurrBoard', board })
-      }else{
-      BoardService.edit(context.getters.currBoard)
+    async setBoard(context, { board }) {
+      if (board) {
+        await BoardService.edit(board)
+        context.commit({ type: 'setCurrBoard', board })
+      } else {
+        BoardService.edit(context.getters.currBoard)
       }
     },
     async addTopic(context, { topic }) {
-      const CurrBoard = { ...context.getters.currBoard }
-      CurrBoard.topicTasksMap[topic] = []
-      const board = await BoardService.edit(CurrBoard)
+      const currBoard = { ...context.getters.currBoard }
+      currBoard.topicTasksMap[topic] = []
+      const board = await BoardService.edit(currBoard)
       context.commit({ type: 'setCurrBoard', board })
     },
     async removeList(context, { topicName }) {
-      const CurrBoard = { ...context.getters.currBoard }
-      delete CurrBoard.topicTasksMap[topicName]
-      const board = await BoardService.edit(CurrBoard)
+      const currBoard = { ...context.getters.currBoard }
+      console.log('currBoard:', currBoard, 'board:', context.getters.currBoard)
+      delete currBoard.topicTasksMap[topicName]
+      console.log(currBoard)
+      const board = await BoardService.edit(currBoard)
       context.commit({ type: 'setCurrBoard', board })
     }
 

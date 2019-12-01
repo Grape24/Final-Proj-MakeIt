@@ -8,6 +8,7 @@
       @end="dragging = false"
     >
       <topics-preview
+        @deletList="deleteList"
         v-for="(key ,val) in topics"
         :key="val.id"
         :topicList="key"
@@ -49,11 +50,22 @@ export default {
     openModal() {
       this.isAddingTopic = !this.isAddingTopic;
     },
+    convertMapToArr() {
+      var result = Object.keys(this.topics).map(key => {
+        return { [key]: this.topics[key] };
+      });
+      this.list = result;
+      console.log(this.list);
+    },
     addTopic() {
       const topic = this.createdTopicName;
       this.$emit("addTopic", topic);
       this.isAddingTopic = false;
       this.createdTopicName = "";
+      this.convertMapToArr();
+    },
+    deleteList() {
+      this.convertMapToArr();
     }
   },
 
@@ -61,11 +73,8 @@ export default {
     TopicsPreview,
     draggable
   },
-  created() {
-    var result = Object.keys(this.topics).map(key => {
-      return { [key]: this.topics[key] };
-    });
-    this.list = result;
+  mounted() {
+    this.convertMapToArr();
   },
   watch: {
     list() {
@@ -75,6 +84,7 @@ export default {
       for (var i = 0; i < keys.length; i++) {
         map[keys[i]] = values[i].flat();
       }
+      console.log(map);
       this.$emit("topicsChanged", map);
     }
   }
