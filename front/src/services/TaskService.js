@@ -13,15 +13,17 @@ async function remove(boardId, taskId, topicName) {
     let board = await BoardService.getById(boardId)
     board.topicTasksMap[topicName] = board.topicTasksMap[topicName].filter(task => task.id !== taskId)
     board = await BoardService.edit(board)
-    return board.data
+    return board
 }
+
+
 
 async function edit(boardId, task, topicName) {
     let board = await BoardService.getById(boardId)
     let idx = board.topicTasksMap[topicName].findIndex(todo => todo.id === task.id)
     board.topicTasksMap[topicName].splice(idx, 1, task)
     return board
-}   
+}
 
 async function getTaskById(boardId, taskId) {
     const board = await BoardService.getById(boardId);
@@ -40,7 +42,7 @@ async function add(boardId, task, topicName) {
     task.createdById = null
     board.topicTasksMap[topicName].push(task)
     board = await BoardService.edit(board)
-    return board.data
+    return board
 }
 
 
