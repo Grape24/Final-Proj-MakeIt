@@ -1,15 +1,33 @@
 .topic-list-container{
-    background-color: darken($clr5, 10%);
+    background-color: $clr3;
     border-radius: 5px;
-    margin: rem(5px);
+    margin: rem(10px);
     padding: rem(10px);
 }
 
 .list-group-item{
     background-color: $clr5;
+    width: rem(220px);
     border-radius: rem(5px);
     margin: rem(5px);
     padding: rem(10px);
     border-bottom: 1px solid darken($clr5, 20%);
+    cursor: pointer;
+    &:hover{
+        background-color: lighten($clr3, 2%);
+    }
+}
 
+.add-task-btn{
+    border: none;
+    background-color: $clr3;
+    color: $clr2;
+    font-size: rem(13px);
+    font-family: $font1;
+    outline:none;
+    cursor:pointer;
+}
+.topic-name{
+    font-size: rem(20px);
+    padding: rem(10px);
 }

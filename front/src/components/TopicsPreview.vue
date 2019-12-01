@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="topic-list-container column">
-      <div>{{topicName}}</div>
+      <div class="topic-name">{{topicName}}</div>
       <draggable
         class="dragArea list-group"
         :list="topicList"
@@ -17,8 +17,8 @@
         >{{ task.title }}</div>
       </draggable>
       <rawDisplayer class="col-3" :value="topicList" title="List 1" />
-      <button @click="push(null)">+</button>
       <button @click="onDeleteList()">Delete list</button>
+      <button class="add-task-btn" @click="push(null)">+ Add another task</button>
     </div>
   </section>
 </template>
@@ -46,7 +46,6 @@ export default {
     return {
       controlOnStart: true,
       topic: null,
-
       currTaskId: null
     };
   },

@@ -20,7 +20,6 @@ export default new Vuex.Store({
   },
   mutations: {
     setCurrBoard(state, { board }) {
-      console.log('mutations:::',board)
       state.currBoard = board;
     },
     setBoards(state, { boards }) {
@@ -65,7 +64,6 @@ export default new Vuex.Store({
     },
     async removeList(context,{topicName}){
         const board = await BoardService.removeList(topicName,context.getters.currBoard)
-        console.log('index',board)
         context.commit({ type: 'setCurrBoard', board })
     }
     

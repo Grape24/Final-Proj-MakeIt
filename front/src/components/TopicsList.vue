@@ -1,7 +1,11 @@
 <template>
   <section>
         <draggable 
-          class="flex">
+          class="flex"
+          ghost-class="ghost"
+          :move="checkMove"
+          @start="dragging = true"
+          @end="dragging = false">
         <topics-preview
           v-for="(key ,val) in topics"
           :key="val.id"
@@ -49,10 +53,15 @@ export default {
     }
 
   },
+  methods:{
+      checkMove: function(e) {
+      window.console.log("Future index: " + e.draggedContext.futureIndex);
+    }
+  },
   components: {
     TopicsPreview,
     draggable
   },
-  
+
 };
 </script>

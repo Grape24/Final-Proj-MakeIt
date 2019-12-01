@@ -24,21 +24,19 @@ async function query() {
 }
 
 function add(board) {
-    console.log('mama', board)
+    
     // return axios.post(BASE_URL, board)
     // .then(res => res.data)
 }
 
 function addTopic(topic,board){
-    // console.log('topbo:', topic)
-    // console.log('topbo:', board)
+   
     board.topicTasksMap[topic]=[]
     edit(board)
 
 }
 
 function edit(board) {
-    console.log('edit ::::',board)
     return axios.put(`${BASE_URL}/${board._id}`, board)
 }
 
@@ -48,11 +46,8 @@ function remove(boardId) {
 }
 
 async function removeList(topic,board){
-
     delete board.topicTasksMap[topic]
     const newBoard = await edit(board)
-    // console.log(newBoard.data)
-    console.log('boardservice',newBoard.data)
     return newBoard.data
 }
 
