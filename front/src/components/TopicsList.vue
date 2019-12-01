@@ -15,8 +15,8 @@
         ></topics-preview>
         </draggable>
     
+    <button class="add-topic-btn" @click="openModal()">+ add topic</button>
     <router-view></router-view>
-    <button @click="openModal()">+ add topic</button>
     <div v-if="isAddingTopic">
       <input type="text" placeholder="Add new list" v-model="createdTopicName" />
       <button @click="addTopic">V</button>
