@@ -8,8 +8,8 @@ export default {
     getById,
     edit,
     addTopic,
-    removeList
-
+    removeList,
+    
 }
 
 const BASE_URL = (process.env.NODE_ENV !== 'development') ?
@@ -35,6 +35,21 @@ function add(board) {
     return newBoard.data
 
 }
+
+// async function changeTopic(newTopic,oldTopic,board){
+//     const topic = JSON.parse(JSON.stringify(board.topicTasksMap[oldTopic]))
+//     console.log(topic)
+//     board.topicTasksMap[newTopic]=topic
+//     delete board.topicTasksMap[oldTopic]
+//     const newBoard =await edit(board)
+//     console.log(newBoard.data)
+//     return newBoard.data
+
+
+    
+
+
+// }
 
 function edit(board) {
     return axios.put(`${BASE_URL}/${board._id}`, board)

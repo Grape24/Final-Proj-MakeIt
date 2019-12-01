@@ -1,7 +1,11 @@
 <template>
   <section>
     <div class="topic-list-container column">
-      <div class="topic-name">{{topicName}}</div>
+      <div >
+        <input class="topic-name" type="text" v-model="newTopic" :placeholder="topicName" >
+        <button v-if="isShowChangeName" @click="changeTopic">V</button>
+      </div>
+     
       <draggable
         class="dragArea list-group"
         :list="topicList"
@@ -46,7 +50,10 @@ export default {
     return {
       controlOnStart: true,
       topic: null,
-      currTaskId: null
+      currTaskId: null,
+      isShowChangeName:false,
+      newTopic:this.topicName
+      
     };
   },
   methods: {
@@ -64,14 +71,27 @@ export default {
     onDeleteList(){
       const topicName=this.topicName
       this.$store.dispatch({ type: "removeList", topicName });
-      
     },
+    changeTopic(newTopic){
+      newTopic =this.newTopic
+      const oldTopic = this.topicName
+      
+      // console.log(newTopic,oldTopic)
+      this.$store.dispatch({ type: "changeTopic", newTopic,oldTopic })
+      this.isShowChangeName=false
+
+    }
   },
  
   watch: {
     topicList(topicList) {
       topicList = this.topicList;
       this.$store.dispatch({ type: "setBoard", topicList });
+    },
+    newTopic(newTopic){
+      this.isShowChangeName=true
+      console.log('koko')
+      
     }
   }
 };
