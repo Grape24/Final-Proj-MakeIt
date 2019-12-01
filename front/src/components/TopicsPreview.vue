@@ -1,18 +1,18 @@
 <template>
   <section>
     <div class="topic-list-container column">
-      <div >
-        <input class="topic-name" type="text" v-model="newTopic" :placeholder="topicName" >
+      <div>
+        <input class="topic-name" type="text" v-model="newTopic" :placeholder="topicName" />
         <button v-if="isShowChangeName" @click="changeTopic">V</button>
       </div>
-     
+
       <draggable
         class="dragArea list-group"
         :list="topicList"
         :group="{ name: 'tasks', pull: pullFunction }"
         @start="start"
       >
-        <div 
+        <div
           v-if="task"
           class="list-group-item column"
           v-for="task in topicList"
@@ -21,7 +21,7 @@
         >{{ task.title }}</div>
       </draggable>
       <rawDisplayer class="col-3" :value="topicList" title="List 1" />
-      <button @click="onDeleteList()">Delete list</button>
+      <button @click="deleteList()">Delete list</button>
       <button class="add-task-btn" @click="push(null)">+ Add another task</button>
     </div>
   </section>
@@ -36,7 +36,7 @@ export default {
   props: {
     topicName: String,
     topicList: Array,
-    currBoardId: Number,
+    currBoardId: String
   },
   name: "clone-on-control",
   display: "Clone on Control",
@@ -68,10 +68,7 @@ export default {
         `${this.currBoardId}/task/edit/${id}/${this.topicName}`
       );
     },
-    onDeleteList(){
-      const topicName=this.topicName
-      this.$store.dispatch({ type: "removeList", topicName });
-    },
+    
     changeTopic(newTopic){
       newTopic =this.newTopic
       const oldTopic = this.topicName
@@ -79,10 +76,13 @@ export default {
       // console.log(newTopic,oldTopic)
       this.$store.dispatch({ type: "changeTopic", newTopic,oldTopic })
       this.isShowChangeName=false
+      },
 
+    deleteList() {
+      this.$store.dispatch({ type: "removeList", topicName: this.topicName });
     }
   },
- 
+
   watch: {
     topicList(topicList) {
       topicList = this.topicList;
@@ -94,5 +94,6 @@ export default {
       
     }
   }
-};
+}
+
 </script>

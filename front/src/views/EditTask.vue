@@ -45,8 +45,6 @@ export default {
     };
   },
   methods: {
-
-   
     async saveTask() {
       if (this.task.id) {
         await this.$store.dispatch({
@@ -56,7 +54,6 @@ export default {
           topic: this.topicName
         });
         this.closeEdit();
-
       } else {
         await this.$store.dispatch({
           type: "addTask",
@@ -84,7 +81,7 @@ export default {
     this.topicName = this.$route.params.topic;
     this.currBoardId = this.$route.params._id;
     const taskId = this.$route.params.taskId;
-    if (taskId !== 'null') { 
+    if (taskId !== "null") {
       let task = await TaskService.getTaskById(this.currBoardId, taskId);
       this.task = JSON.parse(JSON.stringify(task));
     }
