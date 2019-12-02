@@ -70,8 +70,8 @@ export default {
     }
   },
   watch: {
-    topicList(topicList) {
-      console.log(topicList)
+    topicList() {
+      console.log('emit')
       this.$emit("updateList");
     }
   }

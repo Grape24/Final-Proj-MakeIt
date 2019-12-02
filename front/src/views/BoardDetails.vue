@@ -37,7 +37,7 @@ export default {
   },
   methods: {
     topicsChanged(map) {
-      let board = { ...this.$store.getters.currBoard };
+      let board = JSON.parse(JSON.stringify(this.currBoard));
       board.topicTasksMap = map;
       this.$store.dispatch({ type: "setBoard", board });
     },
@@ -48,13 +48,12 @@ export default {
       this.$store.dispatch({ type: "removeList", topicName });
     },
     updateList() {
-      let board = JSON.parse(JSON.stringify(this.$store.getters.currBoard));
-      this.$store.dispatch({ type: "setBoard", board });
+      this.$store.dispatch({ type: "setBoard", board: this.currBoard });
     }
   },
   created() {
     const id = this.$route.params._id;
-    this.currBoard = this.$store.getters.currBoard;
+    // this.currBoard = JSON.parse(JSON.stringify(this.$store.getters.currBoard));
     this.$store.dispatch({ type: "getCurrBoard", id });
   }
 };
