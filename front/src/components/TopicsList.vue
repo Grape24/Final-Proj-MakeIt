@@ -44,11 +44,13 @@ import draggable from "vuedraggable";
 export default {
   props: {
     topics: Object,
-    currBoardId: String
+    currBoardId: String,
+    topicsAsArr: Array
   },
   data() {
     return {
-      list: [this.topics],
+      list: null,
+      // list: [this.topics],
       isAddingTopic: false,
       createdTopicName: ""
     };
@@ -62,37 +64,33 @@ export default {
     openTransition() {
       this.isAddingTopic = !this.isAddingTopic;
     },
-    convertMapToArr() {
-      var result = Object.keys(this.topics).map(key => {
-        return { [key]: this.topics[key] };
-      });
-      this.list = result;
-    },
     addTopic() {
       const topic = this.createdTopicName;
       this.$emit("addTopic", topic);
       this.isAddingTopic = false;
       this.createdTopicName = "";
-      this.convertMapToArr();
+      console.log("happened 1st");
     },
     deleteList(topicName) {
       this.$emit("removeList", topicName);
-      this.convertMapToArr();
     },
-    updateList() {
-      this.$emit("updateList");
+    updateList({ topics, topicName }) {
+      this.$emit("updateList", { topics, topicName });
+      this.list = [...this.topicsAsArr];
     }
   },
-
   components: {
     TopicsPreview,
     draggable
   },
   mounted() {
-    this.convertMapToArr();
+    this.list = [...this.topicsAsArr];
   },
   watch: {
-    list() {
+    list(to, from) {
+      console.log("new", to);
+      console.log("old", from);
+      if (to && from && to.length !== from.length) return;
       var keys = this.list.map(topic => Object.keys(topic));
       var values = this.list.map(task => Object.values(task));
       var map = {};

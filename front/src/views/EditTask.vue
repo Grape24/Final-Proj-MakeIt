@@ -1,30 +1,55 @@
 <template>
   <section>
-    {{task}}
     <button class="modal-mask" @click="closeEdit">X</button>
     <div class="edit-modal">
-      <router-link :to="'/board/' + this.currBoardId">X</router-link>
-
-      <h2>Topic : {{topicName}}</h2>
+      <div class="flex align-end">
+        <router-link :to="'/board/' + this.currBoardId">
+          <i class="fas fa-times"></i>
+        </router-link>
+      </div>
       <form class="edit-form flex column" @submit.prevent="saveTask">
-        <input class="task-title" type="text" v-model="task.title" placeholder="Enter the title" />
-        <input
-          class="task-description"
-          type="text"
-          v-model="task.description"
-          placeholder="Enter the description"
-        />
-
-        <div>
-          <h3>Due date:</h3>
-          <date-picker value-type="timestamp" v-model.number="task.taskDueDate">{{task.taskDueDate}}</date-picker>
-          <div></div>
+        <div class="flex align-center">
+          <i class="fas fa-sticky-note"></i>
+          <input class="task-title" type="text" v-model="task.title" placeholder="Enter the title" />
         </div>
-        <div>Add img attachment</div>
-        <input type="file" @change="uploadImgfunc" />
+        <div class="flex">
+          <div class="main-edit-container">
+            <div class="in-list">In List : {{topicName}}</div>
+            <div class="flex align-center">
+              <i class="fas fa-align-left"></i>
+              <div class="description-title">Description</div>
+            </div>
+            <textarea
+              class="task-description"
+              type="text"
+              v-model="task.description"
+              placeholder="Add a more detailed description..."
+            />
+          </div>
+          <div class="flex column">
+            <div>Add to task:</div>
+            <div>
+              <div @click="datePickerSelected = !datePickerSelected" class="due-date">
+                <i class="far fa-clock"></i>Due Date
+              </div>
+              <date-picker
+                v-if="datePickerSelected"
+                value-type="timestamp"
+                v-model.number="task.taskDueDate"
+              >{{task.taskDueDate}}</date-picker>
+              <div></div>
+            </div>
+            <div @click="imgAttachmentSelected = !imgAttachmentSelected" class="img-attachment">
+              <i class="fas fa-image"></i>Image Attachment
+            </div>
+            <input v-if="imgAttachmentSelected" type="file" @change="uploadImgfunc" />
 
-        <div @click="remove">Delete</div>
-        <button type="submit">Done</button>
+            <div @click="remove" class="delete-task">
+              <i class="fas fa-trash-alt"></i>Delete Task
+            </div>
+          </div>
+        </div>
+        <button class="save-task-btn" type="submit">Save</button>
       </form>
     </div>
   </section>
@@ -44,7 +69,9 @@ export default {
     return {
       task: { title: "", description: "", dueDate: Date.now(), imgUrl: "" },
       currBoardId: null,
-      topicName: ""
+      topicName: "",
+      datePickerSelected: false,
+      imgAttachmentSelected: false
     };
   },
   methods: {

@@ -72,7 +72,11 @@ export default {
   watch: {
     topics() {
       console.log("emit");
-      this.$emit("updateList", this.topics);
+
+      this.$emit("updateList", {
+        topics: this.topics,
+        topicName: this.topicName
+      });
     }
   }
 };
