@@ -9,6 +9,7 @@
     >
       <topics-preview
         @deletList="deleteList"
+        @updateList="updateList"
         v-for="(key ,val) in topics"
         :key="val.id"
         :topicList="key"
@@ -55,7 +56,6 @@ export default {
         return { [key]: this.topics[key] };
       });
       this.list = result;
-      console.log(this.list);
     },
     addTopic() {
       const topic = this.createdTopicName;
@@ -64,8 +64,12 @@ export default {
       this.createdTopicName = "";
       this.convertMapToArr();
     },
-    deleteList() {
+    deleteList(topicName) {
+      this.$emit("removeList", topicName);
       this.convertMapToArr();
+    },
+    updateList() {
+      this.$emit("updateList")
     }
   },
 
@@ -84,7 +88,6 @@ export default {
       for (var i = 0; i < keys.length; i++) {
         map[keys[i]] = values[i].flat();
       }
-      console.log(map);
       this.$emit("topicsChanged", map);
     }
   }

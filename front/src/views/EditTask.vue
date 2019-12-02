@@ -21,7 +21,7 @@
           <div></div>
         </div>
         <div>Add img attachment</div>
-        <input type="file" @change="uploadImgfunc">
+        <input type="file" @change="uploadImgfunc" />
 
         <div @click="remove">Delete</div>
         <button type="submit">Done</button>
@@ -37,7 +37,7 @@ import BoadService from "../services/BoardService.js";
 import TaskService from "../services/TaskService.js";
 import DatePicker from "vue2-datepicker";
 import "vue2-datepicker/index.css";
-import {uploadImg} from '../services/CloudinaryService.js'
+import { uploadImg } from "../services/CloudinaryService.js";
 
 export default {
   data() {
@@ -48,9 +48,9 @@ export default {
     };
   },
   methods: {
-   async uploadImgfunc(ev){
-      var res = await uploadImg(ev)
-      this.task.imgUrl = res.url
+    async uploadImgfunc(ev) {
+      var res = await uploadImg(ev);
+      this.task.imgUrl = res.url;
     },
     async saveTask() {
       if (this.task.id) {
@@ -61,7 +61,6 @@ export default {
           topic: this.topicName,
           imgUrl: this.imgUrl
         });
-        this.closeEdit();
       } else {
         await this.$store.dispatch({
           type: "addTask",
@@ -70,8 +69,8 @@ export default {
           topic: this.topicName,
           imgUrl: this.imgUrl
         });
-        this.closeEdit();
       }
+      this.closeEdit();
     },
     async remove() {
       await this.$store.dispatch({
@@ -85,6 +84,7 @@ export default {
     },
     closeEdit() {
       this.$router.push("/board/" + this.currBoardId);
+      window.location.reload();
     }
   },
   async created() {

@@ -9,7 +9,6 @@
         @start="start"
       >
         <div
-          v-if="task"
           class="list-group-item column"
           v-for="task in topicList"
           :key="task.id"
@@ -65,15 +64,13 @@ export default {
       );
     },
     deleteList() {
-      this.$store.dispatch({ type: "removeList", topicName: this.topicName });
-      this.$emit("deletList");
+      this.$emit("deletList", this.topicName);
     }
   },
 
   watch: {
-    topicList(topicList) {
-      topicList = this.topicList;
-      this.$store.dispatch({ type: "setBoard", topicList });
+    topicList() {
+      this.$emit("updateList");
     }
   }
 };
