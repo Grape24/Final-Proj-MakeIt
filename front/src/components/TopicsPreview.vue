@@ -7,13 +7,13 @@
       </div>
       <draggable
         class="dragArea list-group"
-        :list="topicList"
+        :list="topics"
         :group="{ name: 'tasks', pull: pullFunction }"
         @start="start"
       >
         <div
           class="list-group-item column"
-          v-for="task in topicList"
+          v-for="task in topics"
           :key="task.id"
           @click="push(task.id)"
         >
@@ -21,7 +21,7 @@
           {{ task.title }}
         </div>
       </draggable>
-      <rawDisplayer class="col-3" :value="topicList" title="List 1" />
+      <rawDisplayer class="col-3" :value="topics" title="List 1" />
       <button class="add-task-btn" @click="push(null)">+ Add another task</button>
     </div>
   </section>
@@ -50,7 +50,8 @@ export default {
     return {
       controlOnStart: true,
       topic: null,
-      currTaskId: null
+      currTaskId: null,
+      topics: this.topicList
     };
   },
   methods: {
@@ -71,8 +72,8 @@ export default {
   },
 
   watch: {
-    topicList() {
-      this.$emit("updateList");
+    topics(topics) {
+      this.$emit("updateList", { topics, topicName: this.topicName });
     }
   }
 };
