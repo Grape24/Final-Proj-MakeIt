@@ -79,8 +79,8 @@ export default {
       this.$emit("removeList", topicName);
       this.convertMapToArr();
     },
-    updateList({ topics, topicName }) {
-      this.$emit("updateList", { topics, topicName });
+    updateList() {
+      this.$emit("updateList");
     }
   },
 

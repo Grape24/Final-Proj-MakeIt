@@ -47,9 +47,8 @@ export default {
     removeList(topicName) {
       this.$store.dispatch({ type: "removeList", topicName });
     },
-    updateList({ topics, topicName }) {
+    updateList() {
       let board = JSON.parse(JSON.stringify(this.$store.getters.currBoard));
-      board.topicTasksMap[topicName] = topics;
       this.$store.dispatch({ type: "setBoard", board });
     }
   },
