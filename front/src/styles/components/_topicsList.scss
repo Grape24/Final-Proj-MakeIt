@@ -24,6 +24,13 @@
     margin: rem(10px);
     height: rem(120px);
 }
+.add-topic-input-container{
+    z-index:1;
+    margin: rem(10px);
+    height: rem(120px);
+    transition: 0.1s ease-out;
+}
+
 .add-topic-btn{
     display:block;
     border: none;
