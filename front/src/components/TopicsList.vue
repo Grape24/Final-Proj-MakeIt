@@ -9,6 +9,7 @@
     >
       <topics-preview
         @deletList="deleteList"
+        @updateList="updateList"
         v-for="(key ,val) in topics"
         :key="val.id"
         :topicList="key"
@@ -41,7 +42,6 @@
       </div>
     </div>
     <router-view></router-view>
-
   </section>
 </template>
 
@@ -83,8 +83,12 @@ export default {
       this.createdTopicName = "";
       this.convertMapToArr();
     },
-    deleteList() {
+    deleteList(topicName) {
+      this.$emit("removeList", topicName);
       this.convertMapToArr();
+    },
+    updateList({ topics, topicName }) {
+      this.$emit("updateList", { topics, topicName });
     }
   },
 

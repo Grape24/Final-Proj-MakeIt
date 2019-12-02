@@ -6,6 +6,7 @@ import TaskService from '../services/TaskService'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
+  strict: true,
   state: {
     boards: [],
     currBoard: null,
@@ -56,12 +57,12 @@ export default new Vuex.Store({
 
     },
     async setBoard(context, { board }) {
-      if (board) {
-        await BoardService.edit(board)
-        context.commit({ type: 'setCurrBoard', board })
-      } else {
-        BoardService.edit(context.getters.currBoard)
-      }
+      // const currBoard = this.getters.currBoard
+      context.commit({ type: 'setCurrBoard', board })
+      const res = await BoardService.edit(board)
+      // if (!res) {
+      //   context.commit({ type: 'setCurrBoard', board: currBoard })
+      // }
     },
     async addTopic(context, { topic }) {
       const currBoard = { ...context.getters.currBoard }

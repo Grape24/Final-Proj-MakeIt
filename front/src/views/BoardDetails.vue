@@ -4,7 +4,9 @@
     <div v-if="topics">
       <topics-list
         :topics="topics"
+        @updateList="updateList"
         @addTopic="addTopic"
+        @removeList="removeList"
         @topicsChanged="topicsChanged"
         :currBoardId="currBoard._id"
       ></topics-list>
@@ -35,12 +37,20 @@ export default {
   },
   methods: {
     topicsChanged(map) {
-      let board = this.$store.getters.currBoard;
+      let board = { ...this.$store.getters.currBoard };
       board.topicTasksMap = map;
       this.$store.dispatch({ type: "setBoard", board });
     },
     addTopic(topic) {
       this.$store.dispatch({ type: "addTopic", topic });
+    },
+    removeList(topicName) {
+      this.$store.dispatch({ type: "removeList", topicName });
+    },
+    updateList({ topics, topicName }) {
+      let board = JSON.parse(JSON.stringify(this.$store.getters.currBoard));
+      board.topicTasksMap[topicName] = topics;
+      this.$store.dispatch({ type: "setBoard", board });
     }
   },
   created() {
