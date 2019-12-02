@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="flex">
     <draggable
       class="flex"
       ghost-class="ghost"
@@ -16,12 +16,30 @@
         :currBoardId="currBoardId"
       ></topics-preview>
     </draggable>
-    <router-view></router-view>
-    <button @click="openModal()">+ add topic</button>
-    <div v-if="isAddingTopic">
-      <input type="text" placeholder="Add new list" v-model="createdTopicName" />
-      <button @click="addTopic">V</button>
+    <div class="modal-mask" 
+          v-if="isAddingTopic"
+          @click="isAddingTopic=false">
     </div>
+    <div :class="{'adding-topic': isAddingTopic}">
+    <input class="add-topic-input"
+       v-model="createdTopicName" 
+       :class="{'adding-topic-selected': isAddingTopic}" 
+       placeholder="+ Add another list"  
+       @focus="openTransition()"
+        >
+      <div v-if="isAddingTopic" class="flex">
+        <button @click="addTopic()" 
+                class="add-topic-btn">
+          Add topic
+        </button>
+        <button class="close-modal-btn"
+                @click="isAddingTopic=false">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+    <router-view></router-view>
+
   </section>
 </template>
 
@@ -47,7 +65,7 @@ export default {
     }
   },
   methods: {
-    openModal() {
+    openTransition() {
       this.isAddingTopic = !this.isAddingTopic;
     },
     convertMapToArr() {
@@ -55,7 +73,6 @@ export default {
         return { [key]: this.topics[key] };
       });
       this.list = result;
-      console.log(this.list);
     },
     addTopic() {
       const topic = this.createdTopicName;
@@ -84,11 +101,9 @@ export default {
       for (var i = 0; i < keys.length; i++) {
         map[keys[i]] = values[i].flat();
       }
-      console.log(map);
       this.$emit("topicsChanged", map);
     }
   }
 };
 </script>
 
-  

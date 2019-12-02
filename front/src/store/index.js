@@ -71,9 +71,7 @@ export default new Vuex.Store({
     },
     async removeList(context, { topicName }) {
       const currBoard = { ...context.getters.currBoard }
-      console.log('currBoard:', currBoard, 'board:', context.getters.currBoard)
       delete currBoard.topicTasksMap[topicName]
-      console.log(currBoard)
       const board = await BoardService.edit(currBoard)
       context.commit({ type: 'setCurrBoard', board })
     }

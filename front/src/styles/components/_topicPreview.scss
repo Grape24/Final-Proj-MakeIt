@@ -22,7 +22,7 @@
     border: none;
     background-color: $clr3;
     color: $clr2;
-    font-size: rem(13px);
+    font-size: rem(15px);
     font-family: $font1;
     outline:none;
     cursor:pointer;
@@ -30,4 +30,10 @@
 .topic-name{
     font-size: rem(20px);
     padding: rem(10px);
+}
+
+.delete-list-btn{
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    cursor:pointer;
 }
