@@ -20,7 +20,9 @@
           v-if="isAddingTopic"
           @click="isAddingTopic=false">
     </div>
-    <div :class="{'adding-topic': isAddingTopic}">
+    <div class="add-topic-input-container"
+        :class="{'adding-topic': isAddingTopic}">
+
     <input class="add-topic-input"
        v-model="createdTopicName" 
        :class="{'adding-topic-selected': isAddingTopic}" 
@@ -30,7 +32,7 @@
       <div v-if="isAddingTopic" class="flex">
         <button @click="addTopic()" 
                 class="add-topic-btn">
-          Add topic
+          Add list
         </button>
         <button class="close-modal-btn"
                 @click="isAddingTopic=false">

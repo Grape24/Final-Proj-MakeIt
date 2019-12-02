@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="board-container">
     <h2 class="board-name" v-if="currBoard">{{currBoard.name}}</h2>
     <div v-if="topics">
       <topics-list
