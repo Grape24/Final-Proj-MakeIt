@@ -2,7 +2,11 @@
   <section>
     <div class="topic-list-container column">
       <div class="topic-header flex space-between">
-        <div class="topic-name">{{topicName}}</div>
+        <!-- <div class="topic-name">{{topicName}}</div> -->
+         <div>
+        <input class="topic-name" type="text" v-model="newTopic" :placeholder="topicName" />
+        <button v-if="isShowChangeName" @click="changeTopic">V</button>
+      </div>
         <button class="delete-list-btn" @click="deleteList()">X</button>
       </div>
       <draggable
@@ -51,7 +55,9 @@ export default {
     return {
       controlOnStart: true,
       topic: null,
-      currTaskId: null
+      currTaskId: null,
+      isShowChangeName:false,
+      newTopic:this.topicName
     };
   },
   methods: {
@@ -69,13 +75,24 @@ export default {
     deleteList() {
       this.$store.dispatch({ type: "removeList", topicName: this.topicName });
       this.$emit("deletList");
-    }
+    },
+    changeTopic(newTopic){
+      newTopic =this.newTopic
+      const oldTopic = this.topicName
+      this.$store.dispatch({ type: "changeTopic", newTopic,oldTopic })
+      this.isShowChangeName=false
+      },
   },
 
   watch: {
     topicList(topicList) {
       topicList = this.topicList;
       this.$store.dispatch({ type: "setBoard", topicList });
+    },
+     newTopic(newTopic){
+      this.isShowChangeName=true
+      console.log('koko')
+      
     }
   }
 };
