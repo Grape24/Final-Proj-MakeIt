@@ -14,6 +14,7 @@
         :topicList="key"
         :topicName="val"
         :currBoardId="currBoardId"
+        :topics="topics"
       ></topics-preview>
     </draggable>
     <div class="modal-mask" 
@@ -59,11 +60,11 @@ export default {
       createdTopicName: ""
     };
   },
-  computed: {
-    topicsChanged() {
-      return this.topics;
-    }
-  },
+  // computed: {
+  //   topicsChanged() {
+  //     return this.topics;
+  //   }
+  // },
   methods: {
     openTransition() {
       this.isAddingTopic = !this.isAddingTopic;
@@ -83,6 +84,9 @@ export default {
     },
     deleteList() {
       this.convertMapToArr();
+    },
+    topicsChanged(map) {
+      this.$emit("topicsChanged", map);
     }
   },
 

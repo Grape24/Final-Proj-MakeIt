@@ -2,11 +2,8 @@
   <section>
     <div class="topic-list-container column">
       <div class="topic-header flex space-between">
-        <!-- <div class="topic-name">{{topicName}}</div> -->
-         <div>
-        <input class="topic-name" type="text" v-model="newTopic" :placeholder="topicName" />
-        <button v-if="isShowChangeName" @click="changeTopic">V</button>
-      </div>
+        <div class="topic-name">{{topicName}}</div>
+      
         <button class="delete-list-btn" @click="deleteList()">X</button>
       </div>
       <draggable
@@ -41,7 +38,8 @@ export default {
   props: {
     topicName: String,
     topicList: Array,
-    currBoardId: String
+    currBoardId: String,
+    
   },
   name: "clone-on-control",
   display: "Clone on Control",
@@ -57,7 +55,8 @@ export default {
       topic: null,
       currTaskId: null,
       isShowChangeName:false,
-      newTopic:this.topicName
+      newTopic:this.topicName,
+      list: [this.topics],
     };
   },
   methods: {
@@ -66,6 +65,12 @@ export default {
     },
     start({ originalEvent }) {
       this.controlOnStart = originalEvent.ctrlKey;
+    },
+    convertMapToArr() {
+      var result = Object.keys(this.topics).map(key => {
+        return { [key]: this.topics[key] };
+      });
+      this.list = result;
     },
     push(id) {
       this.$router.push(
@@ -76,12 +81,7 @@ export default {
       this.$store.dispatch({ type: "removeList", topicName: this.topicName });
       this.$emit("deletList");
     },
-    changeTopic(newTopic){
-      newTopic =this.newTopic
-      const oldTopic = this.topicName
-      this.$store.dispatch({ type: "changeTopic", newTopic,oldTopic })
-      this.isShowChangeName=false
-      },
+    
   },
 
   watch: {
@@ -91,9 +91,15 @@ export default {
     },
      newTopic(newTopic){
       this.isShowChangeName=true
-      console.log('koko')
       
-    }
-  }
+      
+    },
+    
+  
+  },
+   
+   computed: {
+   
+  },
 };
 </script>
