@@ -23,7 +23,6 @@
     </div>
     <div class="add-topic-input-container"
         :class="{'adding-topic': isAddingTopic}">
-
     <input class="add-topic-input"
        v-model="createdTopicName" 
        :class="{'adding-topic-selected': isAddingTopic}" 
