@@ -10,6 +10,7 @@ export default {
 }
 
 async function query() {
+    
     const boards = await HttpService.get('/')
     return boards
 }
