@@ -1,7 +1,10 @@
 <template>
   <section>
     <div class="topic-list-container column">
-      <div class="topic-name">{{topicName}}</div>
+      <div class="topic-header flex space-between">
+        <div class="topic-name">{{topicName}}</div>
+        <button class="delete-list-btn" @click="deleteList()">X</button>
+      </div>
       <draggable
         class="dragArea list-group"
         :list="topicList"
@@ -14,12 +17,12 @@
           v-for="task in topicList"
           :key="task.id"
           @click="push(task.id)"
-        ><img :src="task.imgUrl" />
-        {{ task.title }}
+        >
+          <img :src="task.imgUrl" />
+          {{ task.title }}
         </div>
       </draggable>
       <rawDisplayer class="col-3" :value="topicList" title="List 1" />
-      <button @click="deleteList()">Delete list</button>
       <button class="add-task-btn" @click="push(null)">+ Add another task</button>
     </div>
   </section>
@@ -65,6 +68,7 @@ export default {
     },
     deleteList() {
       this.$store.dispatch({ type: "removeList", topicName: this.topicName });
+      this.$emit("deletList");
     }
   },
 

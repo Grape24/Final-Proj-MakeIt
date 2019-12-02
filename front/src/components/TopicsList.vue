@@ -1,28 +1,48 @@
 <template>
-  <section>
-        <draggable 
-          class="flex"
-          ghost-class="ghost"
-          :list="list"
-          @start="dragging = true"
-          @end="dragging = false">
-        <topics-preview
-          v-for="(key ,val) in topics"
-          :key="val.id"
-          :topicList="key"
-          :topicName="val"
-          :currBoardId="currBoardId"
-        ></topics-preview>
-        </draggable>
-    
-    <button class="add-topic-btn" @click="openModal()">+ add topic</button>
-    <router-view></router-view>
-    <div v-if="isAddingTopic">
-      <input type="text" placeholder="Add new list" v-model="createdTopicName" />
-      <button @click="addTopic">V</button>
+  <section class="flex">
+    <draggable
+      class="flex"
+      ghost-class="ghost"
+      :list="list"
+      @start="dragging = true"
+      @end="dragging = false"
+    >
+      <topics-preview
+        @deletList="deleteList"
+        v-for="(key ,val) in topics"
+        :key="val.id"
+        :topicList="key"
+        :topicName="val"
+        :currBoardId="currBoardId"
+      ></topics-preview>
+    </draggable>
+    <div class="modal-mask" 
+          v-if="isAddingTopic"
+          @click="isAddingTopic=false">
     </div>
+    <div :class="{'adding-topic': isAddingTopic}">
+    <input class="add-topic-input"
+       v-model="createdTopicName" 
+       :class="{'adding-topic-selected': isAddingTopic}" 
+       placeholder="+ Add another list"  
+       @focus="openTransition()"
+        >
+      <div v-if="isAddingTopic" class="flex">
+        <button @click="addTopic()" 
+                class="add-topic-btn">
+          Add topic
+        </button>
+        <button class="close-modal-btn"
+                @click="isAddingTopic=false">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+    <router-view></router-view>
+
   </section>
 </template>
+
 
 <script>
 import TopicsPreview from "./TopicsPreview";
@@ -39,49 +59,51 @@ export default {
       createdTopicName: ""
     };
   },
-  computed:{
-    topicsChanged(){
+  computed: {
+    topicsChanged() {
       return this.topics;
     }
   },
   methods: {
-    openModal() {
-      this.isAddingTopic = true;
+    openTransition() {
+      this.isAddingTopic = !this.isAddingTopic;
+    },
+    convertMapToArr() {
+      var result = Object.keys(this.topics).map(key => {
+        return { [key]: this.topics[key] };
+      });
+      this.list = result;
     },
     addTopic() {
       const topic = this.createdTopicName;
-      this.$store.dispatch({ type: "addTopic", topic });
-      this.list.splice()
-      this.isAddingTopic=false
+      this.$emit("addTopic", topic);
+      this.isAddingTopic = false;
+      this.createdTopicName = "";
+      this.convertMapToArr();
     },
-    checkMove: function(e) {
-      window.console.log("Future index: " + e.draggedContext.futureIndex);
-    },
-  
+    deleteList() {
+      this.convertMapToArr();
+    }
   },
-  
+
   components: {
     TopicsPreview,
     draggable
   },
-  created(){
-    var result = Object.keys(this.topics).map(key => {
-                return {[key]: this.topics[key]}
-    })
-    this.list = result
+  mounted() {
+    this.convertMapToArr();
   },
   watch: {
-    list(){
-      var keys = this.list.map((topic) => Object.keys(topic))
-      var values = this.list.map((task) => Object.values(task))
-      var map = {}
-      for (var i = 0; i < keys.length; i++){
+    list() {
+      var keys = this.list.map(topic => Object.keys(topic));
+      var values = this.list.map(task => Object.values(task));
+      var map = {};
+      for (var i = 0; i < keys.length; i++) {
         map[keys[i]] = values[i].flat();
       }
-      this.$emit('topicsChanged', map)
-    },
-
-  },
-  
-}
+      this.$emit("topicsChanged", map);
+    }
+  }
+};
 </script>
+
