@@ -19,6 +19,7 @@
         >
           <img :src="task.imgUrl" />
           {{ task.title }}
+          <div>{{task.dueDate}}</div>
         </div>
       </draggable>
       <rawDisplayer class="col-3" :value="topics" title="List 1" />
@@ -30,6 +31,7 @@
 <script>
 import draggable from "vuedraggable";
 import rawDisplayer from "vuedraggable";
+import moment from "moment";
 
 let idGlobal = 8;
 export default {
@@ -70,11 +72,13 @@ export default {
       this.$emit("deletList", this.topicName);
     }
   },
-
   watch: {
     topics(topics) {
       this.$emit("updateList", { topics, topicName: this.topicName });
     }
+  },
+  created(){
+    console.log(moment());
   }
 };
 </script>

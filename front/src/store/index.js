@@ -53,6 +53,7 @@ export default new Vuex.Store({
     },
     async updateTask(context, { boardId, task, topic }) {
       var board = await TaskService.edit(boardId, task, topic)
+      const res = await BoardService.edit(board)
       context.commit({ type: 'setCurrBoard', board })
 
     },

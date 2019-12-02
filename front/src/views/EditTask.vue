@@ -33,11 +33,16 @@
                   class="due-date">
                   <i class="far fa-clock"></i>Due Date
             </div>
+            <div @click="datePickerSelected = false"
+                 class="transparent-modal-mask"
+                 v-if="datePickerSelected"></div>
             <date-picker v-if="datePickerSelected" 
                           value-type="timestamp" 
-                          v-model.number="task.taskDueDate">{{task.taskDueDate}}
-            </date-picker>
-            <div></div>
+                          placeholder="Select due date"
+                          class="date-picker"
+                          :inline="true"
+                          v-model.number="task.dueDate">{{task.taskDueDate}}
+          </date-picker>
           </div>
           <div @click="imgAttachmentSelected = !imgAttachmentSelected" 
                 class="img-attachment">
@@ -66,7 +71,7 @@ import { uploadImg } from "../services/CloudinaryService.js";
 export default {
   data() {
     return {
-      task: { title: "", description: "", dueDate: Date.now(), imgUrl: "" },
+      task: { title: "", description: "", dueDate: null, imgUrl: "" },
       currBoardId: null,
       topicName: "",
       datePickerSelected: false,
@@ -85,15 +90,18 @@ export default {
           boardId: this.currBoardId,
           task: this.task,
           topic: this.topicName,
-          imgUrl: this.imgUrl
-        });
+          imgUrl: this.imgUrl,
+          dueDate: this.dueDate
+        }
+      );
       } else {
         await this.$store.dispatch({
           type: "addTask",
           boardId: this.currBoardId,
           task: this.task,
           topic: this.topicName,
-          imgUrl: this.imgUrl
+          imgUrl: this.imgUrl,
+          dueDate: this.dueDate
         });
       }
       this.closeEdit();
@@ -104,7 +112,8 @@ export default {
         boardId: this.currBoardId,
         taskId: this.task.id,
         topic: this.topicName,
-        imgUrl: this.imgUrl
+        imgUrl: this.imgUrl,
+        dueDate: this.dueDate
       });
       this.closeEdit();
     },
