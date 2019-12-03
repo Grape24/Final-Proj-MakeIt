@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import BoardService from '../services/BoardService'
 import TaskService from '../services/TaskService'
+import userStore from './userStore'
 
 Vue.use(Vuex)
 
@@ -12,6 +13,9 @@ export default new Vuex.Store({
     currBoard: null,
     // activities :[]
     // topicsAsArray:null
+  },
+  modules:{
+    userStore
   },
   getters: {
     boards(state) {
