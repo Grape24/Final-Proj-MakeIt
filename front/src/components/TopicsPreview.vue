@@ -18,8 +18,8 @@
           v-for="task in topics"
           :key="task.id"
           @click="push(task.id)"
-        >
-          <img :src="task.imgUrl" />
+        > 
+          <img :class="{'rotated': task.imgIsRotated}" :src="task.imgUrl" />
           {{task.title}}
           <div v-if="task.dueDate"><i class="far fa-clock"></i>{{convertTimeStampFormat(task.dueDate)}}</div>
         </div>

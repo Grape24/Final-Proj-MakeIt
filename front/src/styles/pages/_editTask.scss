@@ -7,6 +7,7 @@
     top: 50%;
     transform: translate(-50%, -50%);
     padding: rem(30px);
+    width: 50%;
 }
 
 .modal-mask{
@@ -58,6 +59,8 @@
     padding: rem(10px);
     font-size: rem(13px);
     color: $clr2;
+    width: 80%;
+    height: rem(100px);
 }
 
 .in-list{
@@ -74,16 +77,16 @@
     padding-top: rem(7px);
 }
 
-.due-date, .img-attachment, .delete-task{
+.due-date, .img-attachment, .delete-task, .add-labels-btn{
     background-color: darken($clr1, 5%);
     border-radius: 5px;
     padding: rem(5px);
-    width: 70%;
+    width: 100%;
     cursor: pointer;
     margin: rem(5px);
 }
 
-.fa-clock, .fa-image, .fa-trash-alt{
+.fa-clock, .fa-image, .fa-trash-alt, .fa-tag{
     padding: rem(5px);
 }
 
@@ -117,6 +120,30 @@
 .img-uploader {
     position: absolute;
     background-color: white;
+    padding: rem(10px);
     border-radius: 5px;
     border: 1px solid darken(#fff, 15%);
+    div{
+        font-size: rem(14px);
+        text-align: center;
+        padding: rem(10px);
+        border-bottom: 1px solid darken($clr1, 10%);
+    }
 }
+.rotated{
+    transform: rotate(90deg);
+    overflow: scroll;
+}
+
+.main-edit-container{
+    width:70%;
+}
+.rotate-img-btn{
+    border: 1px solid darken($clr3, 10%);
+    cursor: pointer;
+    width:50%;
+    text-align:center;
+    padding: rem(5px);
+    margin: auto;
+}
+
