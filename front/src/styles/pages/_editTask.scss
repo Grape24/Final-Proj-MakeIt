@@ -1,12 +1,14 @@
 .edit-modal{
+    z-index: 3;
     border-radius: 2px;
-    background-color: $clr5;
+    background-color: $clr1;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     padding: rem(30px);
 }
+
 .modal-mask{
     background-color: rgba(0, 0, 0, .5);
     position: fixed;
@@ -19,14 +21,69 @@
 .edit-form{
     input{
         border: none;
-        font-family: $font2;
+        background-color: $clr1;
     }
 }
 
 .task-title{
-    font-size: rem(40px);
+    font-size: rem(22px);
+    color: $clr2;
+    padding:0 0 0 rem(15px);
+    outline: none;
+    font-weight: 500;
+    
+}
+
+.description-title{
+    color: $clr2;
+    padding-left: rem(12px);
 }
 
 .task-description{
-    font-size: rem(20px);
+    background-color: darken($clr1, 5%);
+    border: none;
+    border-radius: 3px;
+    margin:rem(10px) 0 rem(10px) rem(25px);
+    padding: rem(10px);
+    font-size: rem(13px);
+    color: $clr2;
+}
+
+.in-list{
+    padding: rem(5px) 0 rem(30px) rem(29px);
+    color: #6c6c6c;
+    font-size: rem(15px);
+}
+.fa-align-left, .fa-sticky-note{
+    align-self:center;
+    color: $clr2;
+}
+
+.fa-sticky-note{
+    padding-top: rem(7px);
+}
+
+.due-date, .img-attachment, .delete-task{
+    background-color: darken($clr1, 5%);
+    border-radius: 5px;
+    padding: rem(5px);
+    width: 70%;
+    cursor: pointer;
+    margin: rem(5px);
+}
+
+.fa-clock, .fa-image, .fa-trash-alt{
+    padding: rem(5px);
+}
+
+.save-task-btn{
+    border-bottom: 1px solid darken($clr1, 10%);
+    background-color: darken($clr1, 5%);
+    border-radius: 5px;
+    padding: rem(5px);
+    width: 70%;
+    cursor: pointer;
+    margin: auto;
+
+
 }

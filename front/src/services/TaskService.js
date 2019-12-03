@@ -38,6 +38,7 @@ async function add(boardId, task, topicName) {
     task.id = _makeId()
     task.createdById = null
     board.topicTasksMap[topicName].push(task)
+    board.activities.push({Name : topicName})
     board = await BoardService.edit(board)
     return board
 }

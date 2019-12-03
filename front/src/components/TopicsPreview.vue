@@ -8,14 +8,13 @@
       </div>
       <draggable
         class="dragArea list-group"
-        :list="topicList"
+        :list="topics"
         :group="{ name: 'tasks', pull: pullFunction }"
         @start="start"
       >
         <div
-          v-if="task"
           class="list-group-item column"
-          v-for="task in topicList"
+          v-for="task in topics"
           :key="task.id"
           @click="push(task.id)"
         >
@@ -23,7 +22,7 @@
           {{ task.title }}
         </div>
       </draggable>
-      <rawDisplayer class="col-3" :value="topicList" title="List 1" />
+      <rawDisplayer class="col-3" :value="topics" title="List 1" />
       <button class="add-task-btn" @click="push(null)">+ Add another task</button>
     </div>
   </section>
@@ -54,9 +53,7 @@ export default {
       controlOnStart: true,
       topic: null,
       currTaskId: null,
-      isShowChangeName:false,
-      newTopic:this.topicName,
-      list: [this.topics],
+      topics: this.topicList
     };
   },
   methods: {
@@ -66,40 +63,21 @@ export default {
     start({ originalEvent }) {
       this.controlOnStart = originalEvent.ctrlKey;
     },
-    convertMapToArr() {
-      var result = Object.keys(this.topics).map(key => {
-        return { [key]: this.topics[key] };
-      });
-      this.list = result;
-    },
+   
     push(id) {
       this.$router.push(
-        `${this.currBoardId}/task/edit/${id}/${this.topicName}`
+        `/board/${this.currBoardId}/task/edit/${id}/${this.topicName}`
       );
     },
     deleteList() {
-      this.$store.dispatch({ type: "removeList", topicName: this.topicName });
-      this.$emit("deletList");
-    },
-    
+      this.$emit("deletList", this.topicName);
+    }
   },
 
   watch: {
-    topicList(topicList) {
-      topicList = this.topicList;
-      this.$store.dispatch({ type: "setBoard", topicList });
-    },
-     newTopic(newTopic){
-      this.isShowChangeName=true
-      
-      
-    },
-    
-  
-  },
-   
-   computed: {
-   
-  },
+    topics(topics) {
+      this.$emit("updateList", { topics, topicName: this.topicName });
+    }
+  }
 };
 </script>

@@ -6,9 +6,11 @@ import TaskService from '../services/TaskService'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
+  strict: true,
   state: {
     boards: [],
     currBoard: null,
+    activities :[]
   },
   getters: {
     boards(state) {
@@ -16,6 +18,9 @@ export default new Vuex.Store({
     },
     currBoard(state) {
       return state.currBoard
+    },
+    activities(state){
+      return state.activities
     }
   },
   mutations: {
@@ -29,6 +34,14 @@ export default new Vuex.Store({
       const addedBoard = BoardService.add(board)
       state.boards.push(addedBoard)
     },
+    addActivity(state, {activity}){
+      if(state.activities === []){
+        state.activities=state.currBoard.activities
+      }
+      console.log('index addTask', activity)
+
+      state.activities.push(activity)
+    }
   },
   actions: {
     async loadBoards(context) {
@@ -48,6 +61,9 @@ export default new Vuex.Store({
     async addTask(context, { boardId, task, topic }) {
       var board = await TaskService.add(boardId, task, topic)
       context.commit({ type: 'setCurrBoard', board })
+      console.log('index addTask', topic)
+      context.commit({ type: 'addActivity', topic })
+      
 
     },
     async updateTask(context, { boardId, task, topic }) {
@@ -56,12 +72,12 @@ export default new Vuex.Store({
 
     },
     async setBoard(context, { board }) {
-      if (board) {
-        await BoardService.edit(board)
-        context.commit({ type: 'setCurrBoard', board })
-      } else {
-        BoardService.edit(context.getters.currBoard)
-      }
+      // const currBoard = this.getters.currBoard
+      context.commit({ type: 'setCurrBoard', board })
+      const res = await BoardService.edit(board)
+      // if (!res) {
+      //   context.commit({ type: 'setCurrBoard', board: currBoard })
+      // }
     },
     async addTopic(context, { topic }) {
       const currBoard = { ...context.getters.currBoard }

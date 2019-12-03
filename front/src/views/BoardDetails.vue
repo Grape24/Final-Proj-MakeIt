@@ -1,14 +1,18 @@
 <template>
-  <section>
+  <section class="board-container">
     <h2 class="board-name" v-if="currBoard">{{currBoard.name}}</h2>
+    <!-- <button @click="push(currBoard._id)">activities</button> -->
     <div v-if="topics">
       <topics-list
         :topics="topics"
+        @updateList="updateList"
         @addTopic="addTopic"
+        @removeList="removeList"
         @topicsChanged="topicsChanged"
         :currBoardId="currBoard._id"
       ></topics-list>
     </div>
+   
   </section>
 </template>
  
@@ -35,18 +39,36 @@ export default {
   },
   methods: {
     topicsChanged(map) {
-      let board = this.$store.getters.currBoard;
+      let board = { ...this.$store.getters.currBoard };
       board.topicTasksMap = map;
       this.$store.dispatch({ type: "setBoard", board });
     },
     addTopic(topic) {
       this.$store.dispatch({ type: "addTopic", topic });
-    }
+    },
+    removeList(topicName) {
+      this.$store.dispatch({ type: "removeList", topicName });
+    },
+    updateList({ topics, topicName }) {
+      let board = JSON.parse(JSON.stringify(this.$store.getters.currBoard));
+      board.topicTasksMap[topicName] = topics;
+      this.$store.dispatch({ type: "setBoard", board });
+    },
+    // push(id) {
+    //   this.$router.push(
+    //     `/board/${id}/activties`
+    //   );
+  // }
+  // computed:{
+  //   activities(){
+  //     return "/"
+  //   }
+  // },
   },
   created() {
     const id = this.$route.params._id;
     this.currBoard = this.$store.getters.currBoard;
     this.$store.dispatch({ type: "getCurrBoard", id });
   }
-};
+}
 </script>

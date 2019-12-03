@@ -9,6 +9,7 @@
     >
       <topics-preview
         @deletList="deleteList"
+        @updateList="updateList"
         v-for="(key ,val) in topics"
         :key="val.id"
         :topicList="key"
@@ -21,7 +22,8 @@
           v-if="isAddingTopic"
           @click="isAddingTopic=false">
     </div>
-    <div :class="{'adding-topic': isAddingTopic}">
+    <div class="add-topic-input-container"
+        :class="{'adding-topic': isAddingTopic}">
     <input class="add-topic-input"
        v-model="createdTopicName" 
        :class="{'adding-topic-selected': isAddingTopic}" 
@@ -31,7 +33,7 @@
       <div v-if="isAddingTopic" class="flex">
         <button @click="addTopic()" 
                 class="add-topic-btn">
-          Add topic
+          Add list
         </button>
         <button class="close-modal-btn"
                 @click="isAddingTopic=false">
@@ -40,7 +42,6 @@
       </div>
     </div>
     <router-view></router-view>
-
   </section>
 </template>
 
@@ -60,11 +61,11 @@ export default {
       createdTopicName: ""
     };
   },
-  // computed: {
-  //   topicsChanged() {
-  //     return this.topics;
-  //   }
-  // },
+  computed: {
+    topicsChanged() {
+      return this.topics;
+    }
+  },
   methods: {
     openTransition() {
       this.isAddingTopic = !this.isAddingTopic;
@@ -82,11 +83,12 @@ export default {
       this.createdTopicName = "";
       this.convertMapToArr();
     },
-    deleteList() {
+    deleteList(topicName) {
+      this.$emit("removeList", topicName);
       this.convertMapToArr();
     },
-    topicsChanged(map) {
-      this.$emit("topicsChanged", map);
+    updateList({ topics, topicName }) {
+      this.$emit("updateList", { topics, topicName });
     }
   },
 
