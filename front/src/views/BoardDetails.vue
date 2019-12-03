@@ -4,6 +4,7 @@
     <div v-if="topics">
       <topics-list
         :topics="topics"
+        :topicsAsArr="topicsAsArr"
         @updateList="updateList"
         @addTopic="addTopic"
         @removeList="removeList"
@@ -33,11 +34,14 @@ export default {
       if (this.currBoard) {
         return this.currBoard.topicTasksMap;
       }
+    },
+    topicsAsArr() {
+      return this.$store.getters.topicsAsArray;
     }
   },
   methods: {
     topicsChanged(map) {
-      let board = { ...this.$store.getters.currBoard };
+      let board = JSON.parse(JSON.stringify(this.$store.getters.currBoard));
       board.topicTasksMap = map;
       this.$store.dispatch({ type: "setBoard", board });
     },
@@ -48,14 +52,14 @@ export default {
       this.$store.dispatch({ type: "removeList", topicName });
     },
     updateList({ topics, topicName }) {
-      let board = JSON.parse(JSON.stringify(this.$store.getters.currBoard));
+      let board = JSON.parse(JSON.stringify(this.currBoard));
       board.topicTasksMap[topicName] = topics;
       this.$store.dispatch({ type: "setBoard", board });
     }
   },
   created() {
     const id = this.$route.params._id;
-    this.currBoard = this.$store.getters.currBoard;
+    this.currBoard = JSON.parse(JSON.stringify(this.$store.getters.currBoard));
     this.$store.dispatch({ type: "getCurrBoard", id });
   }
 };

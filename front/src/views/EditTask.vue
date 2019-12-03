@@ -15,7 +15,13 @@
       <div class="flex">
         <div class="main-edit-container">
           <div class="in-list">In List : {{topicName}}</div>
-            <div class="flex align-center">
+            <div class="due-date-title">Due date</div>
+            <date-picker  value-type="timestamp" 
+                          placeholder="Select due date"
+                          class="date-picker-preview"
+                          v-model.number="task.dueDate">{{task.taskDueDate}}
+          </date-picker>
+          <div class="flex align-center">
             <i class="fas fa-align-left"></i>
             <div class="description-title">Description</div>
           </div>
@@ -25,6 +31,11 @@
             v-model="task.description"
             placeholder="Add a more detailed description..."
           />
+          <div v-if="task.imgUrl" class="flex align-center">
+            <i class="fas fa-paperclip"></i>
+            <div class="image-title">Image</div>
+          </div>
+          <img v-if="task.imgUrl" :src="task.imgUrl"/>
         </div>
         <div class="flex column">
           <div>Add to task:</div>
@@ -48,7 +59,9 @@
                 class="img-attachment">
                 <i class="fas fa-image"></i>Image Attachment
           </div>
-          <input v-if="imgAttachmentSelected" type="file" @change="uploadImgfunc" />
+          <div class="img-uploader" v-if="imgAttachmentSelected">
+          <input type="file" @change="uploadImgfunc" />
+          </div>
 
           <div @click="remove" class="delete-task"><i class="fas fa-trash-alt"></i>Delete Task</div>
         </div>
@@ -133,6 +146,7 @@ export default {
   },
   components: {
     DatePicker
-  }
+  },
+
 };
 </script>
