@@ -12,6 +12,7 @@
         @start="start"
       >
         <div
+          v-if="task"
           class="list-group-item column"
           v-for="task in topics"
           :key="task.id"
@@ -62,7 +63,7 @@ export default {
     },
     push(id) {
       this.$router.push(
-        `${this.currBoardId}/task/edit/${id}/${this.topicName}`
+        `/board/${this.currBoardId}/task/edit/${id}/${this.topicName}`
       );
     },
     deleteList() {
@@ -71,8 +72,6 @@ export default {
   },
   watch: {
     topics() {
-      console.log("emit");
-
       this.$emit("updateList", {
         topics: this.topics,
         topicName: this.topicName

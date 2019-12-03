@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import BoardService from '../services/BoardService'
 import TaskService from '../services/TaskService'
 
+
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -20,6 +21,7 @@ export default new Vuex.Store({
       return state.currBoard
     },
     topicsAsArray(state) {
+      if (!state.currBoard) return []
       var res = Object.keys(state.currBoard.topicTasksMap).map(key => {
         return { [key]: state.currBoard.topicTasksMap[key] }
       })
@@ -28,7 +30,6 @@ export default new Vuex.Store({
   },
   mutations: {
     setCurrBoard(state, { board }) {
-      console.log('setting current board')
       state.currBoard = board;
     },
     setBoards(state, { boards }) {
@@ -52,35 +53,33 @@ export default new Vuex.Store({
     },
     async removeTask(context, { boardId, taskId, topic }) {
       var board = await TaskService.remove(boardId, taskId, topic)
+      console.log(board)
       context.commit({ type: 'setCurrBoard', board })
     },
     async addTask(context, { boardId, task, topic }) {
+      console.log('add task')
       var board = await TaskService.add(boardId, task, topic)
+      console.log(board, ' board add task')
       context.commit({ type: 'setCurrBoard', board })
 
     },
     async updateTask(context, { boardId, task, topic }) {
       var board = await TaskService.edit(boardId, task, topic)
+      await BoardService.edit(board)
       context.commit({ type: 'setCurrBoard', board })
 
     },
     async setBoard(context, { board }) {
-      // const currBoard = this.getters.currBoard
-      console.log('in set board action')
       context.commit({ type: 'setCurrBoard', board })
       await BoardService.edit(board)
-      //   context.commit({ type: 'setCurrBoard', board: currBoard })
-      // }
+
     },
     async addTopic(context, { topic }) {
       const currBoard = JSON.parse(JSON.stringify(context.state.currBoard))
-      // console.log('store, from getters', currBoard)
-      
-      console.log('happened 2nd')
       currBoard.topicTasksMap[topic] = []
       const board = await BoardService.edit(currBoard)
-      console.log('in add topic action')
       context.commit({ type: 'setCurrBoard', board })
+
     },
     async removeList(context, { topicName }) {
       const currBoard = JSON.parse(JSON.stringify(context.getters.currBoard))

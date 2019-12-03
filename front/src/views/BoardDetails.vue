@@ -41,8 +41,7 @@ export default {
   },
   methods: {
     topicsChanged(map) {
-      let board = JSON.parse(JSON.stringify(this.$store.getters.currBoard));
-      console.log("board in details from getter", board);
+      let board = JSON.parse(JSON.stringify(this.currBoard));
       board.topicTasksMap = map;
       this.$store.dispatch({ type: "setBoard", board });
     },
