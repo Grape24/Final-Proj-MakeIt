@@ -25,10 +25,10 @@ const routes = [
         path: 'task/edit/:taskId?/:topic?',
         component: EditTask,
       },
-      // {
-      //   path: 'activties',
-      //   component: Activities,
-      // },
+      {
+        path: 'activties',
+        component: Activities,
+      },
     ]
   },
   {

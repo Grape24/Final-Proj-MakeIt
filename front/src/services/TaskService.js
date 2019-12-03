@@ -10,7 +10,9 @@ export default {
 
 async function remove(boardId, taskId, topicName) {
     let board = await BoardService.getById(boardId)
+    let task = getTaskById(boardId , taskId)
     board.topicTasksMap[topicName] = board.topicTasksMap[topicName].filter(task => task.id !== taskId)
+    board.activites.push(`task: ${task.name} removed from ${topicName} at ${Date.now()}` )
     board = await BoardService.edit(board)
     return board
 }
@@ -18,6 +20,7 @@ async function remove(boardId, taskId, topicName) {
 async function edit(boardId, task, topicName) {
     let board = await BoardService.getById(boardId)
     let idx = board.topicTasksMap[topicName].findIndex(todo => todo.id === task.id)
+    board.activites.push(`ask name ${task.title} was update on ${topicName} topic` )
     board.topicTasksMap[topicName].splice(idx, 1, task)
     return board
 }
@@ -38,9 +41,9 @@ async function add(boardId, task, topicName) {
     task.id = _makeId()
     task.createdById = null
     board.topicTasksMap[topicName].push(task)
-    board.activities.push({Name : topicName})
-    board = await BoardService.edit(board)
-    return board
+    board.activites.push('task name '+task.title+' added on '+topicName+' topic' )
+    let newBoard = await BoardService.edit(board)
+    return newBoard
 }
 
 

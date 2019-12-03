@@ -18,25 +18,18 @@
         :topics="topics"
       ></topics-preview>
     </draggable>
-    <div class="modal-mask" 
-          v-if="isAddingTopic"
-          @click="isAddingTopic=false">
-    </div>
-    <div class="add-topic-input-container"
-        :class="{'adding-topic': isAddingTopic}">
-    <input class="add-topic-input"
-       v-model="createdTopicName" 
-       :class="{'adding-topic-selected': isAddingTopic}" 
-       placeholder="+ Add another list"  
-       @focus="openTransition()"
-        >
+    <div class="modal-mask" v-if="isAddingTopic" @click="isAddingTopic=false"></div>
+    <div class="add-topic-input-container" :class="{'adding-topic': isAddingTopic}">
+      <input
+        class="add-topic-input"
+        v-model="createdTopicName"
+        :class="{'adding-topic-selected': isAddingTopic}"
+        placeholder="+ Add another list"
+        @focus="openTransition()"
+      />
       <div v-if="isAddingTopic" class="flex">
-        <button @click="addTopic()" 
-                class="add-topic-btn">
-          Add list
-        </button>
-        <button class="close-modal-btn"
-                @click="isAddingTopic=false">
+        <button @click="addTopic()" class="add-topic-btn">Add list</button>
+        <button class="close-modal-btn" @click="isAddingTopic=false">
           <i class="fas fa-times"></i>
         </button>
       </div>
@@ -52,11 +45,13 @@ import draggable from "vuedraggable";
 export default {
   props: {
     topics: Object,
-    currBoardId: String
+    currBoardId: String,
+    topicsAsArr: Array
   },
   data() {
     return {
-      list: [this.topics],
+      list: null,
+      // list: [this.topics],
       isAddingTopic: false,
       createdTopicName: ""
     };
@@ -70,37 +65,30 @@ export default {
     openTransition() {
       this.isAddingTopic = !this.isAddingTopic;
     },
-    convertMapToArr() {
-      var result = Object.keys(this.topics).map(key => {
-        return { [key]: this.topics[key] };
-      });
-      this.list = result;
-    },
     addTopic() {
       const topic = this.createdTopicName;
       this.$emit("addTopic", topic);
       this.isAddingTopic = false;
       this.createdTopicName = "";
-      this.convertMapToArr();
     },
     deleteList(topicName) {
       this.$emit("removeList", topicName);
-      this.convertMapToArr();
     },
     updateList({ topics, topicName }) {
       this.$emit("updateList", { topics, topicName });
+      this.list = [...this.topicsAsArr];
     }
   },
-
   components: {
     TopicsPreview,
     draggable
   },
   mounted() {
-    this.convertMapToArr();
+    this.list = [...this.topicsAsArr];
   },
   watch: {
-    list() {
+    list(to, from) {
+      if (to && from && to.length !== from.length) return;
       var keys = this.list.map(topic => Object.keys(topic));
       var values = this.list.map(task => Object.values(task));
       var map = {};

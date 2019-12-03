@@ -16,7 +16,6 @@ async function query() {
         const boards = await collection.find().toArray();
         return boards
     } catch (err) {
-        console.log('ERROR: cannot find boards')
         throw err;
     }
 }
@@ -27,7 +26,6 @@ async function getById(boardId) {
         const board = await collection.findOne({ "_id": ObjectId(boardId) })
         return board
     } catch (err) {
-        console.log(`ERROR: while finding board ${boardId}`)
         throw err;
     }
 }
@@ -38,7 +36,6 @@ async function remove(boardId) {
     try {
         await collection.deleteOne({ "_id": ObjectId(boardId) })
     } catch (err) {
-        console.log(`ERROR: cannot remove board ${boardId}`)
         throw err;
     }
 }
@@ -50,7 +47,6 @@ async function update(board) {
         await collection.replaceOne({ "_id": ObjectId(board._id) }, { $set: board })
         return board
     } catch (err) {
-        console.log(`ERROR: cannot update board ${board._id}`)
         throw err;
     }
 }
@@ -61,7 +57,6 @@ async function add(board) {
         await collection.insertOne(board);
         return board;
     } catch (err) {
-        console.log(`ERROR: cannot insert board`)
         throw err;
     }
 }

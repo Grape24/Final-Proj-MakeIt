@@ -18,10 +18,18 @@
     height: 100%;
 }
 
+.transparent-modal-mask{
+    background-color: rgba(0, 0, 0, 0);
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+}
+
 .edit-form{
     input{
         border: none;
-        background-color: $clr1;
     }
 }
 
@@ -31,12 +39,15 @@
     padding:0 0 0 rem(15px);
     outline: none;
     font-weight: 500;
+    background-color: $clr1;
     
 }
 
-.description-title{
+.description-title, .image-title{
     color: $clr2;
     padding-left: rem(12px);
+    font-weight: 600;
+    font-size: rem(17px);
 }
 
 .task-description{
@@ -54,7 +65,7 @@
     color: #6c6c6c;
     font-size: rem(15px);
 }
-.fa-align-left, .fa-sticky-note{
+.fa-align-left, .fa-sticky-note, .fa-paperclip{
     align-self:center;
     color: $clr2;
 }
@@ -86,4 +97,26 @@
     margin: auto;
 
 
+}
+
+.date-picker{
+    position: absolute;
+}
+
+.due-date-title{
+    padding-left: rem(29px);
+    text-transform: uppercase;
+    color: darken($clr4, 15%);
+    font-size: rem(13px);
+}
+
+.date-picker-preview{
+    margin: rem(10px) rem(25px);
+}
+
+.img-uploader {
+    position: absolute;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid darken(#fff, 15%);
 }
