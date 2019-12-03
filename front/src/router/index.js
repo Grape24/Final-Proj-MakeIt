@@ -5,6 +5,7 @@ import Board from '../views/BoardDetails.vue'
 import EditTask from '../views/EditTask.vue'
 import Login from '../views/Login.vue'
 import Signup from '../views/Signup.vue'
+import Activities from '../components/LogActivities.vue'
 
 
 Vue.use(VueRouter)
@@ -23,6 +24,10 @@ const routes = [
       {
         path: 'task/edit/:taskId?/:topic?',
         component: EditTask,
+      },
+      {
+        path: 'activties',
+        component: Activities,
       },
     ]
   },

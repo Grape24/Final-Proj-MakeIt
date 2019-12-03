@@ -1,6 +1,7 @@
 <template>
   <section class="board-container">
     <h2 class="board-name" v-if="currBoard">{{currBoard.name}}</h2>
+    <button @click="push(currBoard._id)">activities</button>
     <div v-if="topics">
       <topics-list
         :topics="topics"
@@ -18,6 +19,7 @@
 
 <script>
 import TopicsList from "../components/TopicsList.vue";
+import SocketService from "../services/SocketService.js";
 
 export default {
   components: {
@@ -55,12 +57,19 @@ export default {
       let board = JSON.parse(JSON.stringify(this.currBoard));
       board.topicTasksMap[topicName] = topics;
       this.$store.dispatch({ type: "setBoard", board });
+    },
+    push(id) {
+      this.$router.push(`/board/${id}/activties`);
     }
   },
   created() {
     const id = this.$route.params._id;
     this.currBoard = JSON.parse(JSON.stringify(this.$store.getters.currBoard));
     this.$store.dispatch({ type: "getCurrBoard", id });
+    SocketService.emit("load board", this.$store.getters.currBoard);
+    SocketService.on("board updated", board => {
+      this.$store.commit({ type: "setCurrBoard", board });
+    });
   }
 };
 </script>

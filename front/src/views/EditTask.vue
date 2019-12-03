@@ -3,71 +3,83 @@
     <button class="modal-mask" @click="closeEdit">X</button>
     <div class="edit-modal">
       <div class="flex align-end">
-        <router-link :to="'/board/' + this.currBoardId">
-          <i class="fas fa-times"></i>
-        </router-link>
+      <router-link :to="'/board/' + this.currBoardId">
+        <i class="fas fa-times"></i>
+      </router-link>
       </div>
       <form class="edit-form flex column" @submit.prevent="saveTask">
-        <div class="flex align-center">
-          <i class="fas fa-sticky-note"></i>
-          <input class="task-title" type="text" v-model="task.title" placeholder="Enter the title" />
-        </div>
-        <div class="flex">
-          <div class="main-edit-container">
-            <div class="in-list">In List : {{topicName}}</div>
-            <div class="flex align-center">
-              <i class="fas fa-align-left"></i>
-              <div class="description-title">Description</div>
-            </div>
-            <textarea
-              class="task-description"
-              type="text"
-              v-model="task.description"
-              placeholder="Add a more detailed description..."
-            />
+      <div class="flex align-center">
+        <i class="fas fa-sticky-note"></i>
+        <input class="task-title" type="text" v-model="task.title" placeholder="Enter the title" />
+      </div>
+      <div class="flex">
+        <div class="main-edit-container">
+          <div class="in-list">In List : {{topicName}}</div>
+            <div class="due-date-title">Due date</div>
+            <date-picker  value-type="timestamp"
+                          placeholder="Select due date"
+                          class="date-picker-preview"
+                          v-model.number="task.dueDate">{{task.taskDueDate}}
+          </date-picker>
+          <div class="flex align-center">
+            <i class="fas fa-align-left"></i>
+            <div class="description-title">Description</div>
           </div>
-          <div class="flex column">
-            <div>Add to task:</div>
-            <div>
-              <div @click="datePickerSelected = !datePickerSelected" class="due-date">
-                <i class="far fa-clock"></i>Due Date
-              </div>
-              <date-picker
-                v-if="datePickerSelected"
-                value-type="timestamp"
-                v-model.number="task.taskDueDate"
-              >{{task.taskDueDate}}</date-picker>
-              <div></div>
-            </div>
-            <div @click="imgAttachmentSelected = !imgAttachmentSelected" class="img-attachment">
-              <i class="fas fa-image"></i>Image Attachment
-            </div>
-            <input v-if="imgAttachmentSelected" type="file" @change="uploadImgfunc" />
-
-            <div @click="remove" class="delete-task">
-              <i class="fas fa-trash-alt"></i>Delete Task
-            </div>
+          <textarea
+            class="task-description"
+            type="text"
+            v-model="task.description"
+            placeholder="Add a more detailed description..."
+          />
+          <div v-if="task.imgUrl" class="flex align-center">
+            <i class="fas fa-paperclip"></i>
+            <div class="image-title">Image</div>
           </div>
+          <img v-if="task.imgUrl" :src="task.imgUrl"/>
         </div>
+        <div class="flex column">
+          <div>Add to task:</div>
+          <div>
+            <div @click="datePickerSelected = !datePickerSelected"
+                  class="due-date">
+                  <i class="far fa-clock"></i>Due Date
+            </div>
+            <div @click="datePickerSelected = false"
+                 class="transparent-modal-mask"
+                 v-if="datePickerSelected"></div>
+            <date-picker v-if="datePickerSelected"
+                          value-type="timestamp"
+                          placeholder="Select due date"
+                          class="date-picker"
+                          :inline="true"
+                          v-model.number="task.dueDate">{{task.taskDueDate}}
+          </date-picker>
+          </div>
+          <div @click="imgAttachmentSelected = !imgAttachmentSelected"
+                class="img-attachment">
+                <i class="fas fa-image"></i>Image Attachment
+          </div>
+          <div class="img-uploader" v-if="imgAttachmentSelected">
+          <input type="file" @change="uploadImgfunc" />
+          </div>
+          <div @click="remove" class="delete-task"><i class="fas fa-trash-alt"></i>Delete Task</div>
+        </div>
+      </div>
         <button class="save-task-btn" type="submit">Save</button>
       </form>
     </div>
   </section>
 </template>
-
-
-
 <script>
 import BoadService from "../services/BoardService.js";
 import TaskService from "../services/TaskService.js";
 import DatePicker from "vue2-datepicker";
 import "vue2-datepicker/index.css";
 import { uploadImg } from "../services/CloudinaryService.js";
-
 export default {
   data() {
     return {
-      task: { title: "", description: "", dueDate: Date.now(), imgUrl: "" },
+      task: { title: "", description: "", dueDate: null, imgUrl: "" },
       currBoardId: null,
       topicName: "",
       datePickerSelected: false,
@@ -86,15 +98,18 @@ export default {
           boardId: this.currBoardId,
           task: this.task,
           topic: this.topicName,
-          imgUrl: this.imgUrl
-        });
+          imgUrl: this.imgUrl,
+          dueDate: this.dueDate
+        }
+      );
       } else {
         await this.$store.dispatch({
           type: "addTask",
           boardId: this.currBoardId,
           task: this.task,
           topic: this.topicName,
-          imgUrl: this.imgUrl
+          imgUrl: this.imgUrl,
+          dueDate: this.dueDate
         });
       }
       this.closeEdit();
@@ -105,7 +120,8 @@ export default {
         boardId: this.currBoardId,
         taskId: this.task.id,
         topic: this.topicName,
-        imgUrl: this.imgUrl
+        imgUrl: this.imgUrl,
+        dueDate: this.dueDate
       });
       this.closeEdit();
     },
@@ -124,6 +140,6 @@ export default {
   },
   components: {
     DatePicker
-  }
+  },
 };
 </script>

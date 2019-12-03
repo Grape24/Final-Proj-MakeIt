@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import BoardService from '../services/BoardService'
 import TaskService from '../services/TaskService'
+import SocketService from "../services/SocketService.js";
+
 
 
 Vue.use(Vuex)
@@ -11,6 +13,7 @@ export default new Vuex.Store({
   state: {
     boards: [],
     currBoard: null,
+    // activities :[]
     // topicsAsArray:null
   },
   getters: {
@@ -19,6 +22,9 @@ export default new Vuex.Store({
     },
     currBoard(state) {
       return state.currBoard
+    },
+    activities(state) {
+      return state.currBoard.activites
     },
     topicsAsArray(state) {
       if (!state.currBoard) return []
@@ -30,7 +36,9 @@ export default new Vuex.Store({
   },
   mutations: {
     setCurrBoard(state, { board }) {
+      console.log('setCurrBoard')
       state.currBoard = board;
+
     },
     setBoards(state, { boards }) {
       state.boards = boards;
@@ -38,7 +46,7 @@ export default new Vuex.Store({
     addBoard(state, { board }) {
       const addedBoard = BoardService.add(board)
       state.boards.push(addedBoard)
-    },
+    }
   },
   actions: {
     async loadBoards(context) {
@@ -49,29 +57,34 @@ export default new Vuex.Store({
     async getCurrBoard(context, { id }) {
       const board = await BoardService.getById(id)
       context.commit({ type: 'setCurrBoard', board })
+      SocketService.emit('update board', board)
       return board;
     },
     async removeTask(context, { boardId, taskId, topic }) {
       var board = await TaskService.remove(boardId, taskId, topic)
       console.log(board)
       context.commit({ type: 'setCurrBoard', board })
+      SocketService.emit('update board', board)
+
     },
     async addTask(context, { boardId, task, topic }) {
-      console.log('add task')
       var board = await TaskService.add(boardId, task, topic)
-      console.log(board, ' board add task')
       context.commit({ type: 'setCurrBoard', board })
+      SocketService.emit('update board', board)
 
     },
     async updateTask(context, { boardId, task, topic }) {
       var board = await TaskService.edit(boardId, task, topic)
       await BoardService.edit(board)
       context.commit({ type: 'setCurrBoard', board })
+      SocketService.emit('update board', board)
+
 
     },
     async setBoard(context, { board }) {
       context.commit({ type: 'setCurrBoard', board })
       await BoardService.edit(board)
+      SocketService.emit('update board', board)
 
     },
     async addTopic(context, { topic }) {
@@ -79,14 +92,17 @@ export default new Vuex.Store({
       currBoard.topicTasksMap[topic] = []
       const board = await BoardService.edit(currBoard)
       context.commit({ type: 'setCurrBoard', board })
+      SocketService.emit('update board', board)
 
     },
     async removeList(context, { topicName }) {
       const currBoard = JSON.parse(JSON.stringify(context.getters.currBoard))
       delete currBoard.topicTasksMap[topicName]
       const board = await BoardService.edit(currBoard)
-
       context.commit({ type: 'setCurrBoard', board })
+      SocketService.emit('update board', board)
+
+
     }
 
   }

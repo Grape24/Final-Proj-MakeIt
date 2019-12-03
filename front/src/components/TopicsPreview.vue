@@ -3,26 +3,32 @@
     <div class="topic-list-container column">
       <div class="topic-header flex space-between">
         <div class="topic-name">{{topicName}}</div>
-        <button class="delete-list-btn" @click="deleteList()">X</button>
+        <button class="delete-list-btn" @click="deleteList()">
+          <i class="fas fa-times"></i>
+        </button>
       </div>
       <draggable
         class="dragArea list-group"
-        :list="topics"
+        :list="topicList"
         :group="{ name: 'tasks', pull: pullFunction }"
         @start="start"
       >
         <div
           v-if="task"
           class="list-group-item column"
-          v-for="task in topics"
+          v-for="task in topicList"
           :key="task.id"
           @click="push(task.id)"
         >
           <img :src="task.imgUrl" />
-          {{ task.title }}
+          {{task.title}}
+          <div v-if="task.dueDate">
+            <i class="far fa-clock"></i>
+            {{convertTimeStampFormat(task.dueDate)}}
+          </div>
         </div>
       </draggable>
-      <rawDisplayer class="col-3" :value="topics" title="List 1" />
+      <rawDisplayer class="col-3" :value="topicList" title="List 1" />
       <button class="add-task-btn" @click="push(null)">+ Add another task</button>
     </div>
   </section>
@@ -31,6 +37,7 @@
 <script>
 import draggable from "vuedraggable";
 import rawDisplayer from "vuedraggable";
+import moment from "moment";
 
 let idGlobal = 8;
 export default {
@@ -50,11 +57,15 @@ export default {
   data() {
     return {
       controlOnStart: true,
-      topics: [...this.topicList],
+      topics: this.topicList,
       currTaskId: null
     };
   },
   methods: {
+    convertTimeStampFormat(ts) {
+      ts = ts + 1000 * 60 * 60 * 24;
+      return moment.utc(ts).calendar();
+    },
     pullFunction() {
       return this.controlOnStart ? "clone" : true;
     },
@@ -73,7 +84,7 @@ export default {
   watch: {
     topics() {
       this.$emit("updateList", {
-        topics: this.topics,
+        topics: this.topicList,
         topicName: this.topicName
       });
     }
