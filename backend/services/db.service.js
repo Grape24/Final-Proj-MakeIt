@@ -16,6 +16,7 @@ module.exports = {
     getCollection
 }
 
+
 // Database Name
 const dbName = 'admin';
 
@@ -25,6 +26,7 @@ async function getCollection(collectionName) {
     const db = await connect()
     return db.collection(collectionName);
 }
+
 
 async function connect() {
     if (dbConn) return dbConn;

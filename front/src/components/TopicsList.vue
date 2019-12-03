@@ -8,8 +8,8 @@
       @end="doneDragging"
     >
       <topics-preview
+        @endTaskDragging="updateList"
         @deletList="deleteList"
-        @updateList="updateList"
         v-for="(key ,val) in topics"
         :key="val.id"
         :topicList="key"
@@ -77,9 +77,13 @@ export default {
     deleteList(topicName) {
       this.$emit("removeList", topicName);
     },
-    updateList({ topics, topicName }) {
-      this.$emit("updateList", { topics, topicName });
-    }
+    updateList(topics) {
+      this.$emit("updateList", topics);
+    },
+    // updateList2({ topic, topicName }) {
+    //   console.log(topic)
+    //   this.$emit("updateListt", { topic, topicName });
+    // }
   },
   components: {
     TopicsPreview,
