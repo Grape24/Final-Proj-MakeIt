@@ -1,6 +1,7 @@
 <template>
   <section class="board-container">
     <h2 class="board-name" v-if="currBoard">{{currBoard.name}}</h2>
+    <button @click="push(currBoard._id)">activities</button>
     <div v-if="topics">
       <topics-list
         :topics="topics"
@@ -12,6 +13,7 @@
         :currBoardId="currBoard._id"
       ></topics-list>
     </div>
+   
   </section>
 </template>
  
@@ -55,12 +57,22 @@ export default {
       let board = JSON.parse(JSON.stringify(this.currBoard));
       board.topicTasksMap[topicName] = topics;
       this.$store.dispatch({ type: "setBoard", board });
-    }
+    },
+    push(id) {
+      this.$router.push(
+        `/board/${id}/activties`
+      );
+  }
+  // computed:{
+  //   activities(){
+  //     return "/"
+  //   }
+  // },
   },
   created() {
     const id = this.$route.params._id;
     this.currBoard = JSON.parse(JSON.stringify(this.$store.getters.currBoard));
     this.$store.dispatch({ type: "getCurrBoard", id });
   }
-};
+}
 </script>

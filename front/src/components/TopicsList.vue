@@ -15,6 +15,7 @@
         :topicList="key"
         :topicName="val"
         :currBoardId="currBoardId"
+        :topics="topics"
       ></topics-preview>
     </draggable>
     <div class="modal-mask" v-if="isAddingTopic" @click="isAddingTopic=false"></div>

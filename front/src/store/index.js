@@ -10,6 +10,7 @@ export default new Vuex.Store({
   state: {
     boards: [],
     currBoard: null,
+    // activities :[]
     // topicsAsArray:null
   },
   getters: {
@@ -18,6 +19,9 @@ export default new Vuex.Store({
     },
     currBoard(state) {
       return state.currBoard
+    },
+    activities(state){
+      return state.currBoard.activites
     },
     topicsAsArray(state) {
       var res = Object.keys(state.currBoard.topicTasksMap).map(key => {
@@ -37,6 +41,9 @@ export default new Vuex.Store({
       const addedBoard = BoardService.add(board)
       state.boards.push(addedBoard)
     },
+    //  addActivity(state, {topic}){
+
+    //  }
   },
   actions: {
     async loadBoards(context) {
@@ -56,7 +63,6 @@ export default new Vuex.Store({
     async addTask(context, { boardId, task, topic }) {
       var board = await TaskService.add(boardId, task, topic)
       context.commit({ type: 'setCurrBoard', board })
-
     },
     async updateTask(context, { boardId, task, topic }) {
       var board = await TaskService.edit(boardId, task, topic)
@@ -74,8 +80,11 @@ export default new Vuex.Store({
       const currBoard = JSON.parse(JSON.stringify(context.state.currBoard))
       
       currBoard.topicTasksMap[topic] = []
+      
       const board = await BoardService.edit(currBoard)
+      console.log('addTop',board)
       context.commit({ type: 'setCurrBoard', board })
+      
     },
     async removeList(context, { topicName }) {
       const currBoard = JSON.parse(JSON.stringify(context.getters.currBoard))

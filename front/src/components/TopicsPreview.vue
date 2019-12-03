@@ -40,7 +40,8 @@ export default {
   props: {
     topicName: String,
     topicList: Array,
-    currBoardId: String
+    currBoardId: String,
+    
   },
   name: "clone-on-control",
   display: "Clone on Control",
@@ -68,9 +69,10 @@ export default {
     start({ originalEvent }) {
       this.controlOnStart = originalEvent.ctrlKey;
     },
+   
     push(id) {
       this.$router.push(
-        `${this.currBoardId}/task/edit/${id}/${this.topicName}`
+        `/board/${this.currBoardId}/task/edit/${id}/${this.topicName}`
       );
     },
     deleteList() {

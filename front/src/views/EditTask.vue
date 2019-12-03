@@ -16,7 +16,7 @@
         <div class="main-edit-container">
           <div class="in-list">In List : {{topicName}}</div>
             <div class="due-date-title">Due date</div>
-            <date-picker  value-type="timestamp" 
+            <date-picker  value-type="timestamp"
                           placeholder="Select due date"
                           class="date-picker-preview"
                           v-model.number="task.dueDate">{{task.taskDueDate}}
@@ -46,15 +46,15 @@
         <div class="edit-nav-bar flex column">
           <div>Add to task:</div>
           <div>
-            <div @click="datePickerSelected = !datePickerSelected" 
+            <div @click="datePickerSelected = !datePickerSelected"
                   class="due-date">
                   <i class="far fa-clock"></i>Due Date
             </div>
             <div @click="datePickerSelected = false"
                  class="transparent-modal-mask"
                  v-if="datePickerSelected"></div>
-            <date-picker v-if="datePickerSelected" 
-                          value-type="timestamp" 
+            <date-picker v-if="datePickerSelected"
+                          value-type="timestamp"
                           placeholder="Select due date"
                           class="date-picker"
                           :inline="true"
@@ -84,16 +84,12 @@
     </div>
   </section>
 </template>
-
-
-
 <script>
 import BoadService from "../services/BoardService.js";
 import TaskService from "../services/TaskService.js";
 import DatePicker from "vue2-datepicker";
 import "vue2-datepicker/index.css";
 import { uploadImg } from "../services/CloudinaryService.js";
-
 export default {
   data() {
     return {
@@ -163,6 +159,5 @@ export default {
   components: {
     DatePicker
   },
-
 };
 </script>
