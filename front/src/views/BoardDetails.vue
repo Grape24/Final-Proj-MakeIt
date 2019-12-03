@@ -1,7 +1,12 @@
 <template>
   <section class="board-container">
     <h2 class="board-name" v-if="currBoard">{{currBoard.name}}</h2>
-    <button @click="push(currBoard._id)">activities</button>
+    <button class="activites-menu" @click="activitiesLogIsOpen = !activitiesLogIsOpen">
+      <i class="fas fa-ellipsis-h"></i>
+      Show Activities
+    </button>
+    <LogActivities @menuClosed="activitiesLogIsOpen=false" v-if="activitiesLogIsOpen"></LogActivities>
+    
     <div v-if="topics">
       <topics-list
         :topics="topics"
@@ -20,15 +25,18 @@
 <script>
 import TopicsList from "../components/TopicsList.vue";
 import SocketService from "../services/SocketService.js";
+import LogActivities from "../components/LogActivities"
 
 export default {
   components: {
-    TopicsList
+    TopicsList,
+    LogActivities
   },
   data() {
     return {
-      currBoard: null
-    };
+      currBoard: null,
+      activitiesLogIsOpen: false
+    }
   },
   computed: {
     topics() {

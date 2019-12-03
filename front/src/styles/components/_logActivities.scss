@@ -1,0 +1,26 @@
+.activities-menu{
+    position: absolute;
+    background-color: darken(white, 3%);
+    height: 100vh;
+    width: rem(350px);
+    right:0;
+    top: rem(59px);
+    padding: rem(10px);
+    z-index: 2;
+    .fa-times{
+        cursor: pointer;
+        padding: rem(21px);
+    }
+}
+
+.activities-menu-title{
+    width:100%;
+    text-align: center;
+    padding: rem(20px);
+    font-size: rem(17px);
+    font-weight: 700;
+}
+
+.activities-header{
+    border-bottom: 1px solid darken($clr1, 10%);
+}
