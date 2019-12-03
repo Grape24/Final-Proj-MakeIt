@@ -10,9 +10,11 @@ export default {
 
 async function remove(boardId, taskId, topicName) {
     let board = await BoardService.getById(boardId)
-    let task = getTaskById(boardId , taskId)
+    let task = await getTaskById(boardId , taskId)
+    console.log('remove',task)
+    debugger
     board.topicTasksMap[topicName] = board.topicTasksMap[topicName].filter(task => task.id !== taskId)
-    board.activites.push(`task: ${task.name} removed from ${topicName} at ${Date.now()}` )
+    board.activites.push(`task: ${task.title} removed from ${topicName} at ${Date.now()}` )
     board = await BoardService.edit(board)
     return board
 }
@@ -31,7 +33,10 @@ async function getTaskById(boardId, taskId) {
     for (let i = 0; i < mat.length; i++) {
         for (let j = 0; j < mat[i].length; j++) {
             let task = (mat[i][j])
-            if (task.id === taskId) return task
+            if (task.id === taskId){
+                console.log('get by id',task)
+                return task
+            }
         }
     }
 }
