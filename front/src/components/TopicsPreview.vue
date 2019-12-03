@@ -9,22 +9,26 @@
       </div>
       <draggable
         class="dragArea list-group"
-        :list="topics"
+        :list="topicList"
         :group="{ name: 'tasks', pull: pullFunction }"
         @start="start"
       >
         <div
+          v-if="task"
           class="list-group-item column"
-          v-for="task in topics"
+          v-for="task in topicList"
           :key="task.id"
           @click="push(task.id)"
         > 
           <img :class="{'rotated': task.imgIsRotated}" :src="task.imgUrl" />
           {{task.title}}
-          <div v-if="task.dueDate"><i class="far fa-clock"></i>{{convertTimeStampFormat(task.dueDate)}}</div>
+          <div v-if="task.dueDate">
+            <i class="far fa-clock"></i>
+            {{convertTimeStampFormat(task.dueDate)}}
+          </div>
         </div>
       </draggable>
-      <rawDisplayer class="col-3" :value="topics" title="List 1" />
+      <rawDisplayer class="col-3" :value="topicList" title="List 1" />
       <button class="add-task-btn" @click="push(null)">+ Add another task</button>
     </div>
   </section>
@@ -40,8 +44,7 @@ export default {
   props: {
     topicName: String,
     topicList: Array,
-    currBoardId: String,
-    
+    currBoardId: String
   },
   name: "clone-on-control",
   display: "Clone on Control",
@@ -54,14 +57,14 @@ export default {
   data() {
     return {
       controlOnStart: true,
-      topics: [...this.topicList],
+      topics: this.topicList,
       currTaskId: null
     };
   },
   methods: {
-    convertTimeStampFormat(ts){
-      ts = ts+(1000*60*60*24);
-      return moment.utc(ts).calendar()
+    convertTimeStampFormat(ts) {
+      ts = ts + 1000 * 60 * 60 * 24;
+      return moment.utc(ts).calendar();
     },
     pullFunction() {
       return this.controlOnStart ? "clone" : true;
@@ -69,7 +72,6 @@ export default {
     start({ originalEvent }) {
       this.controlOnStart = originalEvent.ctrlKey;
     },
-   
     push(id) {
       this.$router.push(
         `/board/${this.currBoardId}/task/edit/${id}/${this.topicName}`
@@ -82,11 +84,10 @@ export default {
   watch: {
     topics() {
       this.$emit("updateList", {
-        topics: this.topics,
+        topics: this.topicList,
         topicName: this.topicName
       });
     }
-  },
-
+  }
 };
 </script>

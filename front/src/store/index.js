@@ -2,6 +2,9 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import BoardService from '../services/BoardService'
 import TaskService from '../services/TaskService'
+import SocketService from "../services/SocketService.js";
+
+
 
 Vue.use(Vuex)
 
@@ -20,10 +23,11 @@ export default new Vuex.Store({
     currBoard(state) {
       return state.currBoard
     },
-    activities(state){
+    activities(state) {
       return state.currBoard.activites
     },
     topicsAsArray(state) {
+      if (!state.currBoard) return []
       var res = Object.keys(state.currBoard.topicTasksMap).map(key => {
         return { [key]: state.currBoard.topicTasksMap[key] }
       })
@@ -32,7 +36,9 @@ export default new Vuex.Store({
   },
   mutations: {
     setCurrBoard(state, { board }) {
+      console.log('setCurrBoard')
       state.currBoard = board;
+
     },
     setBoards(state, { boards }) {
       state.boards = boards;
@@ -40,10 +46,7 @@ export default new Vuex.Store({
     addBoard(state, { board }) {
       const addedBoard = BoardService.add(board)
       state.boards.push(addedBoard)
-    },
-    //  addActivity(state, {topic}){
-
-    //  }
+    }
   },
   actions: {
     async loadBoards(context) {
@@ -54,44 +57,52 @@ export default new Vuex.Store({
     async getCurrBoard(context, { id }) {
       const board = await BoardService.getById(id)
       context.commit({ type: 'setCurrBoard', board })
+      SocketService.emit('update board', board)
       return board;
     },
     async removeTask(context, { boardId, taskId, topic }) {
       var board = await TaskService.remove(boardId, taskId, topic)
+      console.log(board)
       context.commit({ type: 'setCurrBoard', board })
+      SocketService.emit('update board', board)
+
     },
     async addTask(context, { boardId, task, topic }) {
       var board = await TaskService.add(boardId, task, topic)
       context.commit({ type: 'setCurrBoard', board })
+      SocketService.emit('update board', board)
+
     },
     async updateTask(context, { boardId, task, topic }) {
       var board = await TaskService.edit(boardId, task, topic)
-      const res = await BoardService.edit(board)
+      await BoardService.edit(board)
       context.commit({ type: 'setCurrBoard', board })
+      SocketService.emit('update board', board)
+
 
     },
     async setBoard(context, { board }) {
       context.commit({ type: 'setCurrBoard', board })
       await BoardService.edit(board)
-      //   context.commit({ type: 'setCurrBoard', board: currBoard })
-      // }
+      SocketService.emit('update board', board)
+
     },
     async addTopic(context, { topic }) {
       const currBoard = JSON.parse(JSON.stringify(context.state.currBoard))
-      
       currBoard.topicTasksMap[topic] = []
-      
       const board = await BoardService.edit(currBoard)
-      console.log('addTop',board)
       context.commit({ type: 'setCurrBoard', board })
-      
+      SocketService.emit('update board', board)
+
     },
     async removeList(context, { topicName }) {
       const currBoard = JSON.parse(JSON.stringify(context.getters.currBoard))
       delete currBoard.topicTasksMap[topicName]
       const board = await BoardService.edit(currBoard)
-
       context.commit({ type: 'setCurrBoard', board })
+      SocketService.emit('update board', board)
+
+
     }
 
   }

@@ -3,9 +3,9 @@
     <draggable
       class="flex"
       ghost-class="ghost"
-      :list="list"
+      :list="topicsAsArr"
       @start="dragging = true"
-      @end="dragging = false"
+      @end="doneDragging"
     >
       <topics-preview
         @deletList="deleteList"
@@ -50,18 +50,21 @@ export default {
   },
   data() {
     return {
-      list: null,
-      // list: [this.topics],
       isAddingTopic: false,
       createdTopicName: ""
     };
   },
-  computed: {
-    topicsChanged() {
-      return this.topics;
-    }
-  },
   methods: {
+    doneDragging() {
+      this.dragging = false;
+      var keys = this.topicsAsArr.map(topic => Object.keys(topic));
+      var values = this.topicsAsArr.map(task => Object.values(task));
+      var map = {};
+      for (var i = 0; i < keys.length; i++) {
+        map[keys[i]] = values[i].flat();
+      }
+      this.$emit("topicsChanged", map);
+    },
     openTransition() {
       this.isAddingTopic = !this.isAddingTopic;
     },
@@ -76,27 +79,11 @@ export default {
     },
     updateList({ topics, topicName }) {
       this.$emit("updateList", { topics, topicName });
-      this.list = [...this.topicsAsArr];
     }
   },
   components: {
     TopicsPreview,
     draggable
-  },
-  mounted() {
-    this.list = [...this.topicsAsArr];
-  },
-  watch: {
-    list(to, from) {
-      if (to && from && to.length !== from.length) return;
-      var keys = this.list.map(topic => Object.keys(topic));
-      var values = this.list.map(task => Object.values(task));
-      var map = {};
-      for (var i = 0; i < keys.length; i++) {
-        map[keys[i]] = values[i].flat();
-      }
-      this.$emit("topicsChanged", map);
-    }
   }
 };
 </script>
