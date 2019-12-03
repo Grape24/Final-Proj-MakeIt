@@ -36,7 +36,6 @@ export default new Vuex.Store({
   },
   mutations: {
     setCurrBoard(state, { board }) {
-      console.log('setCurrBoard')
       state.currBoard = board;
 
     },

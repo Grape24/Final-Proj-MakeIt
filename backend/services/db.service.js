@@ -1,5 +1,14 @@
 
 const MongoClient = require('mongodb').MongoClient;
+const uri = 'mongodb+srv://nevonoam:bcubugo22@boards-rmsul.mongodb.net/test?retryWrites=true&w=majority'
+const client = new MongoClient(uri, { userNameUrlParser: true })
+client.connect(err => {
+    console.log('connected to mongo')
+    const collection = client.db('BOARD_DB').collection('board')
+    collection.find().toArray()
+        .then(res => console.log(res))
+    client.close()
+})
 
 const config = require('../config')
 
