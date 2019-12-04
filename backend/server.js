@@ -7,10 +7,10 @@ const session = require('express-session')
 
 const app = express()
 const http = require('http').createServer(app);
-// const io = require('socket.io')(http);
+const io = require('socket.io')(http);
 
 const boardRoutes = require('./api/board/board.routes')
-// const connectSockets = require('./api/socket/socket.routes')
+const connectSockets = require('./api/socket/socket.routes')
 
 
 app.use(cookieParser())
@@ -33,11 +33,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 // routes
 app.use('/api/board', boardRoutes)
-// app.use('/api/user', boardRoutes)
-
-
-
-// connectSockets(io)
+connectSockets(io)
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.resolve(__dirname, 'public')));

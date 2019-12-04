@@ -144,7 +144,6 @@ export default {
     },
     closeEdit() {
       this.$router.push("/board/" + this.currBoardId);
-      window.location.reload();
     }
   },
   async created() {
