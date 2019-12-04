@@ -16,9 +16,9 @@ export default {
   },
   actions: {
     async signup(context, {userCred}) {
-        console.log(userCred)
+        //  console.log('mama',userCred)
         const user = await UserService.signup(userCred)
-        context.commit({type: 'setUser', user})
+        // context.commit({type: 'setUser', user})
         return user;
         
     },

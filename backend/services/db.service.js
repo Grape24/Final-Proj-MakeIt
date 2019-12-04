@@ -11,7 +11,7 @@ module.exports = {
 
 
 // Database Name
-const dbName = 'BOARD_DB';
+const dbName = 'admin';
 
 var dbConn = null;
 

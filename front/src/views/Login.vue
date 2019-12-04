@@ -1,20 +1,19 @@
 <template>
-  <div class="about">
-    
-    
-
-   
+  <div>
     <div>
-    <!-- <form  @submit.prevent="doLogin"> -->
-      <input type="text"  placeholder="Email">
+      
+    </div>
+    <div>
+    <form  @submit.prevent="doLogin">
+      <input type="text" v-model="loginCred.email" placeholder="Email">
       <br />
-      <input type="text"  placeholder="Password">
+      <input type="text" v-model="loginCred.password" placeholder="Password">
       <br />
       <button>Login</button>
-    <!-- </form> -->
+    </form>
 
     <form @submit.prevent="doSignup">
-      <input type="text" v-model="signupCred.email"  placeholder="Email">
+      <input type="text" v-model="signupCred.email" placeholder="Email">
       <br />
       <input type="text" v-model="signupCred.password" placeholder="Password">
       <br />
@@ -23,21 +22,16 @@
       <button>Signup</button>
     </form>
     </div>
-    <hr />
-    <!-- <button @click="getAllUsers">Get All Users</button> -->
-    <!-- <ul>
-      <li v-for="user in users" :key="user._id">
-        <pre>{{user}}</pre>
-        <button @click="removeUser(user._id)">x</button>
-      </li>
-    </ul> -->
+    <hr/>
+   
+    
 
   </div>
 </template>
 
-// <script>
+<script>
 export default {
-  name: 'test',
+  
   data() {
     return {
       loginCred: {},
@@ -45,43 +39,26 @@ export default {
       msg: '',
     }
   },
-//   computed: {
-//     users() {
-//       return this.$store.getters.users
-//     },
-//     loggedinUser() {
-//       return this.$store.getters.loggedinUser
-
-//     }
-//   },
+  
+  
   methods: {
-//     async doLogin() {
-//       const cred = this.loginCred
-//       if(!cred.email || !cred.password) return this.msg = 'Please enter user/password'
-//       await this.$store.dispatch({type :'login', userCred:cred})
-//       this.loginCred = {};
+    async doLogin() {
+      const cred = this.loginCred
+      if(!cred.email || !cred.password) return this.msg = 'Please enter user/password'
+      await this.$store.dispatch({type :'login', userCred:cred})
+      this.loginCred = {};
       
-//     },
-//     doLogout() {
-//       this.$store.dispatch({type: 'logout'})
-//     },
+    },
+    doLogout() {
+      this.$store.dispatch({type: 'logout'})
+    },
     doSignup() {
       const cred = this.signupCred
-      if(!cred.email || !cred.password ||!cred.username) {
-          console.log('Please fill up the form') 
-        }else{
-            // console.log('halooooo')
-            this.$store.dispatch({type: 'signup', userCred: cred})
-        }
-    //   this.$store.dispatch({type: 'signup', userCred: cred})
+      if(!cred.email || !cred.password ||!cred.username) return this.msg = 'Please fill up the form'
+      this.$store.dispatch({type: 'signup', userCred: cred})
     },
-//     getAllUsers() {
-//       this.$store.dispatch({type: 'loadUsers'})
-//     },
-//     removeUser(userId) {
-//       this.$store.dispatch({type: 'removeUser', userId})
-//     }
+   
   }
   
- }
+}
 </script>
