@@ -46,7 +46,7 @@ export default {
         createdBy: {},
         members: [],
         activities: [],
-        topicTaskMap: {}
+        topicTasksMap: {}
       };
       this.$emit("addBoard", board);
       this.isAddingBoard = false;
