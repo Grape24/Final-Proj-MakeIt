@@ -77,13 +77,6 @@ export default {
     openTransition() {
       this.isAddingTopic = !this.isAddingTopic;
     },
-    // addTopic() {
-    //   const topic = this.createdTopicName;
-    //   console.log(this.createdTopicName);
-    //   this.$emit("addTopic", topic);
-    //   this.isAddingTopic = false;
-    //   this.createdTopicName = "";
-    // },
     removeBoard() {
       this.$store.dispatch({ type: "removeBoard", boardId: this.boardId });
       this.$router.push("/");
@@ -102,6 +95,12 @@ export default {
     updateList(topics) {
       let board = JSON.parse(JSON.stringify(this.currBoard));
       board.topicTasksMap = topics;
+      board.activites.push({
+        task: "lists",
+        activity: "updated",
+        inTopic: "",
+        DoneAt: Date.now()
+      });
       this.$store.dispatch({ type: "setBoard", board });
     },
     // updateListt({ topic, topicName }) {

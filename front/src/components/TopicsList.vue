@@ -32,7 +32,7 @@ export default {
     currBoardId: String,
     topicsAsArr: Array
   },
-  
+
   methods: {
     doneDragging() {
       this.dragging = false;
@@ -49,11 +49,7 @@ export default {
     },
     updateList(topics) {
       this.$emit("updateList", topics);
-    },
-    // updateList2({ topic, topicName }) {
-    //   console.log(topic)
-    //   this.$emit("updateListt", { topic, topicName });
-    // }
+    }
   },
   components: {
     TopicsPreview,
