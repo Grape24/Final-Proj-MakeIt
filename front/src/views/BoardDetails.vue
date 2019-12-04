@@ -1,12 +1,15 @@
 <template>
   <section class="board-container">
-    <h2 class="board-name" v-if="currBoard">{{currBoard.name}}</h2>
-    <button @click="removeBoard">Delete board</button>
+    <div class="flex">
+      <h2 class="board-name" v-if="currBoard">{{currBoard.name}}</h2>
+      <button class="delete-board-btn" @click="removeBoard">Delete board</button>
+    </div>
     <button class="activites-menu" @click="activitiesLogIsOpen = !activitiesLogIsOpen">
       <i class="fas fa-ellipsis-h"></i>
       Show Activities
     </button>
     <LogActivities @menuClosed="activitiesLogIsOpen=false" v-if="activitiesLogIsOpen"></LogActivities>
+    <div class="flex">
     <div v-if="topics">
       <topics-list
         :topics="topics"
@@ -32,6 +35,7 @@
           <i class="fas fa-times"></i>
         </button>
       </div>
+    </div>
     </div>
   </section>
 </template>
