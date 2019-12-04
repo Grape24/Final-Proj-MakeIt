@@ -12,9 +12,7 @@ export default new Vuex.Store({
   strict: true,
   state: {
     boards: [],
-    currBoard: null,
-    // activities :[]
-    // topicsAsArray:null
+    currBoard: null
   },
   getters: {
     boards(state) {

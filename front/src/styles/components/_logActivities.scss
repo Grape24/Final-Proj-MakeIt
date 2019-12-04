@@ -2,11 +2,12 @@
     position: absolute;
     background-color: darken(white, 3%);
     height: 100vh;
-    width: rem(350px);
     right:0;
+    width: rem(350px);
     top: rem(59px);
     padding: rem(10px);
     z-index: 2;
+    border-left: 1px solid $clr3;
     .fa-times{
         cursor: pointer;
         padding: rem(21px);
@@ -23,4 +24,16 @@
 
 .activities-header{
     border-bottom: 1px solid darken($clr1, 10%);
+}
+
+.activity{
+    padding: rem(5px) rem(10px);
+    .time{
+        font-size: rem(13px);
+        color: darken($clr3, 30%);
+    }
+}
+
+.side-nav-container{
+    transition: all 0.3s ease-out;
 }

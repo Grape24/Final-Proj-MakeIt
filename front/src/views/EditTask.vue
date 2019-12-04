@@ -38,10 +38,6 @@
           <div :class="{rotated: task.imgIsRotated}" class="img-container">
           <img v-if="task.imgUrl" :src="task.imgUrl"/>
           </div>
-          <div class="rotate-img-btn" @click.stop="task.imgIsRotated = !task.imgIsRotated" v-if="task.imgUrl">
-            <i class="fas fa-undo"></i>
-            Rotate Image
-          </div>
         </div>
         <div class="edit-nav-bar flex column">
           <div>Add to task:</div>
@@ -74,7 +70,7 @@
           </div>
           <div class="add-labels-btn">
             <i class="fas fa-tag">
-              </i>Add Labels
+              </i>Add Label
           </div>
           <div @click="remove" class="delete-task"><i class="fas fa-trash-alt"></i>Delete Task</div>
         </div>
