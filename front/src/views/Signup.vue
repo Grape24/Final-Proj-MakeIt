@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import { uploadImg } from "../services/CloudinaryService.js";
+
 export default {
   data() {
     return {
@@ -20,6 +22,10 @@ export default {
     };
   },
   methods: {
+    async uploadImgfunc(ev) {
+      var res = await uploadImg(ev);
+      this.task.imgUrl = res.url;
+    },
     doSignup() {
       const cred = this.signupCred;
       if (!cred.email || !cred.password || !cred.username)
