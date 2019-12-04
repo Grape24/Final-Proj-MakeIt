@@ -33,6 +33,10 @@ if (process.env.NODE_ENV !== 'production') {
 
 // routes
 app.use('/api/board', boardRoutes)
+// app.use('/api/user', boardRoutes)
+
+
+
 // connectSockets(io)
 
 if (process.env.NODE_ENV === 'production') {

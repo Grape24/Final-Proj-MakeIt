@@ -1,6 +1,12 @@
 <template>
   <section>
-    <h1>{{activities}}</h1>
+    <div class="activities-menu">
+      <div @click="closeMenu" class="activities-header flex space-between">
+        <div class="activities-menu-title">Activities Log</div>
+        <i class="fas fa-times"></i>
+      </div>
+      <div>{{activities}}</div>
+    </div>
 
   </section>
 </template>
@@ -12,22 +18,11 @@ export default {
     topics: Object,
     currBoardId: String
   },
-  data() {
-    return {
-     
-    };
+  methods:{
+    closeMenu(){
+      this.$emit('menuClosed');
+    }
   },
-  
-  
-  methods: {
-    
-    },
-    
-    
-    
-    
-  
-  
   computed: {
     activities() {
         return this.$store.getters.activities

@@ -12,7 +12,7 @@
         <i class="fas fa-sticky-note"></i>
         <input class="task-title" type="text" v-model="task.title" placeholder="Enter the title" />
       </div>
-      <div class="flex">
+      <div class="flex space-between">
         <div class="main-edit-container">
           <div class="in-list">In List : {{topicName}}</div>
             <div class="due-date-title">Due date</div>
@@ -35,9 +35,15 @@
             <i class="fas fa-paperclip"></i>
             <div class="image-title">Image</div>
           </div>
+          <div :class="{rotated: task.imgIsRotated}" class="img-container">
           <img v-if="task.imgUrl" :src="task.imgUrl"/>
+          </div>
+          <div class="rotate-img-btn" @click.stop="task.imgIsRotated = !task.imgIsRotated" v-if="task.imgUrl">
+            <i class="fas fa-undo"></i>
+            Rotate Image
+          </div>
         </div>
-        <div class="flex column">
+        <div class="edit-nav-bar flex column">
           <div>Add to task:</div>
           <div>
             <div @click="datePickerSelected = !datePickerSelected"
@@ -55,12 +61,20 @@
                           v-model.number="task.dueDate">{{task.taskDueDate}}
           </date-picker>
           </div>
-          <div @click="imgAttachmentSelected = !imgAttachmentSelected"
+          <div @click="imgAttachmentSelected = false"
+                 class="transparent-modal-mask"
+                 v-if="imgAttachmentSelected"></div>
+          <div @click="imgAttachmentSelected = !imgAttachmentSelected" 
                 class="img-attachment">
                 <i class="fas fa-image"></i>Image Attachment
           </div>
           <div class="img-uploader" v-if="imgAttachmentSelected">
-          <input type="file" @change="uploadImgfunc" />
+          <div>Attach and Image</div> 
+          <input class="upload-img-input" type="file" @change="uploadImgfunc" />
+          </div>
+          <div class="add-labels-btn">
+            <i class="fas fa-tag">
+              </i>Add Labels
           </div>
           <div @click="remove" class="delete-task"><i class="fas fa-trash-alt"></i>Delete Task</div>
         </div>
@@ -79,11 +93,11 @@ import { uploadImg } from "../services/CloudinaryService.js";
 export default {
   data() {
     return {
-      task: { title: "", description: "", dueDate: null, imgUrl: "" },
+      task: { title: "", description: "", dueDate: null, imgUrl: "", imgIsRotated: false },
       currBoardId: null,
       topicName: "",
       datePickerSelected: false,
-      imgAttachmentSelected: false
+      imgAttachmentSelected: false,
     };
   },
   methods: {
@@ -99,7 +113,8 @@ export default {
           task: this.task,
           topic: this.topicName,
           imgUrl: this.imgUrl,
-          dueDate: this.dueDate
+          dueDate: this.dueDate,
+          imgIsRotated: this.imgIsRotated
         }
       );
       } else {
@@ -109,7 +124,8 @@ export default {
           task: this.task,
           topic: this.topicName,
           imgUrl: this.imgUrl,
-          dueDate: this.dueDate
+          dueDate: this.dueDate,
+          imgIsRotated: this.imgIsRotated
         });
       }
       this.closeEdit();
@@ -121,7 +137,8 @@ export default {
         taskId: this.task.id,
         topic: this.topicName,
         imgUrl: this.imgUrl,
-        dueDate: this.dueDate
+        dueDate: this.dueDate,
+        imgIsRotated: this.imgIsRotated
       });
       this.closeEdit();
     },

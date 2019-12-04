@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import BoardService from '../services/BoardService'
 import TaskService from '../services/TaskService'
-import userStore from './userStore'
+import userStore from './modules/userStore.js'
 
 Vue.use(Vuex)
 

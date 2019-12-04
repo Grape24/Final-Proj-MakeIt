@@ -70,6 +70,7 @@ export default {
       if(!cred.email || !cred.password ||!cred.username) {
           console.log('Please fill up the form') 
         }else{
+            // console.log('halooooo')
             this.$store.dispatch({type: 'signup', userCred: cred})
         }
     //   this.$store.dispatch({type: 'signup', userCred: cred})

@@ -1,10 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import UserService from  '../../services/UserService'
 
-
-Vue.use(Vuex)
-
-export default new Vuex.Store({
+export default {
   strict: true,
   state:{
 
@@ -19,12 +17,12 @@ export default new Vuex.Store({
   actions: {
     async signup(context, {userCred}) {
         console.log(userCred)
-        // const user = await UserService.signup(userCred)
-        // context.commit({type: 'setUser', user})
-        // return user;
+        const user = await UserService.signup(userCred)
+        context.commit({type: 'setUser', user})
+        return user;
         
     },
 
   }
     
-})
+}

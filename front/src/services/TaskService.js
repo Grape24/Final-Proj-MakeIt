@@ -11,7 +11,6 @@ export default {
 async function remove(boardId, taskId, topicName) {
     let board = await BoardService.getById(boardId)
     let task = await getTaskById(boardId , taskId)
-    console.log('remove',task)
     board.topicTasksMap[topicName] = board.topicTasksMap[topicName].filter(task => task.id !== taskId)
     board.activites.push(`task: ${task.title} removed from ${topicName} at ${Date.now()}` )
     board = await BoardService.edit(board)
