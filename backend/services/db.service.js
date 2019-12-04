@@ -10,8 +10,12 @@ module.exports = {
 
 
 // Database Name
+<<<<<<< HEAD
+const dbName = 'admin';
+=======
 const dbName = 'BOARD_DB';
 // const dbName = 'admin';
+>>>>>>> 03a535ae8f4806f3c3907f2ea9df7db369076f48
 
 var dbConn = null;
 
