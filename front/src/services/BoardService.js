@@ -6,11 +6,11 @@ export default {
     remove,
     getById,
     edit,
+    add
 
 }
 
 async function query() {
-    
     const boards = await HttpService.get('/')
     return boards
 }
@@ -27,6 +27,11 @@ async function getById(id) {
 async function remove(boardId) {
     await HttpService.delete(boardId)
 
+}
+
+async function add(board) {
+    const updatedBoards = await HttpService.post('/', board)
+    return updatedBoards
 }
 
 

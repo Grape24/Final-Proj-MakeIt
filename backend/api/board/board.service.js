@@ -7,7 +7,22 @@ module.exports = {
     getById,
     remove,
     update,
-    add
+    add,
+    updateBoards
+}
+
+
+async function updateBoards(board) {
+    const collection = await dbService.getCollection('boards')
+    try {
+        const updateBoards = await collection.insertOne(board)
+        return updateBoards
+    }
+    catch (err) {
+        throw err
+
+    }
+
 }
 
 async function query() {
@@ -34,7 +49,7 @@ async function getById(boardId) {
 async function remove(boardId) {
     const collection = await dbService.getCollection('boards')
     try {
-        await collection.deleteOne({ "_id": ObjectId(boardId) })
+        const board = await collection.deleteOne({ "_id": ObjectId(boardId) })
     } catch (err) {
         throw err;
     }

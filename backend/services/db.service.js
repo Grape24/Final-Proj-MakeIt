@@ -1,6 +1,5 @@
 
 const MongoClient = require('mongodb').MongoClient;
-// const uri = 'mongodb+srv://nevonoam:bcubugo22@boards-rmsul.mongodb.net/test?retryWrites=true&w=majority'
 
 
 const config = require('../config')

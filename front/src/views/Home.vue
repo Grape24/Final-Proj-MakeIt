@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <board-list :boards="boards"></board-list>
+    <board-list :boards="boards" @addBoard="addBoard"></board-list>
   </div>
 </template>
 
@@ -11,6 +11,9 @@ export default {
   methods: {
     getBoards() {
       this.$store.dispatch({ type: "loadBoards" });
+    },
+    addBoard(board) {
+      this.$store.dispatch({ type: "addBoard", board });
     }
   },
   computed: {
