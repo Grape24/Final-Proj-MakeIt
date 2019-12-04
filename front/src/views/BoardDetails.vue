@@ -6,7 +6,7 @@
       Show Activities
     </button>
     <LogActivities @menuClosed="activitiesLogIsOpen=false" v-if="activitiesLogIsOpen"></LogActivities>
-    
+
     <div v-if="topics">
       <topics-list
         :topics="topics"
@@ -25,7 +25,7 @@
 <script>
 import TopicsList from "../components/TopicsList.vue";
 import SocketService from "../services/SocketService.js";
-import LogActivities from "../components/LogActivities"
+import LogActivities from "../components/LogActivities";
 
 export default {
   components: {
@@ -36,7 +36,7 @@ export default {
     return {
       currBoard: null,
       activitiesLogIsOpen: false
-    }
+    };
   },
   computed: {
     topics() {
@@ -61,11 +61,16 @@ export default {
     removeList(topicName) {
       this.$store.dispatch({ type: "removeList", topicName });
     },
-    updateList({ topics, topicName }) {
+    updateList(topics) {
       let board = JSON.parse(JSON.stringify(this.currBoard));
-      board.topicTasksMap[topicName] = topics;
+      board.topicTasksMap = topics;
       this.$store.dispatch({ type: "setBoard", board });
     },
+    // updateListt({ topic, topicName }) {
+    //   let board = JSON.parse(JSON.stringify(this.currBoard));
+    //   board.topicTasksMap[topicName] = topic;
+    //   this.$store.dispatch({ type: "setBoard", board });
+    // },
     push(id) {
       this.$router.push(`/board/${id}/activties`);
     }

@@ -12,6 +12,7 @@
         :list="topicList"
         :group="{ name: 'tasks', pull: pullFunction }"
         @start="start"
+        @end="end"
       >
         <div
           v-if="task"
@@ -19,7 +20,7 @@
           v-for="task in topicList"
           :key="task.id"
           @click="push(task.id)"
-        > 
+        >
           <img :class="{'rotated': task.imgIsRotated}" :src="task.imgUrl" />
           {{task.title}}
           <div v-if="task.dueDate">
@@ -44,7 +45,8 @@ export default {
   props: {
     topicName: String,
     topicList: Array,
-    currBoardId: String
+    currBoardId: String,
+    topics: Object
   },
   name: "clone-on-control",
   display: "Clone on Control",
@@ -57,11 +59,23 @@ export default {
   data() {
     return {
       controlOnStart: true,
-      topics: this.topicList,
       currTaskId: null
     };
   },
+  computed: {
+    topicListCopy() {
+      return [...this.topicList];
+    }
+  },
   methods: {
+    end() {
+      // console.log(ev)
+      // this.$emit("updateList", {
+      //   topic: this.topicListCopy,
+      //   topicName: this.topicName
+      // });
+      this.$emit("endTaskDragging", this.topics);
+    },
     convertTimeStampFormat(ts) {
       ts = ts + 1000 * 60 * 60 * 24;
       return moment.utc(ts).calendar();
@@ -79,14 +93,6 @@ export default {
     },
     deleteList() {
       this.$emit("deletList", this.topicName);
-    }
-  },
-  watch: {
-    topics() {
-      this.$emit("updateList", {
-        topics: this.topicList,
-        topicName: this.topicName
-      });
     }
   }
 };
