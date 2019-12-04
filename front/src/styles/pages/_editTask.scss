@@ -97,7 +97,6 @@
     font-size: rem(15px);
     border-radius: 5px;
     padding: rem(10px) rem(30px);
-
     cursor: pointer;
     margin: auto;
 
@@ -147,5 +146,100 @@
     text-align:center;
     padding: rem(5px);
     margin: auto;
+}
+
+.label-picker{
+    position: absolute;
+    background-color: white;
+    padding: rem(10px);
+    border-radius: 5px;
+    border: 1px solid darken(#fff, 15%);
+}
+
+.labels-title{
+    font-size: rem(14px);
+    text-align: center;
+    padding: rem(10px);
+    border-bottom: 1px solid darken($clr1, 10%);
+}
+.labels-container{
+    div{
+        border-radius: 3px;
+        margin: rem(5px);
+        width: rem(200px);
+        height: rem(30px);
+        cursor: pointer;
+        &:hover{
+            transition: padding 85ms,margin 85ms,box-shadow 85ms;
+        }
+    }
+
+}
+.green{
+    background-color: #61bd4f;
+    color: #61bd4f;
+    &:hover{
+        box-shadow: -8px 0 darken(#61bd4f,10%);
+    }
+}
+
+.yellow{
+    background-color: #f2d600;
+    color: #f2d600;
+    &:hover{
+        box-shadow: -8px 0 darken(#f2d600,10%);
+    }
+}
+
+.orange{
+   background-color:#ff9f1a;
+   color: #ff9f1a;
+   &:hover{
+    box-shadow: -8px 0 darken(#ff9f1a,10%);
+    }
+}
+
+.red{
+    background-color: #eb5a46;
+    color: #eb5a46;
+    &:hover{
+        box-shadow: -8px 0 darken(#eb5a46,10%);
+    }
+}
+
+.purple{
+    background-color: #c377e0;
+    color: #c377e0;
+    &:hover{
+        box-shadow: -8px 0 darken(#c377e0,10%);
+    }
+}
+
+
+.blue{
+    background-color:#0079bf;
+    color: #0079bf;
+    &:hover{
+        box-shadow: -8px 0 darken(#0079bf,10%);
+    }
+}
+
+.labels-title-display{
+    padding-left: rem(29px);
+    text-transform: uppercase;
+    color: darken($clr4, 15%);
+    font-size: rem(13px);
+}
+
+.label-preview{
+    border-radius: 3px;
+    margin: rem(2px);
+    width: rem(40px);
+    height: rem(30px);
+}
+
+.labels-container-display{
+    padding-left: rem(29px);
+    padding-top: rem(10px);
 }
 

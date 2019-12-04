@@ -21,6 +21,7 @@
           :key="task.id"
           @click="push(task.id)"
         >
+          <div>{{task.labels}}</div>
           <img :class="{'rotated': task.imgIsRotated}" :src="task.imgUrl" />
           {{task.title}}
           <div v-if="task.dueDate">

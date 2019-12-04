@@ -15,12 +15,24 @@
       <div class="flex space-between">
         <div class="main-edit-container">
           <div class="in-list">In List : {{topicName}}</div>
-            <div class="due-date-title">Due date</div>
-            <date-picker  value-type="timestamp"
-                          placeholder="Select due date"
-                          class="date-picker-preview"
-                          v-model.number="task.dueDate">{{task.taskDueDate}}
-          </date-picker>
+            <div class="labels-due-date-container flex">
+              <div>
+                <div class="labels-title-display" v-if="task.labels">labels</div>
+                <div class="labels-container-display flex">
+                  <div :key="index" v-for="(label, index) in task.labels">
+                    <div class="label-preview" :class="label">.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="due-date-container">
+                <div class="due-date-title">Due date</div>
+                <date-picker  value-type="timestamp"
+                              placeholder="Select due date"
+                              class="date-picker-preview"
+                              v-model.number="task.dueDate">{{task.taskDueDate}}
+              </date-picker>
+            </div>
+            </div>
           <div class="flex align-center">
             <i class="fas fa-align-left"></i>
             <div class="description-title">Description</div>
@@ -68,9 +80,24 @@
           <div>Attach and Image</div> 
           <input class="upload-img-input" type="file" @change="uploadImgfunc" />
           </div>
-          <div class="add-labels-btn">
+          <div @click="addLabelsSelected = false"
+                 class="transparent-modal-mask"
+                 v-if="addLabelsSelected">
+          </div>
+          <div @click="addLabelsSelected = !addLabelsSelected" class="add-labels-btn">
             <i class="fas fa-tag">
               </i>Add Label
+          </div>
+          <div v-if="addLabelsSelected" class="label-picker">
+            <div class="labels-title">Labels</div>
+            <div class="labels-container">
+              <div @click="selectLabel('green')" class="green">.</div>
+              <div @click="selectLabel('yellow')" class="yellow">.</div>
+              <div @click="selectLabel('orange')" class="orange">.</div>
+              <div @click="selectLabel('red')" class="red">.</div>
+              <div @click="selectLabel('purple')" class="purple">.</div>
+              <div @click="selectLabel('blue')" class="blue">.</div>
+            </div>
           </div>
           <div @click="remove" class="delete-task"><i class="fas fa-trash-alt"></i>Delete Task</div>
         </div>
@@ -89,11 +116,12 @@ import { uploadImg } from "../services/CloudinaryService.js";
 export default {
   data() {
     return {
-      task: { title: "", description: "", dueDate: null, imgUrl: "", imgIsRotated: false },
+      task: { title: "", description: "", dueDate: null, imgUrl: "", imgIsRotated: false, labels: [] },
       currBoardId: null,
       topicName: "",
       datePickerSelected: false,
       imgAttachmentSelected: false,
+      addLabelsSelected: false
     };
   },
   methods: {
@@ -110,7 +138,8 @@ export default {
           topic: this.topicName,
           imgUrl: this.imgUrl,
           dueDate: this.dueDate,
-          imgIsRotated: this.imgIsRotated
+          imgIsRotated: this.imgIsRotated,
+          labels: this.labels
         }
       );
       } else {
@@ -121,7 +150,8 @@ export default {
           topic: this.topicName,
           imgUrl: this.imgUrl,
           dueDate: this.dueDate,
-          imgIsRotated: this.imgIsRotated
+          imgIsRotated: this.imgIsRotated,
+          labels: this.labels
         });
       }
       this.closeEdit();
@@ -134,12 +164,16 @@ export default {
         topic: this.topicName,
         imgUrl: this.imgUrl,
         dueDate: this.dueDate,
-        imgIsRotated: this.imgIsRotated
+        imgIsRotated: this.imgIsRotated,
+        labels: this.labels
       });
       this.closeEdit();
     },
     closeEdit() {
       this.$router.push("/board/" + this.currBoardId);
+    },
+    selectLabel(color){
+      this.task.labels.push(color);
     }
   },
   async created() {
