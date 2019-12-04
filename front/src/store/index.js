@@ -94,7 +94,7 @@ export default new Vuex.Store({
       SocketService.emit('update board', board)
 
     },
-    async addTopic(context, { topic }) {
+    async addList(context, { topic }) {
       const currBoard = JSON.parse(JSON.stringify(context.state.currBoard))
       currBoard.topicTasksMap[topic] = []
       const board = await BoardService.edit(currBoard)
