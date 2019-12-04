@@ -6,11 +6,10 @@
         <i class="fas fa-times"></i>
       </div>
       <div class="activity" :key="index" v-for="(activity, index) in activities">
-        {{activity.task}} in list {{activity.inTopic}} was {{activity.activity}} 
-          <div class="time">{{convertTimeStampFormat(activity.DoneAt)}}</div>
+        {{activity.task}} in list {{activity.inTopic}} was {{activity.activity}}
+        <div class="time">{{convertTimeStampFormat(activity.DoneAt)}}</div>
       </div>
     </div>
-
   </section>
 </template>
 
@@ -26,7 +25,8 @@ export default {
       this.$emit('menuClosed');
     },
     convertTimeStampFormat(ts){
-      return moment.utc(ts).calendar();
+      console.log(ts)
+      return moment.utc(ts+12000).calendar();
     }
   },
   computed: {

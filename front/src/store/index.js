@@ -10,7 +10,6 @@ import { stat } from 'fs';
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  strict: true,
   state: {
     boards: [],
     currBoard: null
