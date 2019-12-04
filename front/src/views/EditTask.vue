@@ -20,7 +20,7 @@
                 <div class="labels-title-display" v-if="task.labels">labels</div>
                 <div class="labels-container-display flex">
                   <div :key="index" v-for="(label, index) in task.labels">
-                    <div class="label-preview" :class="label">.</div>
+                    <div :class="`${label}-label-preview`">.</div>
                   </div>
                 </div>
               </div>

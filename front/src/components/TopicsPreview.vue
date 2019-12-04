@@ -20,8 +20,10 @@
           v-for="task in topicList"
           :key="task.id"
           @click="push(task.id)"
-        >
-          <div>{{task.labels}}</div>
+        > 
+        <div class="flex">
+          <div :class="`${label}-task-label`" :key="index" v-for="(label, index) in task.labels"></div>
+        </div>
           <img :class="{'rotated': task.imgIsRotated}" :src="task.imgUrl" />
           {{task.title}}
           <div v-if="task.dueDate">
