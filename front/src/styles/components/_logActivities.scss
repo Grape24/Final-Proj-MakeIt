@@ -1,8 +1,9 @@
 .activities-menu{
     position: absolute;
     background-color: darken(white, 3%);
-    height: 100vh;
     right:0;
+    height: 100vh;
+    overflow: scroll;
     width: rem(350px);
     top: rem(59px);
     padding: rem(10px);

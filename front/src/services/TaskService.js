@@ -42,7 +42,7 @@ async function getTaskById(boardId, taskId) {
     for (let i = 0; i < mat.length; i++) {
         for (let j = 0; j < mat[i].length; j++) {
             let task = (mat[i][j])
-            if (task.id === taskId) {
+            if (task.id === taskId){
                 return task
             }
         }
