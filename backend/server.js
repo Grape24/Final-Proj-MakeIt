@@ -12,6 +12,7 @@ const io = require('socket.io')(http);
 const boardRoutes = require('./api/board/board.routes')
 const connectSockets = require('./api/socket/socket.routes')
 
+app.use(express.static('public'));
 
 app.use(cookieParser())
 app.use(bodyParser.json());
