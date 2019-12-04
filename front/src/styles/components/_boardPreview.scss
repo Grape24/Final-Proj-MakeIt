@@ -1,0 +1,17 @@
+.board-card{
+    background-color: $clr3;
+    width: rem(250px);
+    height: rem(250px);
+    margin: rem(50px);
+    border-radius: 5px;
+    font-size: rem(40px);
+}
+
+.board-name{
+    padding: rem(20px);
+}
+
+.board-container{
+    overflow: scroll;
+    height:100vh;
+}

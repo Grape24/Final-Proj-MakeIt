@@ -1,0 +1,31 @@
+.activites-menu{
+    border: none;
+    background-color: rgba(0, 0, 0, 0.116);
+    border-radius: 4px;
+    position: absolute;
+    top: rem(70px);
+    right: 0;
+    margin: rem(20px);
+    padding: rem(15px);
+    font-size: rem(15px);
+    color: gray;
+    cursor: pointer;
+    outline:none;
+}
+
+.fa-ellipsis-h{
+  font-size: 10px;
+}
+
+.delete-board-btn{
+  border: none;
+  background-color: rgba(0, 0, 0, 0.116);
+  border-radius: 4px;
+  margin: rem(20px);
+  padding: rem(15px);
+  font-size: 0.9375rem;
+  color: gray;
+  cursor: pointer;
+  outline: none;
+  align-self: center;
+}
