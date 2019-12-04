@@ -20,7 +20,7 @@
                 <div class="labels-title-display" v-if="task.labels">labels</div>
                 <div class="labels-container-display flex">
                   <div :key="index" v-for="(label, index) in task.labels">
-                    <div :class="`${label}-label-preview`">.</div>
+                    <div :class="`${label}-label-preview`"></div>
                   </div>
                 </div>
               </div>
@@ -91,12 +91,12 @@
           <div v-if="addLabelsSelected" class="label-picker">
             <div class="labels-title">Labels</div>
             <div class="labels-container">
-              <div @click="selectLabel('green')" class="green">.</div>
-              <div @click="selectLabel('yellow')" class="yellow">.</div>
-              <div @click="selectLabel('orange')" class="orange">.</div>
-              <div @click="selectLabel('red')" class="red">.</div>
-              <div @click="selectLabel('purple')" class="purple">.</div>
-              <div @click="selectLabel('blue')" class="blue">.</div>
+              <div @click="selectLabel('green')" class="green flex align-center"><i v-if="selected('green')" class="fas fa-check"></i></div>
+              <div @click="selectLabel('yellow')" class="yellow flex align-center"><i v-if="selected('yellow')" class="fas fa-check"></i></div>
+              <div @click="selectLabel('orange')" class="orange flex align-center"><i v-if="selected('orange')" class="fas fa-check"></i></div>
+              <div @click="selectLabel('red')" class="red flex align-center"><i v-if="selected('red')" class="fas fa-check"></i></div>
+              <div @click="selectLabel('purple')" class="purple flex align-center"><i v-if="selected('purple')" class="fas fa-check"></i></div>
+              <div @click="selectLabel('blue')" class="blue flex align-center"><i v-if="selected('blue')" class="fas fa-check"></i></div>
             </div>
           </div>
           <div @click="remove" class="delete-task"><i class="fas fa-trash-alt"></i>Delete Task</div>
@@ -173,7 +173,23 @@ export default {
       this.$router.push("/board/" + this.currBoardId);
     },
     selectLabel(color){
-      this.task.labels.push(color);
+      let idx = this.task.labels.indexOf(color);
+      if(idx === -1){
+        this.task.labels.push(color);
+        return true
+      }else{
+        this.task.labels.splice(idx, 1)
+        return false
+      }
+    },
+    selected(color){
+      let idx = this.task.labels.indexOf(color);
+      if(idx === -1){
+      return false
+      }else{
+        return true;
+      }
+
     }
   },
   async created() {

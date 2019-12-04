@@ -176,40 +176,45 @@
 
 }
 .green{
+    padding-left: rem(5px);
     background-color: #61bd4f;
-    color: #61bd4f;
+    color:white;
     &:hover{
         box-shadow: -8px 0 darken(#61bd4f,10%);
     }
 }
 
 .yellow{
+    padding-left: rem(5px);
     background-color: #f2d600;
-    color: #f2d600;
+    color: white;
     &:hover{
         box-shadow: -8px 0 darken(#f2d600,10%);
     }
 }
 
 .orange{
+    padding-left: rem(5px);
    background-color:#ff9f1a;
-   color: #ff9f1a;
+   color: white;
    &:hover{
     box-shadow: -8px 0 darken(#ff9f1a,10%);
     }
 }
 
 .red{
+    padding-left: rem(5px);
     background-color: #eb5a46;
-    color: #eb5a46;
+    color: white;
     &:hover{
         box-shadow: -8px 0 darken(#eb5a46,10%);
     }
 }
 
 .purple{
+    padding-left: rem(5px);
     background-color: #c377e0;
-    color: #c377e0;
+    color: white;
     &:hover{
         box-shadow: -8px 0 darken(#c377e0,10%);
     }
@@ -217,8 +222,9 @@
 
 
 .blue{
+    padding-left: rem(5px);
     background-color:#0079bf;
-    color: #0079bf;
+    color: white;
     &:hover{
         box-shadow: -8px 0 darken(#0079bf,10%);
     }
