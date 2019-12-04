@@ -39,7 +39,6 @@ export default {
   methods: {
     toggleIsAdding() {
       this.isAddingBoard = !this.isAddingBoard;
-      console.log(this.isAddingBoard);
     },
     addBoard() {
       const board = {
