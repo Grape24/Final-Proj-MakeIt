@@ -45,8 +45,8 @@ export default {
         name: this.createdBoardName,
         createdBy: {},
         members: [],
-        activities: [],
-        topicTasksMap: {}
+        activites: [],
+        topicTasksMap: { Todo: [], Doing: [], Done: [] }
       };
       this.$emit("addBoard", board);
       this.isAddingBoard = false;
