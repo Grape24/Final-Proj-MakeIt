@@ -38,3 +38,52 @@
     background-color: rgba(255, 255, 255, 0);
     cursor:pointer;
 }
+
+.green-task-label{
+    background-color: #61bd4f;
+    color: #61bd4f;
+    border-radius: 5px;
+    margin: rem(2px);
+    width: rem(20px);
+    height: rem(10px);
+}
+.yellow-task-label{
+    background-color: #f2d600;
+    color: #f2d600;
+    border-radius: 5px;
+    margin: rem(2px);
+    width: rem(20px);
+    height: rem(10px);
+}
+.orange-task-label{
+    background-color:#ff9f1a;
+    color: #ff9f1a;
+    border-radius: 5px;
+    margin: rem(2px);
+    width: rem(20px);
+    height: rem(10px);
+}
+.red-task-label{
+    background-color: #eb5a46;
+    color: #eb5a46;
+    border-radius: 5px;
+    margin: rem(2px);
+    width: rem(20px);
+    height: rem(10px);
+}
+.purple-task-label{
+    background-color: #c377e0;
+    color: #c377e0;
+    border-radius: 5px;
+    margin: rem(2px);
+    width: rem(20px);
+    height: rem(10px);
+}
+.blue-task-label{
+    background-color:#0079bf;
+    color: #0079bf;
+    border-radius: 5px;
+    margin: rem(2px);
+    width: rem(20px);
+    height: rem(10px);
+}
