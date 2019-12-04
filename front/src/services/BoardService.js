@@ -11,7 +11,7 @@ export default {
 }
 
 async function query() {
-    
+
     const boards = await HttpService.get('board/')
     return boards
 }

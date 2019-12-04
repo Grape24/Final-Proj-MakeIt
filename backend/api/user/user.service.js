@@ -5,14 +5,15 @@ const ObjectId = require('mongodb').ObjectId
 module.exports = {
     query,
     getById,
-    add
+    add,
+    getByEmail
 }
 
 async function query() {
     let collection;
-    try{
+    try {
         collection = await dbService.getCollection('users')
-    }catch{
+    } catch{
         console.log(err)
     }
     try {
@@ -29,7 +30,7 @@ async function query() {
 async function getById(userId) {
     const collection = await dbService.getCollection('users')
     try {
-        const user = await collection.findOne({"_id":ObjectId(userId)})
+        const user = await collection.findOne({ "_id": ObjectId(userId) })
         delete user.password
         return user
     } catch (err) {
@@ -39,12 +40,9 @@ async function getById(userId) {
 }
 
 async function add(user) {
-    console.log('add',user)
     const collection = await dbService.getCollection('users')
-    console.log(collection)
     try {
-        await collection.insert(user);
-        console.log('after')
+        await collection.insertOne(user);
         return user;
     } catch (err) {
         console.log(`ERROR: cannot insert user`)
@@ -52,4 +50,14 @@ async function add(user) {
     }
 }
 
+async function getByEmail(email) {
+    const collection = await dbService.getCollection('users')
+    try {
+        const user = await collection.findOne({ email })
+        return user
+    } catch (err) {
+        console.log(`ERROR: while finding user ${email}`)
+        throw err;
+    }
+}
 

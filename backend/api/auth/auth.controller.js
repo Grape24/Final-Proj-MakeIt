@@ -13,17 +13,12 @@ async function login(req, res) {
 }
 
 async function signup(req, res) {
-    // console.log(req.body)
     try {
-        
         const { email, password, username } = req.body
-        console.log('authvontroller',email, password, username)
         logger.debug(email + ", " + username + ', ' + password)
         const account = await authService.signup(email, password, username)
         logger.debug(`auth.route - new account created: ` + JSON.stringify(account))
-        console.log('afterSignup')
         const user = await authService.login(email, password)
-        console.log('afterlogin ',user)
         req.session.user = user
         res.json(user)
     } catch (err) {
@@ -32,7 +27,7 @@ async function signup(req, res) {
     }
 }
 
-async function logout(req, res){
+async function logout(req, res) {
     try {
         req.session.destroy()
         res.send({ message: 'logged out successfully' })

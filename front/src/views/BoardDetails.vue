@@ -1,6 +1,9 @@
 <template>
   <section class="board-container">
     <h2 class="board-name" v-if="currBoard">{{currBoard.name}}</h2>
+    <div v-if="currBoard">
+      <img v-for="member in currBoard.members" :key="member._id" :src="member.imgUrl" alt />
+    </div>
     <button @click="removeBoard">Delete board</button>
     <button class="activites-menu" @click="activitiesLogIsOpen = !activitiesLogIsOpen">
       <i class="fas fa-ellipsis-h"></i>
@@ -103,19 +106,18 @@ export default {
       });
       this.$store.dispatch({ type: "setBoard", board });
     },
-    // updateListt({ topic, topicName }) {
-    //   let board = JSON.parse(JSON.stringify(this.currBoard));
-    //   board.topicTasksMap[topicName] = topic;
-    //   this.$store.dispatch({ type: "setBoard", board });
-    // },
     push(id) {
       this.$router.push(`/board/${id}/activties`);
     }
   },
   created() {
     this.boardId = this.$route.params._id;
-    this.currBoard = JSON.parse(JSON.stringify(this.$store.getters.currBoard));
     this.$store.dispatch({ type: "getCurrBoard", id: this.boardId });
+    this.currBoard = JSON.parse(JSON.stringify(this.$store.getters.currBoard));
+    const user = sessionStorage.user;
+    if (user && this.currBoard) {
+      this.$store.dispatch({ type: "addMembers", user });
+    }
     SocketService.emit("load board", this.$store.getters.currBoard);
     SocketService.on("board updated", board => {
       this.$store.commit({ type: "setCurrBoard", board });

@@ -15,7 +15,7 @@ export default new Vuex.Store({
     boards: [],
     currBoard: null
   },
-  modules:{
+  modules: {
     userStore
   },
   getters: {
@@ -50,6 +50,24 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    async loggedOut(context) {
+      const user = null
+      if (sessionStorage.user) {
+        user = JSON.parse(sessionStorage.user)
+      }
+      const currBoard = JSON.parse(JSON.stringify(context.state.currBoard))
+      currBoard.members.filter(member => member._id !== user._id)
+      const board = BoardService.edit(currBoard)
+      context.commit({ type: 'setCurrBoard', board })
+    },
+    async addMembers(context, { user }) {
+      const currBoard = JSON.parse(JSON.stringify(context.state.currBoard))
+      currBoard.members.push(user)
+      const board = await BoardService.edit(board)
+      context.commit({ type: 'setCurrBoard', board })
+      SocketService.emit('update board', board)
+
+    },
     async removeBoard(context, { boardId }) {
       await BoardService.remove(boardId)
       context.commit({ type: 'removeBoard', boardId })
