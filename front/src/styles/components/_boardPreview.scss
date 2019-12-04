@@ -1,10 +1,17 @@
 .board-card{
-    background-color: $clr3;
-    width: rem(250px);
-    height: rem(250px);
-    margin: rem(50px);
+    background-color: #bfbfbf5b;
+    width: rem(200px);
+    height: rem(150px);
+    margin: rem(20px);
     border-radius: 5px;
-    font-size: rem(40px);
+    font-size: rem(20px);
+    cursor: pointer;
+    color: $clr2; 
+    border-bottom: 2px solid rgba(128, 128, 128, 0.543);
+    &:hover{
+        transition: background-color 0.2s;
+        background-color: darken(#bfbfbf5b, 20%);
+    }
 }
 
 .board-name{
@@ -14,4 +21,66 @@
 .board-container{
     overflow: scroll;
     height:100vh;
+}
+
+.add-board-btn{
+    background-color: #bfbfbf5b;
+    cursor: pointer;
+    width: 400px;
+    margin: rem(30px);
+    padding: rem(20px);
+    border-radius: 5px;
+    &:hover{
+        transition: background-color 0.2s;
+        background-color: darken(#bfbfbf5b, 20%)
+    }
+}
+
+.add-board-input-container{
+    position: absolute;
+    border-radius: 2px;
+    background-color: $clr1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: rem(30px);
+    width: 30%;
+}
+
+.enter-board-title{
+    border: none;
+    font-size: rem(16px);
+    font-family: $font1;
+    border-radius: 5px;
+    height: rem(10px);
+    background-color: $clr3;
+    font-weight: 800;
+    &:hover{
+        background-color: rgba(255, 255, 255, 0.336);
+    }
+}
+
+
+.create-board-btn{
+    z-index:1;
+    position:absolute;
+    bottom:-50px;
+    left:0px;
+    border: none;
+    background-color: $clr3;
+    border-radius: 3px;
+    color: darken($clr4, 20%);
+    font-size: rem(14px);
+    padding: rem(10px);
+    cursor: pointer;
+    outline: none;
+
+}
+
+.success{
+    background-color: #5aac44;
+    color: white;
+    &:hover{
+        background-color: lighten(#5aac44, 20%);  
+    }
 }
