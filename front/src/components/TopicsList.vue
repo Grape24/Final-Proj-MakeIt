@@ -18,22 +18,6 @@
         :topics="topics"
       ></topics-preview>
     </draggable>
-    <div class="modal-mask" v-if="isAddingTopic" @click="isAddingTopic=false"></div>
-    <div class="add-topic-input-container" :class="{'adding-topic': isAddingTopic}">
-      <input
-        class="add-topic-input"
-        v-model="createdTopicName"
-        :class="{'adding-topic-selected': isAddingTopic}"
-        placeholder="+ Add another list"
-        @focus="openTransition()"
-      />
-      <div v-if="isAddingTopic" class="flex">
-        <button @click="addTopic()" class="add-topic-btn">Add list</button>
-        <button class="close-modal-btn" @click="isAddingTopic=false">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-    </div>
     <router-view></router-view>
   </section>
 </template>
@@ -48,12 +32,7 @@ export default {
     currBoardId: String,
     topicsAsArr: Array
   },
-  data() {
-    return {
-      isAddingTopic: false,
-      createdTopicName: ""
-    };
-  },
+  
   methods: {
     doneDragging() {
       this.dragging = false;
@@ -64,15 +43,6 @@ export default {
         map[keys[i]] = values[i].flat();
       }
       this.$emit("topicsChanged", map);
-    },
-    openTransition() {
-      this.isAddingTopic = !this.isAddingTopic;
-    },
-    addTopic() {
-      const topic = this.createdTopicName;
-      this.$emit("addTopic", topic);
-      this.isAddingTopic = false;
-      this.createdTopicName = "";
     },
     deleteList(topicName) {
       this.$emit("removeList", topicName);

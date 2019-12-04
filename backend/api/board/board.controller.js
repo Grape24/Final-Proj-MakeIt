@@ -12,7 +12,7 @@ async function getBoards(req, res) {
 
 async function deleteBoard(req, res) {
     await boardService.remove(req.params.id)
-    res.send({})
+    res.send()
 }
 
 async function update(req, res) {
@@ -25,11 +25,16 @@ async function add(req, res) {
     res.send(board)
 }
 
+async function updateBoards(req, res) {
+    const boards = await boardService.updateBoards(req.body)
+    res.send(boards)
+}
 
 module.exports = {
     getBoard,
     getBoards,
     deleteBoard,
     update,
-    add
+    add,
+    updateBoards
 }

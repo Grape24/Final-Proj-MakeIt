@@ -1,12 +1,12 @@
 <template>
-  <section class="board-container">
+  <section class="board-container flex" >
     <h2 class="board-name" v-if="currBoard">{{currBoard.name}}</h2>
+    <button @click="removeBoard">Delete board</button>
     <button class="activites-menu" @click="activitiesLogIsOpen = !activitiesLogIsOpen">
       <i class="fas fa-ellipsis-h"></i>
       Show Activities
     </button>
     <LogActivities @menuClosed="activitiesLogIsOpen=false" v-if="activitiesLogIsOpen"></LogActivities>
-
     <div v-if="topics">
       <topics-list
         :topics="topics"
@@ -17,7 +17,23 @@
         @topicsChanged="topicsChanged"
         :currBoardId="currBoard._id"
       ></topics-list>
-    </div>
+      </div>
+      <div class="modal-mask" v-if="isAddingTopic" @click="isAddingTopic=false"></div>
+      <div class="add-topic-input-container" :class="{'adding-topic': isAddingTopic}">
+        <input
+          class="add-topic-input"
+          v-model="createdTopicName"
+          :class="{'adding-topic-selected': isAddingTopic}"
+          placeholder="+ Add another list"
+          @focus="openTransition()"
+        />
+        <div v-if="isAddingTopic" class="flex">
+          <button @click="addTopic()" class="add-topic-btn">Add list</button>
+          <button class="close-modal-btn" @click="isAddingTopic=false">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
   </section>
 </template>
  
@@ -35,7 +51,10 @@ export default {
   data() {
     return {
       currBoard: null,
-      activitiesLogIsOpen: false
+      activitiesLogIsOpen: false,
+      boardId: null,
+      isAddingTopic: false,
+      createdTopicName: ""
     };
   },
   computed: {
@@ -50,6 +69,19 @@ export default {
     }
   },
   methods: {
+    openTransition() {
+      this.isAddingTopic = !this.isAddingTopic;
+    },
+    addTopic() {
+      const topic = this.createdTopicName;
+      this.$emit("addTopic", topic);
+      this.isAddingTopic = false;
+      this.createdTopicName = "";
+    },
+    removeBoard() {
+      this.$store.dispatch({ type: "removeBoard", boardId: this.boardId });
+      this.$router.push("/");
+    },
     topicsChanged(map) {
       let board = JSON.parse(JSON.stringify(this.currBoard));
       board.topicTasksMap = map;
@@ -76,9 +108,9 @@ export default {
     }
   },
   created() {
-    const id = this.$route.params._id;
+    this.boardId = this.$route.params._id;
     this.currBoard = JSON.parse(JSON.stringify(this.$store.getters.currBoard));
-    this.$store.dispatch({ type: "getCurrBoard", id });
+    this.$store.dispatch({ type: "getCurrBoard", id: this.boardId });
     SocketService.emit("load board", this.$store.getters.currBoard);
     SocketService.on("board updated", board => {
       this.$store.commit({ type: "setCurrBoard", board });
