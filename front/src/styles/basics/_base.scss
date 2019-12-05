@@ -25,3 +25,21 @@ a{
 input{
     padding: rem(20px);
 }
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #80808054;
+    border-radius: 10px;
+  }
+  
