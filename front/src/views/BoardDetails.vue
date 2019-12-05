@@ -122,6 +122,9 @@ export default {
     SocketService.on("board updated", board => {
       this.$store.commit({ type: "setCurrBoard", board });
     });
+  },
+  destroyed() {
+    SocketService.emit("exit board");
   }
 };
 </script>

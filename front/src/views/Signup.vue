@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { uploadImg } from "../services/CloudinaryService.js";
+// import { uploadImg } from "../services/CloudinaryService.js";
 
 export default {
   data() {
