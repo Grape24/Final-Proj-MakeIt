@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import BoardService from '../services/BoardService'
 import TaskService from '../services/TaskService'
+import userStore from './modules/userStore.js'
 import SocketService from "../services/SocketService.js";
 import { stat } from 'fs';
 
@@ -13,6 +14,9 @@ export default new Vuex.Store({
   state: {
     boards: [],
     currBoard: null
+  },
+  modules: {
+    userStore
   },
   getters: {
     boards(state) {
@@ -46,6 +50,24 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    async loggedOut(context) {
+      const user = null
+      if (sessionStorage.user) {
+        user = JSON.parse(sessionStorage.user)
+      }
+      const currBoard = JSON.parse(JSON.stringify(context.state.currBoard))
+      currBoard.members.filter(member => member._id !== user._id)
+      const board = BoardService.edit(currBoard)
+      context.commit({ type: 'setCurrBoard', board })
+    },
+    async addMembers(context, { user }) {
+      const currBoard = JSON.parse(JSON.stringify(context.state.currBoard))
+      currBoard.members.push(user)
+      const board = await BoardService.edit(board)
+      context.commit({ type: 'setCurrBoard', board })
+      SocketService.emit('update board', board)
+
+    },
     async removeBoard(context, { boardId }) {
       await BoardService.remove(boardId)
       context.commit({ type: 'removeBoard', boardId })

@@ -10,7 +10,9 @@ const http = require('http').createServer(app);
 const io = require('socket.io')(http);
 
 const boardRoutes = require('./api/board/board.routes')
+const userRoutes = require('./api/user/user.routes')
 const connectSockets = require('./api/socket/socket.routes')
+const authRoutes = require('./api/auth/auth.routes')
 
 
 app.use(cookieParser())
@@ -33,6 +35,8 @@ if (process.env.NODE_ENV !== 'production') {
 
 // routes
 app.use('/api/board', boardRoutes)
+app.use('/api/user', userRoutes)
+app.use('/api/auth', authRoutes)
 connectSockets(io)
 
 if (process.env.NODE_ENV === 'production') {
