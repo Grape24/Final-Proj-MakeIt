@@ -6,7 +6,7 @@
         <i class="fas fa-times"></i>
       </div>
       <div class="activity" :key="index" v-for="(activity, index) in activities">
-        {{activity.task}} in list {{activity.inTopic}} was {{activity.activity}}
+        {{activity.task}} in list {{activity.inTopic}} was {{activity.activity}} by: {{activity.by}}
         <div class="time">{{convertTimeStampFormat(activity.DoneAt)}}</div>
       </div>
     </div>
@@ -14,26 +14,26 @@
 </template>
 
 <script>
-import moment from "moment"
+import moment from "moment";
 export default {
   props: {
     topics: Object,
     currBoardId: String
   },
-  methods:{
-    closeMenu(){
-      this.$emit('menuClosed');
+  methods: {
+    closeMenu() {
+      this.$emit("menuClosed");
     },
-    convertTimeStampFormat(ts){
-      console.log(ts)
-      return moment.utc(ts+12000).calendar();
+    convertTimeStampFormat(ts) {
+      ts = ts + 1000 * 60 * 60 * 2;
+      return moment.utc(ts).calendar();
     }
   },
   computed: {
     activities() {
-        return this.$store.getters.activities
+      return this.$store.getters.activities;
     }
-  },
+  }
 };
 </script>
 

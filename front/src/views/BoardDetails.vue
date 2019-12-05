@@ -1,9 +1,17 @@
 <template>
   <section class="board-container">
+<<<<<<< HEAD
     <div class="flex">
       <h2 class="board-name" v-if="currBoard">{{currBoard.name}}</h2>
       <button class="delete-board-btn" @click="removeBoard">Delete board</button>
     </div>
+=======
+    <h2 class="board-name" v-if="currBoard">{{currBoard.name}}</h2>
+    <div v-if="currBoard">
+      <img v-for="member in currBoard.members" :key="member._id" :src="member.imgUrl" />
+    </div>
+    <button @click="removeBoard">Delete board</button>
+>>>>>>> dev
     <button class="activites-menu" @click="activitiesLogIsOpen = !activitiesLogIsOpen">
       <i class="fas fa-ellipsis-h"></i>
       Show Activities
@@ -107,23 +115,38 @@ export default {
       });
       this.$store.dispatch({ type: "setBoard", board });
     },
-    // updateListt({ topic, topicName }) {
-    //   let board = JSON.parse(JSON.stringify(this.currBoard));
-    //   board.topicTasksMap[topicName] = topic;
-    //   this.$store.dispatch({ type: "setBoard", board });
-    // },
     push(id) {
       this.$router.push(`/board/${id}/activties`);
     }
   },
   created() {
     this.boardId = this.$route.params._id;
-    this.currBoard = JSON.parse(JSON.stringify(this.$store.getters.currBoard));
-    this.$store.dispatch({ type: "getCurrBoard", id: this.boardId });
-    SocketService.emit("load board", this.$store.getters.currBoard);
-    SocketService.on("board updated", board => {
-      this.$store.commit({ type: "setCurrBoard", board });
-    });
+    this.$store
+      .dispatch({ type: "getCurrBoard", id: this.boardId })
+      .then(() => {
+        if (sessionStorage.user) {
+          const user = JSON.parse(sessionStorage.user);
+          let board = this.$store.getters.currBoard;
+          if (!board.members.find(member => member._id === user._id)) {
+            this.$store.dispatch({ type: "addMembers", user });
+          }
+        }
+        this.currBoard = JSON.parse(
+          JSON.stringify(this.$store.getters.currBoard)
+        );
+        SocketService.emit("load board", this.currBoard);
+        SocketService.on("board updated", board => {
+          this.$store.commit({ type: "setCurrBoard", board });
+        });
+      });
+  },
+  destroyed() {
+    if (sessionStorage.user) {
+      const user = JSON.parse(sessionStorage.user);
+      this.currBoard.members.filter(member => member._id === user._id);
+      this.$store.dispatch({ type: "updateBoard", board: this.currBoard });
+    }
+    SocketService.emit("exit board");
   }
 };
 </script>

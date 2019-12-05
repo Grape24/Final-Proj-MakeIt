@@ -8,8 +8,10 @@ function connectSockets(io) {
             io.to(socket.board).emit('board loaded', board)
         })
         socket.on('update board', board => {
-            console.log(board)
             io.to(socket.board).emit('board updated', board)
+        })
+        socket.on('exit board', () => {
+            socket.leave(socket.board)
         })
     })
 }
