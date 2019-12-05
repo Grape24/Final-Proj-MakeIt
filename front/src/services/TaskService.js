@@ -11,12 +11,17 @@ export default {
 async function remove(boardId, taskId, topicName) {
     let board = await BoardService.getById(boardId)
     let task = await getTaskById(boardId, taskId)
+    var user;
+    if (sessionStorage.user) user = JSON.parse(sessionStorage.user)
+    else user = { username: 'guest' }
+
     board.topicTasksMap[topicName] = board.topicTasksMap[topicName].filter(task => task.id !== taskId)
     board.activites.push({
         task: task.title,
         activity: 'removed',
         inTopic: topicName,
-        DoneAt: Date.now()
+        DoneAt: Date.now(),
+        by: user.username
     }
     )
     board = await BoardService.edit(board)
@@ -25,12 +30,16 @@ async function remove(boardId, taskId, topicName) {
 
 async function edit(boardId, task, topicName) {
     let board = await BoardService.getById(boardId)
+    var user;
+    if (sessionStorage.user) user = JSON.parse(sessionStorage.user)
+    else user = { username: 'guest' }
     let idx = board.topicTasksMap[topicName].findIndex(todo => todo.id === task.id)
     board.activites.push({
         task: task.title,
         activity: 'updated',
         inTopic: topicName,
-        DoneAt: Date.now()
+        DoneAt: Date.now(),
+        by: user.username
     })
     board.topicTasksMap[topicName].splice(idx, 1, task)
     return board
@@ -42,7 +51,7 @@ async function getTaskById(boardId, taskId) {
     for (let i = 0; i < mat.length; i++) {
         for (let j = 0; j < mat[i].length; j++) {
             let task = (mat[i][j])
-            if (task.id === taskId){
+            if (task.id === taskId) {
                 return task
             }
         }
@@ -53,12 +62,16 @@ async function add(boardId, task, topicName) {
     let board = await BoardService.getById(boardId)
     task.id = _makeId()
     task.createdById = null
+    var user;
+    if (sessionStorage.user) user = JSON.parse(sessionStorage.user)
+    else user = { username: 'guest' }
     board.topicTasksMap[topicName].push(task)
     board.activites.push({
         task: task.title,
         activity: 'added',
         inTopic: topicName,
-        DoneAt: Date.now()
+        DoneAt: Date.now(),
+        by: user.username
     })
     let newBoard = await BoardService.edit(board)
     return newBoard

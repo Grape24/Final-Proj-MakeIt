@@ -2,7 +2,7 @@
   <section class="board-container">
     <h2 class="board-name" v-if="currBoard">{{currBoard.name}}</h2>
     <div v-if="currBoard">
-      <img v-for="member in currBoard.members" :key="member._id" :src="member.imgUrl" alt />
+      <img v-for="member in currBoard.members" :key="member._id" :src="member.imgUrl" />
     </div>
     <button @click="removeBoard">Delete board</button>
     <button class="activites-menu" @click="activitiesLogIsOpen = !activitiesLogIsOpen">
@@ -112,18 +112,31 @@ export default {
   },
   created() {
     this.boardId = this.$route.params._id;
-    this.$store.dispatch({ type: "getCurrBoard", id: this.boardId });
-    this.currBoard = JSON.parse(JSON.stringify(this.$store.getters.currBoard));
-    const user = sessionStorage.user;
-    if (user && this.currBoard) {
-      this.$store.dispatch({ type: "addMembers", user });
-    }
-    SocketService.emit("load board", this.$store.getters.currBoard);
-    SocketService.on("board updated", board => {
-      this.$store.commit({ type: "setCurrBoard", board });
-    });
+    this.$store
+      .dispatch({ type: "getCurrBoard", id: this.boardId })
+      .then(() => {
+        if (sessionStorage.user) {
+          const user = JSON.parse(sessionStorage.user);
+          let board = this.$store.getters.currBoard;
+          if (!board.members.find(member => member._id === user._id)) {
+            this.$store.dispatch({ type: "addMembers", user });
+          }
+        }
+        this.currBoard = JSON.parse(
+          JSON.stringify(this.$store.getters.currBoard)
+        );
+        SocketService.emit("load board", this.currBoard);
+        SocketService.on("board updated", board => {
+          this.$store.commit({ type: "setCurrBoard", board });
+        });
+      });
   },
   destroyed() {
+    if (sessionStorage.user) {
+      const user = JSON.parse(sessionStorage.user);
+      this.currBoard.members.filter(member => member._id === user._id);
+      this.$store.dispatch({ type: "updateBoard", board: this.currBoard });
+    }
     SocketService.emit("exit board");
   }
 };

@@ -6,7 +6,7 @@
         <i class="fas fa-times"></i>
       </div>
       <div class="activity" :key="index" v-for="(activity, index) in activities">
-        {{activity.task}} in list {{activity.inTopic}} was {{activity.activity}}
+        {{activity.task}} in list {{activity.inTopic}} was {{activity.activity}} by: {{activity.by}}
         <div class="time">{{convertTimeStampFormat(activity.DoneAt)}}</div>
       </div>
     </div>

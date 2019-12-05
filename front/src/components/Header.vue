@@ -26,17 +26,13 @@ export default {
   },
   methods: {
     logout() {
-      sessionStorage.clear();
       this.$emit("loggedOut");
-      this.$router.push("/");
     }
   },
   computed: {
     loggedinUser() {
-      if (sessionStorage.user) {
-        return JSON.parse(sessionStorage.user);
-      } else return null;
+      return this.$store.getters.loggedinUser;
     }
   }
-};
+}
 </script>
