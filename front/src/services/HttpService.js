@@ -2,15 +2,9 @@
 
 import router from '@/router'
 
-<<<<<<< HEAD
-const BASE_URL = (process.env.NODE_ENV !== 'development')
-    ? '/api/board'
-    : '//localhost:3000/api/board/'
-=======
 const BASE_URL = process.env.NODE_ENV === 'production'
     ? '/api/'
     : '//localhost:3000/api/'
->>>>>>> dev
 
 
 import Axios from 'axios';

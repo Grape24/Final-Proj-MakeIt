@@ -1,17 +1,10 @@
 <template>
   <section class="board-container">
-<<<<<<< HEAD
-    <div class="flex">
-      <h2 class="board-name" v-if="currBoard">{{currBoard.name}}</h2>
-      <button class="delete-board-btn" @click="removeBoard">Delete board</button>
-    </div>
-=======
     <h2 class="board-name" v-if="currBoard">{{currBoard.name}}</h2>
     <div v-if="currBoard">
       <img v-for="member in currBoard.members" :key="member._id" :src="member.imgUrl" />
     </div>
     <button @click="removeBoard">Delete board</button>
->>>>>>> dev
     <button class="activites-menu" @click="activitiesLogIsOpen = !activitiesLogIsOpen">
       <i class="fas fa-ellipsis-h"></i>
       Show Activities
