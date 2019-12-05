@@ -1,0 +1,54 @@
+.add-topic-input{
+    height: rem(50px);
+    width: rem(220px);
+    border: none;
+    background-color: rgba(0, 0, 0, 0.075);
+    border-radius: 5px;
+    margin: rem(10px);
+    padding: rem(10px);
+    cursor: pointer;
+    font-size: rem(15px);
+    font-family: $font1;
+}
+
+.adding-topic-selected{
+    background-color: white;
+    outline: none;
+    box-shadow: inset 0 0 0 2px #0079bf;
+}
+
+.adding-topic{
+    z-index: 1;
+    background-color: $clr3;
+    border-radius: 5px;
+    margin: rem(10px);
+    height: rem(120px);
+}
+.add-topic-input-container{
+    z-index:1;
+    margin: rem(10px);
+    height: rem(120px);
+    transition: 0.1s ease-out;
+}
+
+.add-topic-btn{
+    display:block;
+    border: none;
+    margin-left: rem(10px);
+    border-radius: 3px;
+    background-color: #5aac44;
+    color: white;
+    cursor:pointer;
+    font-size: rem(15px);
+    padding: rem(10px);
+}
+
+.close-modal-btn{
+    border:none;
+    background-color: $clr3;
+    margin-left: rem(10px);
+    font-size: rem(15px);
+    cursor:pointer;
+    outline: none;
+
+}

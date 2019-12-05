@@ -1,9 +1,10 @@
-import router from '@/router'
-import store from '@/store'
+'use strict'
 
-const BASE_URL = process.env.NODE_ENV === 'production'
-    ? '/api/'
-    : '//localhost:3000/api/'
+import router from '@/router'
+
+const BASE_URL = (process.env.NODE_ENV !== 'development')
+    ? '/api/board'
+    : '//localhost:3000/api/board/'
 
 
 import Axios from 'axios';

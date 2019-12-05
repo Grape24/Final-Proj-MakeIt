@@ -1,0 +1,27 @@
+.header {
+ background-color: rgba(0, 0, 0, 0.39);
+}
+
+.nav-links-container{
+    a{
+        padding: rem(20px);
+        color: white;
+        align-self: center;
+    }
+}
+
+.home-icon-container{
+    background-color: rgba(255, 255, 255, 0.26);
+    align-self: center;
+    color: white;
+    border-radius: 3px;
+    padding: rem(10px);
+    margin: rem(5px);
+}
+
+.logo{
+    font-family: $font4;
+    color: rgba(255, 255, 255, 0.616);
+    font-size: rem(25px);
+}
+
