@@ -1,30 +1,4 @@
 
-<<<<<<< HEAD
-Mon, 02 Dec 2019 16:09:11 GMT - Info - Server is running on port: 3000
-Mon, 02 Dec 2019 17:40:31 GMT - Info - Server is running on port: 3000
-Mon, 02 Dec 2019 17:40:35 GMT - Info - Server is running on port: 3000
-Mon, 02 Dec 2019 17:40:36 GMT - Info - Server is running on port: 3000
-Tue, 03 Dec 2019 06:26:27 GMT - Info - Server is running on port: 3000
-Tue, 03 Dec 2019 12:58:16 GMT - Info - Server is running on port: 3000
-Tue, 03 Dec 2019 12:59:13 GMT - Info - Server is running on port: 3000
-Tue, 03 Dec 2019 16:02:09 GMT - Info - Server is running on port: 3000
-Tue, 03 Dec 2019 16:05:42 GMT - Info - Server is running on port: 3000
-Wed, 04 Dec 2019 07:04:34 GMT - Info - Server is running on port: 3000
-Wed, 04 Dec 2019 09:53:00 GMT - Info - Server is running on port: 3000
-Wed, 04 Dec 2019 10:37:59 GMT - Info - Server is running on port: 3000
-Wed, 04 Dec 2019 11:57:29 GMT - Info - Server is running on port: 3000
-Wed, 04 Dec 2019 12:30:36 GMT - Info - Server is running on port: 3000
-Wed, 04 Dec 2019 13:47:55 GMT - Info - Server is running on port: 3000
-Wed, 04 Dec 2019 13:49:39 GMT - Info - Server is running on port: 3000
-Wed, 04 Dec 2019 13:57:25 GMT - Info - Server is running on port: 3000
-Wed, 04 Dec 2019 13:58:42 GMT - Info - Server is running on port: 3000
-Wed, 04 Dec 2019 14:01:00 GMT - Info - Server is running on port: 3000
-Wed, 04 Dec 2019 14:10:57 GMT - Info - Server is running on port: 3000
-Wed, 04 Dec 2019 15:33:59 GMT - Info - Server is running on port: 3000
-Wed, 04 Dec 2019 16:03:14 GMT - Info - Server is running on port: 3000
-Wed, 04 Dec 2019 17:51:36 GMT - Info - Server is running on port: 3000
-Thu, 05 Dec 2019 06:37:51 GMT - Info - Server is running on port: 3000
-=======
 Sun, 01 Dec 2019 10:11:43 GMT - Info - Server is running on port: 4000
 Sun, 01 Dec 2019 10:12:33 GMT - Info - Server is running on port: 3001
 Sun, 01 Dec 2019 10:18:31 GMT - Info - Server is running on port: 3001
@@ -492,8 +466,21 @@ Wed, 04 Dec 2019 19:50:37 GMT - Info - Server is running on port: 3000
 Wed, 04 Dec 2019 19:51:18 GMT - Info - Server is running on port: 3000
 Wed, 04 Dec 2019 19:51:37 GMT - Info - Server is running on port: 3000
 Thu, 05 Dec 2019 06:19:29 GMT - Info - Server is running on port: 3000
->>>>>>> 1934a2c273819dbab16b42ff0b97601c77f1da3a
 
 Thu, 05 Dec 2019 07:13:12 GMT - Info - Server is running on port: 3000
 Thu, 05 Dec 2019 10:41:06 GMT - Info - Server is running on port: 3000
 Thu, 05 Dec 2019 10:45:34 GMT - Info - Server is running on port: 3000
+Thu, 05 Dec 2019 10:46:08 GMT - Info - Server is running on port: 3000
+Thu, 05 Dec 2019 10:50:32 GMT - Info - Server is running on port: 3000
+Thu, 05 Dec 2019 10:56:48 GMT - Info - Server is running on port: 3000
+Thu, 05 Dec 2019 11:16:14 GMT - Info - Server is running on port: 3000
+Thu, 05 Dec 2019 11:18:35 GMT - Info - Server is running on port: 3000
+Thu, 05 Dec 2019 11:19:00 GMT - Info - Server is running on port: 3000
+Thu, 05 Dec 2019 11:25:11 GMT - Info - Server is running on port: 3000
+Thu, 05 Dec 2019 11:31:56 GMT - Info - Server is running on port: 3000
+Thu, 05 Dec 2019 11:35:17 GMT - Info - Server is running on port: 3000
+Thu, 05 Dec 2019 11:38:29 GMT - Info - Server is running on port: 3000
+Thu, 05 Dec 2019 15:17:22 GMT - Debug - eavvss@gmail.com, ee, jknkerg
+Thu, 05 Dec 2019 15:17:22 GMT - Debug - auth.service - signup with email: eavvss@gmail.com, username: ee
+Thu, 05 Dec 2019 15:17:23 GMT - Debug - auth.route - new account created: {"email":"eavvss@gmail.com","password":"$2b$10$mFQ5.RYQpKIEn2BRBUBRmO6bL5IdnoLq3BQnsMb61Tp7XTixnSnVK","username":"ee","_id":"5de91f82b24aa457748156ac"}
+Thu, 05 Dec 2019 15:17:23 GMT - Debug - auth.service - login with email: eavvss@gmail.com
