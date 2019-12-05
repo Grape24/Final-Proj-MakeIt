@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 Mon, 02 Dec 2019 16:09:11 GMT - Info - Server is running on port: 3000
 Mon, 02 Dec 2019 17:40:31 GMT - Info - Server is running on port: 3000
 Mon, 02 Dec 2019 17:40:35 GMT - Info - Server is running on port: 3000
@@ -23,3 +24,472 @@ Wed, 04 Dec 2019 15:33:59 GMT - Info - Server is running on port: 3000
 Wed, 04 Dec 2019 16:03:14 GMT - Info - Server is running on port: 3000
 Wed, 04 Dec 2019 17:51:36 GMT - Info - Server is running on port: 3000
 Thu, 05 Dec 2019 06:37:51 GMT - Info - Server is running on port: 3000
+=======
+Sun, 01 Dec 2019 10:11:43 GMT - Info - Server is running on port: 4000
+Sun, 01 Dec 2019 10:12:33 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 10:18:31 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 10:19:01 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 10:21:13 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 10:21:14 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 10:26:01 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 10:26:41 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 10:30:21 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 10:30:29 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 10:31:47 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 10:32:43 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 10:33:08 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 10:33:10 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 10:34:12 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 10:34:20 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 10:36:54 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 10:37:04 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 10:48:50 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 11:00:13 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 11:00:19 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 11:08:18 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 11:08:27 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 11:08:28 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 11:08:33 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 11:08:34 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 11:08:47 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 11:08:47 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 11:09:03 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 11:09:07 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 11:09:08 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 11:45:19 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 11:50:35 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 11:51:33 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:02:07 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:02:08 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:09:00 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:09:19 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:09:20 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:11:20 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:11:21 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:12:53 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:13:29 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:13:42 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:14:20 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:14:21 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:14:22 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:14:45 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:15:08 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:15:09 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:15:16 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:15:17 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:15:32 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:16:22 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:16:23 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:16:30 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:16:30 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:16:57 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:16:59 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:19:23 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:21:22 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:21:44 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:21:45 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:22:03 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:22:04 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:22:28 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:22:41 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:22:42 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:22:51 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:22:51 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:23:18 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:23:19 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:23:47 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:23:53 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:24:01 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:24:05 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:24:14 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:24:16 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:24:41 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:26:47 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:26:48 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:34:53 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:40:05 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:40:08 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:41:40 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:41:42 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:41:43 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:43:08 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:43:09 GMT - Info - Server is running on port: 3001
+Sun, 01 Dec 2019 12:43:37 GMT - Info - Server is running on port: 3000
+Sun, 01 Dec 2019 13:09:10 GMT - Info - Server is running on port: 3000
+Sun, 01 Dec 2019 13:09:29 GMT - Info - Server is running on port: 3000
+Sun, 01 Dec 2019 13:09:44 GMT - Info - Server is running on port: 3000
+Sun, 01 Dec 2019 13:12:45 GMT - Info - Server is running on port: 3000
+Sun, 01 Dec 2019 13:13:26 GMT - Info - Server is running on port: 3000
+Sun, 01 Dec 2019 13:13:58 GMT - Info - Server is running on port: 3000
+Sun, 01 Dec 2019 13:40:19 GMT - Info - Server is running on port: 3000
+Sun, 01 Dec 2019 14:16:26 GMT - Info - Server is running on port: 3000
+Sun, 01 Dec 2019 14:16:32 GMT - Info - Server is running on port: 3000
+Sun, 01 Dec 2019 14:19:06 GMT - Info - Server is running on port: 3000
+Sun, 01 Dec 2019 15:23:27 GMT - Info - Server is running on port: 3000
+Mon, 02 Dec 2019 07:08:44 GMT - Info - Server is running on port: 3000
+Mon, 02 Dec 2019 12:57:19 GMT - Info - Server is running on port: 3000
+Mon, 02 Dec 2019 16:39:59 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 11:15:25 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 12:24:40 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 12:25:04 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 12:25:07 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 12:25:19 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 13:04:05 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 13:13:15 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 13:24:34 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 13:58:38 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 14:05:04 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 14:05:17 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 14:05:22 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 14:35:02 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 14:35:03 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 14:35:36 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 14:35:43 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 14:35:44 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 14:36:26 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 14:36:27 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 14:36:54 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 14:36:56 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 14:37:26 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 14:37:29 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 14:37:30 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 14:37:34 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 14:37:35 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 14:38:30 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 14:38:31 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 14:49:46 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 14:50:00 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 14:50:02 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 14:50:19 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 14:50:36 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 14:50:37 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 15:12:42 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 15:12:45 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 15:15:12 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 15:23:28 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 15:24:32 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 15:24:33 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 15:24:51 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 15:27:15 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 15:27:15 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 15:27:38 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 15:27:39 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 15:28:07 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 15:28:08 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 15:29:06 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 15:32:25 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 15:32:26 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 15:33:14 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 15:34:33 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 15:34:34 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 15:47:27 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 16:40:08 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 16:41:09 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 16:41:12 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 16:41:40 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 16:42:21 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 16:42:33 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 16:42:49 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 16:43:11 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 16:43:45 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 16:43:55 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 16:43:58 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 16:43:59 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 16:44:14 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 17:16:41 GMT - Info - Server is running on port: 3000
+Tue, 03 Dec 2019 17:16:46 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 06:46:10 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 06:52:08 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 06:52:09 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 06:52:15 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 06:52:19 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 06:53:04 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 06:59:18 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 07:01:27 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 07:09:09 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 08:01:55 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 08:06:57 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 08:07:31 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 08:07:39 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 08:07:48 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 08:07:52 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 08:07:58 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 08:21:35 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 08:23:19 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 08:23:22 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 08:23:32 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 08:23:38 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 08:23:46 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 08:24:23 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 08:35:25 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 08:47:23 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 08:47:24 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 08:50:22 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 08:50:24 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 08:50:26 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 08:50:56 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 08:51:02 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 08:51:49 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 08:51:54 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 08:52:06 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 08:52:16 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 08:53:27 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 08:53:28 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 08:54:30 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 08:54:50 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 09:26:21 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 09:26:28 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 09:27:15 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 09:28:51 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 09:29:22 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 09:29:39 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 09:30:14 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 09:30:36 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 09:30:56 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 09:33:14 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 09:36:42 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 09:37:05 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 09:37:43 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 09:38:10 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 09:38:30 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 09:38:45 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 09:39:33 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 09:39:43 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 09:39:46 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 09:40:07 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 09:40:22 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 10:06:19 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 10:07:01 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 10:07:59 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 10:28:08 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 10:28:22 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 13:13:18 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 13:13:19 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 13:39:53 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 13:56:42 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 14:59:17 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 14:59:27 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 14:59:28 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 14:59:48 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 15:00:25 GMT - Debug - kkk, kkk, jdj
+Wed, 04 Dec 2019 15:00:25 GMT - Debug - auth.service - signup with email: kkk, username: kkk
+Wed, 04 Dec 2019 15:00:25 GMT - Debug - auth.route - new account created: {"email":"kkk","password":"$2b$10$NMyu8j9dJz3DhbJdv4ZEMe50FvFWtS5fxPQcbZH.g0uPkCix4E.Di","username":"kkk","_id":"5de7ca093a6b703ba461e0c3"}
+Wed, 04 Dec 2019 15:00:25 GMT - Debug - auth.service - login with email: kkk
+Wed, 04 Dec 2019 15:00:25 GMT - Error - [SIGNUP] TypeError: userService.getByEmail is not a function
+Wed, 04 Dec 2019 15:05:24 GMT - Debug - ks, lll, lll
+Wed, 04 Dec 2019 15:05:24 GMT - Debug - auth.service - signup with email: ks, username: lll
+Wed, 04 Dec 2019 15:05:24 GMT - Debug - auth.route - new account created: {"email":"ks","password":"$2b$10$cOwLaiL0kQQuxZONsoaq9.Nho38kjXWtkuAZmkGCencFBA7YBNYgG","username":"lll","_id":"5de7cb343a6b703ba461e0c4"}
+Wed, 04 Dec 2019 15:05:24 GMT - Debug - auth.service - login with email: ks
+Wed, 04 Dec 2019 15:05:24 GMT - Error - [SIGNUP] TypeError: userService.getByEmail is not a function
+Wed, 04 Dec 2019 15:05:47 GMT - Debug - sj, l, ls
+Wed, 04 Dec 2019 15:05:47 GMT - Debug - auth.service - signup with email: sj, username: l
+Wed, 04 Dec 2019 15:05:48 GMT - Debug - auth.route - new account created: {"email":"sj","password":"$2b$10$6a0/dMrMqJ/k73KE7TAHmuWTPWqX87QbofYCctXE3wXgfHDnjwEsC","username":"l","_id":"5de7cb4c3a6b703ba461e0c5"}
+Wed, 04 Dec 2019 15:05:48 GMT - Debug - auth.service - login with email: sj
+Wed, 04 Dec 2019 15:05:48 GMT - Error - [SIGNUP] TypeError: userService.getByEmail is not a function
+Wed, 04 Dec 2019 15:07:07 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 15:07:15 GMT - Debug - sj, l, ls
+Wed, 04 Dec 2019 15:07:15 GMT - Debug - auth.service - signup with email: sj, username: l
+Wed, 04 Dec 2019 15:07:17 GMT - Debug - auth.route - new account created: {"email":"sj","password":"$2b$10$JLeUqvw8ff/8Zp6BTFRKD.hscdZ0gAIlqvALH4a.TkIBdwybtVrUa","username":"l","_id":"5de7cba5da2e1731e827c255"}
+Wed, 04 Dec 2019 15:07:17 GMT - Debug - auth.service - login with email: sj
+Wed, 04 Dec 2019 15:07:17 GMT - Error - [SIGNUP] TypeError: userService.getByEmail is not a function
+Wed, 04 Dec 2019 15:08:19 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 15:08:21 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 15:08:28 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 15:08:50 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 15:08:56 GMT - Debug - sj, l, ls
+Wed, 04 Dec 2019 15:08:56 GMT - Debug - auth.service - signup with email: sj, username: l
+Wed, 04 Dec 2019 15:08:59 GMT - Debug - sj, l, ls
+Wed, 04 Dec 2019 15:08:59 GMT - Debug - auth.service - signup with email: sj, username: l
+Wed, 04 Dec 2019 15:09:01 GMT - Debug - auth.route - new account created: {"email":"sj","password":"$2b$10$lMJL1PEvB2fFyi4QzJ6duekcE4fjiKjEja0HKYkRuxi0zYQ8GQ3fm","username":"l","_id":"5de7cc0cc96699483c52cb17"}
+Wed, 04 Dec 2019 15:09:01 GMT - Debug - auth.service - login with email: sj
+Wed, 04 Dec 2019 15:09:01 GMT - Error - [SIGNUP] TypeError: userService.getByEmail is not a function
+Wed, 04 Dec 2019 15:09:02 GMT - Debug - auth.route - new account created: {"email":"sj","password":"$2b$10$dkdvV.WlAjQI7pZxrjthEuXZbrR.6.fcVUmlxox111qA6SZhVJlJe","username":"l","_id":"5de7cc0ec96699483c52cb18"}
+Wed, 04 Dec 2019 15:09:02 GMT - Debug - auth.service - login with email: sj
+Wed, 04 Dec 2019 15:09:02 GMT - Error - [SIGNUP] TypeError: userService.getByEmail is not a function
+Wed, 04 Dec 2019 15:09:46 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 15:09:57 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 15:09:58 GMT - Debug - sj, l, ls
+Wed, 04 Dec 2019 15:09:58 GMT - Debug - auth.service - signup with email: sj, username: l
+Wed, 04 Dec 2019 15:09:59 GMT - Debug - auth.route - new account created: {"email":"sj","password":"$2b$10$2vXPob/ER9mUYeQUhYLbLO3z/ye28KuyXItxzz3FIKaJugvIYmdFK","username":"l","_id":"5de7cc47305ade4758a61700"}
+Wed, 04 Dec 2019 15:09:59 GMT - Debug - auth.service - login with email: sj
+Wed, 04 Dec 2019 15:09:59 GMT - Error - [SIGNUP] TypeError: userService.getByEmail is not a function
+Wed, 04 Dec 2019 15:10:22 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 15:10:42 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 15:11:22 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 15:11:26 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 15:11:33 GMT - Debug - sj, l, ls
+Wed, 04 Dec 2019 15:11:33 GMT - Debug - auth.service - signup with email: sj, username: l
+Wed, 04 Dec 2019 15:11:34 GMT - Debug - auth.route - new account created: {"email":"sj","password":"$2b$10$l9nfZyxrRfCeoXfEPtxxI.Xr.2rGpbE4oVT7pid194Quu1eNVT8nG","username":"l","_id":"5de7cca635504b282466f235"}
+Wed, 04 Dec 2019 15:11:34 GMT - Debug - auth.service - login with email: sj
+Wed, 04 Dec 2019 15:11:34 GMT - Error - [SIGNUP] TypeError: userService.getByEmail is not a function
+Wed, 04 Dec 2019 15:12:02 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 15:12:05 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 15:13:38 GMT - Debug - x, x, x
+Wed, 04 Dec 2019 15:13:38 GMT - Debug - auth.service - signup with email: x, username: x
+Wed, 04 Dec 2019 15:13:39 GMT - Debug - auth.route - new account created: {"email":"x","password":"$2b$10$/vTKN5A6yTx57TogyXCW4.pRhwCNgl3RpmTGOkTlEMilRupU0bx.i","username":"x","_id":"5de7cd23549d714604eb5f98"}
+Wed, 04 Dec 2019 15:13:39 GMT - Debug - auth.service - login with email: x
+Wed, 04 Dec 2019 15:13:39 GMT - Error - [SIGNUP] TypeError: userService.getByEmail is not a function
+Wed, 04 Dec 2019 15:15:21 GMT - Debug - ddd, undefined, sss
+Wed, 04 Dec 2019 15:15:21 GMT - Debug - auth.service - signup with email: ddd, username: undefined
+Wed, 04 Dec 2019 15:15:21 GMT - Error - [SIGNUP] email, username and password are required!
+Wed, 04 Dec 2019 15:16:38 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 15:16:45 GMT - Debug - xww, xd, xd
+Wed, 04 Dec 2019 15:16:45 GMT - Debug - auth.service - signup with email: xww, username: xd
+Wed, 04 Dec 2019 15:16:46 GMT - Debug - auth.route - new account created: {"email":"xww","password":"$2b$10$1JJIIAwUCMOkz0xpA27z5.Ew3E9ZknIFJV6A5S.uva8pNSDYCSKh2","username":"xd","_id":"5de7cddecee2dc17042d7379"}
+Wed, 04 Dec 2019 15:16:46 GMT - Debug - auth.service - login with email: xww
+Wed, 04 Dec 2019 15:16:46 GMT - Error - [SIGNUP] TypeError: userService.getByEmail is not a function
+Wed, 04 Dec 2019 15:17:05 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 15:20:53 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 15:21:32 GMT - Debug - dj, q;, sl
+Wed, 04 Dec 2019 15:21:32 GMT - Debug - auth.service - signup with email: dj, username: q;
+Wed, 04 Dec 2019 15:21:34 GMT - Debug - auth.route - new account created: {"email":"dj","password":"$2b$10$4dymhtResztLIjxmTyK.lOey6h5x5z0d1en1XBFY9B/3wL64ibym.","username":"q;","_id":"5de7cefea26e443624ba6a8f"}
+Wed, 04 Dec 2019 15:21:34 GMT - Debug - auth.service - login with email: dj
+Wed, 04 Dec 2019 15:21:34 GMT - Error - [SIGNUP] TypeError: userService.getByEmail is not a function
+Wed, 04 Dec 2019 15:21:52 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 15:22:00 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 15:22:02 GMT - Debug - dj, q;, sl
+Wed, 04 Dec 2019 15:22:02 GMT - Debug - auth.service - signup with email: dj, username: q;
+Wed, 04 Dec 2019 15:22:04 GMT - Debug - auth.route - new account created: {"email":"dj","password":"$2b$10$DfIKjESbC4bykTGLKAsTw.L1YQJ6tnqVf4FjB2sxd73Rmp4Gau3C2","username":"q;","_id":"5de7cf1be6b9003eac4b48d0"}
+Wed, 04 Dec 2019 15:22:04 GMT - Debug - auth.service - login with email: dj
+Wed, 04 Dec 2019 15:22:04 GMT - Error - [SIGNUP] TypeError: userService.getByEmail is not a function
+Wed, 04 Dec 2019 15:22:22 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 15:22:23 GMT - Debug - dj, q;, sl
+Wed, 04 Dec 2019 15:22:23 GMT - Debug - auth.service - signup with email: dj, username: q;
+Wed, 04 Dec 2019 15:22:24 GMT - Debug - auth.route - new account created: {"email":"dj","password":"$2b$10$1wVote/ZOEclpjCAF0oM.OPchciRPGAZNFIeW5DM60MgX7RHq5nLu","username":"q;","_id":"5de7cf302246a8517c2d1e6c"}
+Wed, 04 Dec 2019 15:22:24 GMT - Debug - auth.service - login with email: dj
+Wed, 04 Dec 2019 15:22:24 GMT - Error - [SIGNUP] TypeError: userService.getByEmail is not a function
+Wed, 04 Dec 2019 15:22:55 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 15:23:18 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 15:24:37 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 15:24:37 GMT - Debug - dj, q;, sl
+Wed, 04 Dec 2019 15:24:37 GMT - Debug - auth.service - signup with email: dj, username: q;
+Wed, 04 Dec 2019 15:24:39 GMT - Debug - auth.route - new account created: {"email":"dj","password":"$2b$10$vLU195d//5xD1zv0cHEMPuFRyUKDNzpxkghzuiHrwys758fAlPowa","username":"q;","_id":"5de7cfb7f7ebba25bc92b2b9"}
+Wed, 04 Dec 2019 15:24:39 GMT - Debug - auth.service - login with email: dj
+Wed, 04 Dec 2019 15:24:39 GMT - Error - [SIGNUP] TypeError: userService.getByEmail is not a function
+Wed, 04 Dec 2019 15:25:09 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 15:25:12 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 15:25:14 GMT - Debug - dj, q;, sl
+Wed, 04 Dec 2019 15:25:14 GMT - Debug - auth.service - signup with email: dj, username: q;
+Wed, 04 Dec 2019 15:25:16 GMT - Debug - auth.route - new account created: {"email":"dj","password":"$2b$10$rMeY3llvFgRUCQipYzwnk.sYcWH27GEvREblem1iiMremJyIK.JUa","username":"q;","_id":"5de7cfdb6facd355789608d0"}
+Wed, 04 Dec 2019 15:25:16 GMT - Debug - auth.service - login with email: dj
+Wed, 04 Dec 2019 15:25:16 GMT - Error - [SIGNUP] TypeError: userService.getByEmail is not a function
+Wed, 04 Dec 2019 15:25:46 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 15:25:57 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 15:26:12 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 15:26:20 GMT - Debug - dj, q;, sl
+Wed, 04 Dec 2019 15:26:20 GMT - Debug - auth.service - signup with email: dj, username: q;
+Wed, 04 Dec 2019 15:26:22 GMT - Debug - auth.route - new account created: {"email":"dj","password":"$2b$10$nbCjegS4LixlhQkO7d9.3.MwSucpyomzfnLs.A4RGHkwYc32neAtO","username":"q;","_id":"5de7d01e715a34549ce579cf"}
+Wed, 04 Dec 2019 15:26:22 GMT - Debug - auth.service - login with email: dj
+Wed, 04 Dec 2019 15:26:22 GMT - Error - [SIGNUP] TypeError: userService.getByEmail is not a function
+Wed, 04 Dec 2019 15:26:46 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 15:27:53 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 15:28:01 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 15:28:07 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 15:28:14 GMT - Debug - ssl, qp, ;;;
+Wed, 04 Dec 2019 15:28:14 GMT - Debug - auth.service - signup with email: ssl, username: qp
+Wed, 04 Dec 2019 15:28:15 GMT - Debug - auth.route - new account created: {"email":"ssl","password":"$2b$10$iCKk.wPz/FT9TgE7u3GI7eiw3fOaZsEy6qFqP/dY9A9O/LCHlRC1O","username":"qp","_id":"5de7d08fd8086e51a47634ff"}
+Wed, 04 Dec 2019 15:28:15 GMT - Debug - auth.service - login with email: ssl
+Wed, 04 Dec 2019 15:28:15 GMT - Error - [SIGNUP] Invalid email or password
+Wed, 04 Dec 2019 15:28:34 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 15:28:43 GMT - Debug - lklk, qp, ;;;
+Wed, 04 Dec 2019 15:28:43 GMT - Debug - auth.service - signup with email: lklk, username: qp
+Wed, 04 Dec 2019 15:28:44 GMT - Debug - auth.route - new account created: {"email":"lklk","password":"$2b$10$QeqUVCLVZWQOHxJCWPnGVeJbTavk7Gr6N4XRjzbv3uTcw9GR4RvaO","username":"qp","_id":"5de7d0ac655a334b4cb9f986"}
+Wed, 04 Dec 2019 15:28:44 GMT - Debug - auth.service - login with email: lklk
+Wed, 04 Dec 2019 15:28:45 GMT - Error - [SIGNUP] Invalid email or password
+Wed, 04 Dec 2019 15:29:06 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 15:29:09 GMT - Debug - lklkklklkl, qp, ;;;
+Wed, 04 Dec 2019 15:29:09 GMT - Debug - auth.service - signup with email: lklkklklkl, username: qp
+Wed, 04 Dec 2019 15:29:10 GMT - Debug - auth.route - new account created: {"email":"lklkklklkl","password":"$2b$10$ey6plTxjqBjZ90S4qskCIe19bU5Az27NXTEvzeGwi/pthGDo/FKYC","username":"qp","_id":"5de7d0c686645c38586eda8e"}
+Wed, 04 Dec 2019 15:29:10 GMT - Debug - auth.service - login with email: lklkklklkl
+Wed, 04 Dec 2019 15:29:34 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 15:29:51 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 15:29:56 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 15:33:37 GMT - Debug - mdmd, lll, lll
+Wed, 04 Dec 2019 15:33:37 GMT - Debug - auth.service - signup with email: mdmd, username: lll
+Wed, 04 Dec 2019 15:33:38 GMT - Debug - auth.route - new account created: {"email":"mdmd","password":"$2b$10$NGomEEbYJyxZjHjCdegULeGUYrYq9JvIXX1ahTTlyG6RapfFOrhDm","username":"lll","_id":"5de7d1d2362bf634a0383ebe"}
+Wed, 04 Dec 2019 15:33:38 GMT - Debug - auth.service - login with email: mdmd
+Wed, 04 Dec 2019 15:50:51 GMT - Debug - kd, nn, ll
+Wed, 04 Dec 2019 15:50:51 GMT - Debug - auth.service - signup with email: kd, username: nn
+Wed, 04 Dec 2019 15:50:51 GMT - Debug - auth.route - new account created: {"email":"kd","password":"$2b$10$Zh6IbJrimdkrsAHMcR0EM.h5W/uMlcATXw1lscUMnwtcv9Du5CoNq","username":"nn","_id":"5de7d5db362bf634a0383ebf"}
+Wed, 04 Dec 2019 15:50:51 GMT - Debug - auth.service - login with email: kd
+Wed, 04 Dec 2019 16:02:59 GMT - Debug - sf, ttt, lll
+Wed, 04 Dec 2019 16:02:59 GMT - Debug - auth.service - signup with email: sf, username: ttt
+Wed, 04 Dec 2019 16:02:59 GMT - Debug - auth.route - new account created: {"email":"sf","password":"$2b$10$5ONJHAtzpIUndcS6deep2.BGqq2jsLNIFyKjPSDaPgnTFJZJJ/jeC","username":"ttt","_id":"5de7d8b3362bf634a0383ec0"}
+Wed, 04 Dec 2019 16:02:59 GMT - Debug - auth.service - login with email: sf
+Wed, 04 Dec 2019 16:03:42 GMT - Debug - sf, ttt, lll
+Wed, 04 Dec 2019 16:03:42 GMT - Debug - auth.service - signup with email: sf, username: ttt
+Wed, 04 Dec 2019 16:03:42 GMT - Debug - auth.route - new account created: {"email":"sf","password":"$2b$10$3GzpoZcTjtR.fO0KHgsNK.LSwfDAbL3YybeTPuqSrIcGGeMbBkEEa","username":"ttt","_id":"5de7d8de362bf634a0383ec1"}
+Wed, 04 Dec 2019 16:03:42 GMT - Debug - auth.service - login with email: sf
+Wed, 04 Dec 2019 16:05:56 GMT - Debug - ll, ', l
+Wed, 04 Dec 2019 16:05:56 GMT - Debug - auth.service - signup with email: ll, username: '
+Wed, 04 Dec 2019 16:05:57 GMT - Debug - auth.route - new account created: {"email":"ll","password":"$2b$10$xFUSknwE/Gqb7kNKfXoviubh/XuHb.3eKm1J7pnwv3AEKHQmuMQ6C","username":"'","_id":"5de7d964362bf634a0383ec2"}
+Wed, 04 Dec 2019 16:05:57 GMT - Debug - auth.service - login with email: ll
+Wed, 04 Dec 2019 16:34:41 GMT - Debug - l;, u, mmm
+Wed, 04 Dec 2019 16:34:41 GMT - Debug - auth.service - signup with email: l;, username: u
+Wed, 04 Dec 2019 16:34:42 GMT - Debug - auth.route - new account created: {"email":"l;","password":"$2b$10$5K7e/f2v6ONTAoJEub1eX.oEmtmfL1jvlL3HXWoAy5Q2JhSQGeQ.W","username":"u","_id":"5de7e021362bf634a0383ec3"}
+Wed, 04 Dec 2019 16:34:42 GMT - Debug - auth.service - login with email: l;
+Wed, 04 Dec 2019 16:35:22 GMT - Debug - l, u, .
+Wed, 04 Dec 2019 16:35:22 GMT - Debug - auth.service - signup with email: l, username: u
+Wed, 04 Dec 2019 16:35:24 GMT - Debug - auth.route - new account created: {"email":"l","password":"$2b$10$zwG3Gb1fBzX3i.3V9eaSRe8/LqabvtzCXbrD/5r/wwgJcrCyEDDdS","username":"u","_id":"5de7e04b362bf634a0383ec4"}
+Wed, 04 Dec 2019 16:35:24 GMT - Debug - auth.service - login with email: l
+Wed, 04 Dec 2019 16:38:26 GMT - Debug - xxxx, xxx, xx
+Wed, 04 Dec 2019 16:38:26 GMT - Debug - auth.service - signup with email: xxxx, username: xxx
+Wed, 04 Dec 2019 16:38:26 GMT - Debug - auth.route - new account created: {"email":"xxxx","password":"$2b$10$7U.dHTxpRy1irfPvv.tal.HSmI8cuJh/Lurhs5uLdhgj7KwhlXnam","username":"xxx","_id":"5de7e102362bf634a0383ec5"}
+Wed, 04 Dec 2019 16:38:26 GMT - Debug - auth.service - login with email: xxxx
+Wed, 04 Dec 2019 16:45:59 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 16:48:34 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 16:49:18 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 17:20:35 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 17:25:07 GMT - Debug - sdsk, u, ppp
+Wed, 04 Dec 2019 17:25:07 GMT - Debug - auth.service - signup with email: sdsk, username: u
+Wed, 04 Dec 2019 17:25:07 GMT - Debug - auth.route - new account created: {"email":"sdsk","password":"$2b$10$sbVMzWNzBIM9hbA8J7Zf6.SDSWXxIpHHOYHUyDyz3zezla/vEl4de","username":"u","_id":"5de7ebf323a26a332804dc10"}
+Wed, 04 Dec 2019 17:25:07 GMT - Debug - auth.service - login with email: sdsk
+Wed, 04 Dec 2019 17:25:16 GMT - Debug - sdsk, u, ppp
+Wed, 04 Dec 2019 17:25:16 GMT - Debug - auth.service - signup with email: sdsk, username: u
+Wed, 04 Dec 2019 17:25:17 GMT - Debug - auth.route - new account created: {"email":"sdsk","password":"$2b$10$VPra.mzIUkhDb9ul2nbX5uSKoNYY7oW4yXjctVFI76a9mGF//Ypfq","username":"u","_id":"5de7ebfc23a26a332804dc11"}
+Wed, 04 Dec 2019 17:25:17 GMT - Debug - auth.service - login with email: sdsk
+Wed, 04 Dec 2019 17:25:52 GMT - Debug - ld, d, ddd
+Wed, 04 Dec 2019 17:25:52 GMT - Debug - auth.service - signup with email: ld, username: d
+Wed, 04 Dec 2019 17:25:53 GMT - Debug - auth.route - new account created: {"email":"ld","password":"$2b$10$gvC4iOe3i0eSPqCR59T0wudtjn0aGgAavG9v08gqsXz4DTPuD4aNi","username":"d","_id":"5de7ec2123a26a332804dc12"}
+Wed, 04 Dec 2019 17:25:53 GMT - Debug - auth.service - login with email: ld
+Wed, 04 Dec 2019 17:27:20 GMT - Debug - z, ppp, kk
+Wed, 04 Dec 2019 17:27:20 GMT - Debug - auth.service - signup with email: z, username: ppp
+Wed, 04 Dec 2019 17:27:22 GMT - Debug - auth.route - new account created: {"email":"z","password":"$2b$10$3zj8V2bhhHm441AOeKZHm.a2UOHlHkC3U8EawDnv2CLeKtIyHnBMG","username":"ppp","_id":"5de7ec7823a26a332804dc13"}
+Wed, 04 Dec 2019 17:27:22 GMT - Debug - auth.service - login with email: z
+Wed, 04 Dec 2019 17:32:44 GMT - Debug - x, x, x
+Wed, 04 Dec 2019 17:32:44 GMT - Debug - auth.service - signup with email: x, username: x
+Wed, 04 Dec 2019 17:32:44 GMT - Debug - auth.route - new account created: {"email":"x","password":"$2b$10$.k6jy9o6lCE7lTRAiZq0Ee6kgCIBDioRyZ8Ni.U7rMi5qa8rbDaF6","username":"x","_id":"5de7edbc23a26a332804dc14"}
+Wed, 04 Dec 2019 17:32:44 GMT - Debug - auth.service - login with email: x
+Wed, 04 Dec 2019 17:35:36 GMT - Debug - auth.service - login with email: x
+Wed, 04 Dec 2019 18:52:53 GMT - Debug - auth.service - login with email: סססססס
+Wed, 04 Dec 2019 19:14:21 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 19:14:36 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 19:15:12 GMT - Debug - nonon, ooo, nnn
+Wed, 04 Dec 2019 19:15:12 GMT - Debug - auth.service - signup with email: nonon, username: ooo
+Wed, 04 Dec 2019 19:15:13 GMT - Debug - auth.route - new account created: {"email":"nonon","password":"$2b$10$mWN8fFPNeehJ0rUJcxQ8lesOt5vFfoQ0yF7sC/qBc/cPzvlhJRY/K","username":"ooo","_id":"5de805c1c26ef419f084ff52"}
+Wed, 04 Dec 2019 19:15:13 GMT - Debug - auth.service - login with email: nonon
+Wed, 04 Dec 2019 19:15:30 GMT - Debug - auth.service - login with email: nonon
+Wed, 04 Dec 2019 19:16:03 GMT - Debug - auth.service - login with email: nnn
+Wed, 04 Dec 2019 19:16:34 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 19:16:40 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 19:16:48 GMT - Debug - auth.service - login with email: cscs
+Wed, 04 Dec 2019 19:17:24 GMT - Debug - auth.service - login with email: nonon
+Wed, 04 Dec 2019 19:18:50 GMT - Debug - auth.service - login with email: nonon
+Wed, 04 Dec 2019 19:19:56 GMT - Debug - auth.service - login with email: nonon
+Wed, 04 Dec 2019 19:20:20 GMT - Debug - auth.service - login with email: nnnn
+Wed, 04 Dec 2019 19:23:04 GMT - Debug - auth.service - login with email: ks
+Wed, 04 Dec 2019 19:25:05 GMT - Debug - auth.service - login with email: ms
+Wed, 04 Dec 2019 19:25:14 GMT - Debug - s, s, s
+Wed, 04 Dec 2019 19:25:14 GMT - Debug - auth.service - signup with email: s, username: s
+Wed, 04 Dec 2019 19:25:14 GMT - Debug - auth.route - new account created: {"email":"s","password":"$2b$10$riisj080kdCIukyYgzo65e9Ytr42ff1z7TuvSFQKmbl8DIo72dfaO","username":"s","_id":"5de8081ae50a20149c8f6f1f"}
+Wed, 04 Dec 2019 19:25:14 GMT - Debug - auth.service - login with email: s
+Wed, 04 Dec 2019 19:25:25 GMT - Debug - auth.service - login with email: s
+Wed, 04 Dec 2019 19:35:52 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 19:48:12 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 19:48:15 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 19:48:55 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 19:50:37 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 19:51:18 GMT - Info - Server is running on port: 3000
+Wed, 04 Dec 2019 19:51:37 GMT - Info - Server is running on port: 3000
+Thu, 05 Dec 2019 06:19:29 GMT - Info - Server is running on port: 3000
+>>>>>>> 1934a2c273819dbab16b42ff0b97601c77f1da3a
