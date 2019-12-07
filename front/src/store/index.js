@@ -57,9 +57,10 @@ export default new Vuex.Store({
       }
       const currBoard = JSON.parse(JSON.stringify(context.state.currBoard))
       if (currBoard) {
-        currBoard.members.filter(member => {
-          return member._id === user._id
-        })
+        let idx = this.currBoard.members.findIndex(
+          member => member._id === user._id
+        );
+        this.currBoard.members.splice(idx, 1);
         const board = BoardService.edit(currBoard)
         context.commit({ type: 'setCurrBoard', board })
       }

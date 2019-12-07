@@ -506,3 +506,5 @@ Sat, 07 Dec 2019 16:26:00 GMT - Debug - auth.route - new account created: {"emai
 Sat, 07 Dec 2019 16:26:00 GMT - Debug - auth.service - login with email: nevonoam@gmail.com
 Sat, 07 Dec 2019 16:26:29 GMT - Info - Server is running on port: 3000
 Sat, 07 Dec 2019 16:30:04 GMT - Debug - auth.service - login with email: nevonoam@gmail.com
+Sat, 07 Dec 2019 16:39:52 GMT - Debug - auth.service - login with email: nevonoam@gmail.com
+Sat, 07 Dec 2019 16:45:40 GMT - Debug - auth.service - login with email: nevonoam@gmail.com

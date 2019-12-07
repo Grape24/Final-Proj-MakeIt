@@ -134,8 +134,11 @@ export default {
   },
   destroyed() {
     if (this.$store.getters.loggedinUser) {
-      const user = this.$store.getters.loggedinUser;
-      this.currBoard.members.filter(member => member._id === user._id);
+      let user = this.$store.getters.loggedinUser;
+      let idx = this.currBoard.members.findIndex(
+        member => member._id === user._id
+      );
+      this.currBoard.members.splice(idx, 1);
       this.$store.dispatch({ type: "updateBoard", board: this.currBoard });
     }
     SocketService.emit("exit board");
