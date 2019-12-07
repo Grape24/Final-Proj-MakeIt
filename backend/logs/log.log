@@ -498,3 +498,11 @@ Thu, 05 Dec 2019 10:31:33 GMT - Info - Server is running on port: 3000
 =======
 >>>>>>> 1934a2c273819dbab16b42ff0b97601c77f1da3a
 >>>>>>> 116458260845ad859ec9eae7886340715f262252
+
+Sat, 07 Dec 2019 16:23:53 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 16:25:59 GMT - Debug - nevonoam@gmail.com, nevonoam, bcubugo,http://res.cloudinary.com/dwlyhuwyk/image/upload/v1575735948/s0txt5zv1dcwfzivpdqw.jpg
+Sat, 07 Dec 2019 16:25:59 GMT - Debug - auth.service - signup with email: nevonoam@gmail.com, username: nevonoam
+Sat, 07 Dec 2019 16:26:00 GMT - Debug - auth.route - new account created: {"email":"nevonoam@gmail.com","password":"$2b$10$fmfLSXN60XXYjqde9nJifel4E2jsSnPPipc49Cv6uoG6ca8RvdbSi","username":"nevonoam","imgUrl":"http://res.cloudinary.com/dwlyhuwyk/image/upload/v1575735948/s0txt5zv1dcwfzivpdqw.jpg","_id":"5debd297a002ed0b1caf6679"}
+Sat, 07 Dec 2019 16:26:00 GMT - Debug - auth.service - login with email: nevonoam@gmail.com
+Sat, 07 Dec 2019 16:26:29 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 16:30:04 GMT - Debug - auth.service - login with email: nevonoam@gmail.com

@@ -11,32 +11,31 @@
     </button>
     <LogActivities @menuClosed="activitiesLogIsOpen=false" v-if="activitiesLogIsOpen"></LogActivities>
     <div class="flex">
-    <div v-if="topics">
-      <topics-list
-        :topics="topics"
-        :topicsAsArr="topicsAsArr"
-        @updateList="updateList"
-        @removeList="removeList"
-        @topicsChanged="topicsChanged"
-        :currBoardId="currBoard._id"
-      ></topics-list>
-    </div>
-    <!-- <div class="modal-mask" v-if="isAddingTopic" @click="isAddingTopic=false"></div> -->
-    <div class="add-topic-input-container" :class="{'adding-topic': isAddingTopic}">
-      <input
-        class="add-topic-input"
-        v-model="createdTopicName"
-        :class="{'adding-topic-selected': isAddingTopic}"
-        placeholder="+ Add another list"
-        @focus="openTransition()"
-      />
-      <div v-if="isAddingTopic" class="flex">
-        <button @click="addList()" class="add-topic-btn">Add list</button>
-        <button class="close-modal-btn" @click="isAddingTopic=false">
-          <i class="fas fa-times"></i>
-        </button>
+      <div v-if="topics">
+        <topics-list
+          :topics="topics"
+          :topicsAsArr="topicsAsArr"
+          @updateList="updateList"
+          @removeList="removeList"
+          @topicsChanged="topicsChanged"
+          :currBoardId="currBoard._id"
+        ></topics-list>
       </div>
-    </div>
+      <div class="add-topic-input-container" :class="{'adding-topic': isAddingTopic}">
+        <input
+          class="add-topic-input"
+          v-model="createdTopicName"
+          :class="{'adding-topic-selected': isAddingTopic}"
+          placeholder="+ Add another list"
+          @focus="openTransition()"
+        />
+        <div v-if="isAddingTopic" class="flex">
+          <button @click="addList()" class="add-topic-btn">Add list</button>
+          <button class="close-modal-btn" @click="isAddingTopic=false">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -134,8 +133,8 @@ export default {
       });
   },
   destroyed() {
-    if (sessionStorage.user) {
-      const user = JSON.parse(sessionStorage.user);
+    if (this.$store.getters.loggedinUser) {
+      const user = this.$store.getters.loggedinUser;
       this.currBoard.members.filter(member => member._id === user._id);
       this.$store.dispatch({ type: "updateBoard", board: this.currBoard });
     }

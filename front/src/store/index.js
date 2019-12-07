@@ -56,13 +56,14 @@ export default new Vuex.Store({
         user = JSON.parse(sessionStorage.user)
       }
       const currBoard = JSON.parse(JSON.stringify(context.state.currBoard))
-      currBoard.members.filter(member => {
-        console.log(member, user)
-        return member._id === user._id
-      })
+      if (currBoard) {
+        currBoard.members.filter(member => {
+          return member._id === user._id
+        })
+        const board = BoardService.edit(currBoard)
+        context.commit({ type: 'setCurrBoard', board })
+      }
       sessionStorage.clear();
-      const board = BoardService.edit(currBoard)
-      context.commit({ type: 'setCurrBoard', board })
     },
     async addMembers(context, { user }) {
       const currBoard = JSON.parse(JSON.stringify(context.state.currBoard))
