@@ -484,3 +484,4 @@ Thu, 05 Dec 2019 15:17:22 GMT - Debug - eavvss@gmail.com, ee, jknkerg
 Thu, 05 Dec 2019 15:17:22 GMT - Debug - auth.service - signup with email: eavvss@gmail.com, username: ee
 Thu, 05 Dec 2019 15:17:23 GMT - Debug - auth.route - new account created: {"email":"eavvss@gmail.com","password":"$2b$10$mFQ5.RYQpKIEn2BRBUBRmO6bL5IdnoLq3BQnsMb61Tp7XTixnSnVK","username":"ee","_id":"5de91f82b24aa457748156ac"}
 Thu, 05 Dec 2019 15:17:23 GMT - Debug - auth.service - login with email: eavvss@gmail.com
+Sat, 07 Dec 2019 09:42:45 GMT - Info - Server is running on port: 3000
