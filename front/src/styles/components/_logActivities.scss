@@ -2,7 +2,7 @@
     position: absolute;
     background-color: darken(white, 3%);
     right:0;
-    height: 100vh;
+    max-height: 100vh;
     overflow: scroll;
     width: rem(350px);
     top: rem(59px);
@@ -14,6 +14,24 @@
         padding: rem(21px);
     }
 }
+
+.activites-menu-btn{
+    height: 3.125rem;
+    width: 13.75rem;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.075);
+    border-radius: 5px;
+    margin: 0.625rem;
+    padding: 0.625rem;
+    cursor: pointer;
+    font-size: 0.9375rem;
+    font-family: "Lato", sans-serif;
+    outline: none;
+    position: absolute;
+    top: rem(80px);
+    right: 0;
+}
+
 
 .activities-menu-title{
     width:100%;

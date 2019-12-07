@@ -51,22 +51,28 @@ export default new Vuex.Store({
   },
   actions: {
     async loggedOut(context) {
-      const user = null
+      let user = null
       if (sessionStorage.user) {
         user = JSON.parse(sessionStorage.user)
       }
       const currBoard = JSON.parse(JSON.stringify(context.state.currBoard))
-      currBoard.members.filter(member => member._id !== user._id)
+      currBoard.members.filter(member => {
+        console.log(member, user)
+        return member._id === user._id
+      })
+      sessionStorage.clear();
       const board = BoardService.edit(currBoard)
       context.commit({ type: 'setCurrBoard', board })
     },
     async addMembers(context, { user }) {
       const currBoard = JSON.parse(JSON.stringify(context.state.currBoard))
       currBoard.members.push(user)
-      const board = await BoardService.edit(board)
+      const board = await BoardService.edit(currBoard)
       context.commit({ type: 'setCurrBoard', board })
       SocketService.emit('update board', board)
-
+    },
+    async updateBoard(context, { board }) {
+      await BoardService.edit(board)
     },
     async removeBoard(context, { boardId }) {
       await BoardService.remove(boardId)

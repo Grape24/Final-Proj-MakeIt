@@ -30,6 +30,19 @@
   align-self: center;
 }
 
+.board-members-title{
+  padding-right: rem(20px)
+}
+
 .user-avatar{
   border-radius: 50%;
+}
+
+.board-container{
+  height: 100vh;
+  overflow: auto;
+}
+
+.topics-container{
+  overflow: scroll;
 }

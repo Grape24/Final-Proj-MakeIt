@@ -1,5 +1,4 @@
 .board-card{
-    background-color: #bfbfbf5b;
     width: rem(200px);
     height: rem(150px);
     margin: rem(20px);
@@ -7,33 +6,31 @@
     font-size: rem(20px);
     cursor: pointer;
     color: $clr2; 
-    border-bottom: 2px solid rgba(128, 128, 128, 0.543);
     &:hover{
-        transition: background-color 0.2s;
-        background-color: darken(#bfbfbf5b, 20%);
+        transition: background-color 0.5s;
+        background-color: rgba(255, 255, 255, 0.384);
+        box-shadow:-7px -9px 51px -9px rgba(0,0,0,0.32);;
     }
+
 }
+
+
 
 .board-name{
     padding: rem(20px);
 }
 
-.board-container{
-    overflow: scroll;
-    height:100vh;
-}
+
 
 .add-board-btn{
-    background-color: #bfbfbf5b;
-    cursor: pointer;
-    width: 400px;
-    margin: rem(30px);
-    padding: rem(20px);
+    width: 12.5rem;
+    height: 9.375rem;
+    margin: 1.25rem;
     border-radius: 5px;
-    &:hover{
-        transition: background-color 0.2s;
-        background-color: darken(#bfbfbf5b, 20%)
-    }
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: #172b4d;
+    border: 2px dashed;
 }
 
 .add-board-input-container{

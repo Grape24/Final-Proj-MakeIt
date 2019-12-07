@@ -1,10 +1,14 @@
 <template>
   <section>
-    <div class="flex justify-center">
-      <div @click="isAddingBoard=true" class="add-board-btn flex align-center justify-center">Add a new board</div>
-    </div>
+    <header>
+      <h1 class="align-center">Get your work done. Togather.</h1>
+      <div class="align-center">Project management and collabroation made easy with MakeIt.</div>
+    </header>
     <div class="flex wrap">
       <board-preview v-for="board in boards" :key="board._id" :board="board"></board-preview>
+      <div @click="isAddingBoard=true" class="add-board-btn flex align-center justify-center">
+        <i class="fas fa-plus"></i>
+      </div>
     </div>
     <div class="modal-mask" v-if="isAddingBoard" @click="isAddingBoard=false"></div>
     <div v-if="isAddingBoard" class="add-board-input-container" :class="{'adding-topic': isAddingBoard}">

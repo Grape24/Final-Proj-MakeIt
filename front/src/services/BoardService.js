@@ -17,7 +17,7 @@ async function query() {
 }
 
 async function edit(board) {
-    const updatedBoard = await HttpService.put(`board/${board.id}`, board)
+    const updatedBoard = await HttpService.put(`board/${board._id}`, board)
     return updatedBoard
 }
 async function getById(id) {

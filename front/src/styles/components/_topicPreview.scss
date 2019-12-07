@@ -1,10 +1,13 @@
 .topic-list-container{
+    overflow-y: scroll;
+    overflow-x: hidden;
     background-color: $clr3;
-    border-radius: 5px;
-    margin: rem(20px);
+    margin: 0 rem(20px);
     padding: rem(10px);
     width: rem(250px);
+    max-height: 100vh;
 }
+
 
 .list-group-item{
     background-color: $clr5;
@@ -20,6 +23,10 @@
 }
 
 .add-task-btn{
+    border-radius: 0 0 5px 5px;
+    margin: 0 rem(20px);
+    padding: rem(10px);
+    width: rem(250px);
     border: none;
     background-color: $clr3;
     color: $clr2;
@@ -28,6 +35,14 @@
     outline:none;
     cursor:pointer;
 }
+.topic-header{
+    background-color: $clr3;
+    border-radius: 5px 5px 0 0 ;
+    margin: 0 rem(20px);
+    padding: rem(10px);
+    width: rem(250px);
+}
+
 .topic-name{
     font-size: rem(20px);
     padding: rem(10px);

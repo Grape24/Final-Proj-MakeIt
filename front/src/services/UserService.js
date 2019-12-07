@@ -38,6 +38,8 @@ function getUsers() {
 }
 
 function _handleLogin(user) {
-    sessionStorage.setItem('user', JSON.stringify(user))
+    if (user) {
+        sessionStorage.setItem('user', JSON.stringify(user))
+    }
     return user;
 }

@@ -1,16 +1,25 @@
 <template>
   <section class="board-container">
-    <h2 class="board-name" v-if="currBoard">{{currBoard.name}}</h2>
-    <div v-if="currBoard">
-      <img class="ratio-square" v-for="member in currBoard.members" :key="member._id" :src="member.imgUrl" alt />
+    <div class="flex">
+      <h2 class="board-name" v-if="currBoard">{{currBoard.name}}</h2>
+      <button class="delete-board-btn" @click="removeBoard">Delete board</button>
+      <div class="flex align-center" v-if="currBoard">
+        <div class="board-members-title">Board Members:</div>
+        <avatar username="Darth Vader"
+                v-for="member in currBoard.members"
+                :key="member._id"
+                :src="member.imgUrl"
+                :size="50">
+        </avatar>
+      </div>
     </div>
-    <button class="delete-board-btn" @click="removeBoard">Delete board</button>
-    <button class="activites-menu" @click="activitiesLogIsOpen = !activitiesLogIsOpen">
+
+    <button class="activites-menu-btn" @click="activitiesLogIsOpen = !activitiesLogIsOpen">
       <i class="fas fa-ellipsis-h"></i>
       Show Activities
     </button>
     <LogActivities @menuClosed="activitiesLogIsOpen=false" v-if="activitiesLogIsOpen"></LogActivities>
-    <div class="flex">
+    <div class="topics-container flex">
     <div v-if="topics">
       <topics-list
         :topics="topics"
@@ -46,11 +55,13 @@
 import TopicsList from "../components/TopicsList.vue";
 import SocketService from "../services/SocketService.js";
 import LogActivities from "../components/LogActivities";
+import Avatar from 'vue-avatar';
 
 export default {
   components: {
     TopicsList,
-    LogActivities
+    LogActivities,
+    Avatar
   },
   data() {
     return {
@@ -114,16 +125,32 @@ export default {
   },
   created() {
     this.boardId = this.$route.params._id;
-    this.$store.dispatch({ type: "getCurrBoard", id: this.boardId });
-    this.currBoard = JSON.parse(JSON.stringify(this.$store.getters.currBoard));
-    const user = sessionStorage.user;
-    if (user && this.currBoard) {
-      this.$store.dispatch({ type: "addMembers", user });
+    this.$store
+      .dispatch({ type: "getCurrBoard", id: this.boardId })
+      .then(() => {
+        if (sessionStorage.user) {
+          const user = JSON.parse(sessionStorage.user);
+          let board = this.$store.getters.currBoard;
+          if (!board.members.find(member => member._id === user._id)) {
+            this.$store.dispatch({ type: "addMembers", user });
+          }
+        }
+        this.currBoard = JSON.parse(
+          JSON.stringify(this.$store.getters.currBoard)
+        );
+        SocketService.emit("load board", this.currBoard);
+        SocketService.on("board updated", board => {
+          this.$store.commit({ type: "setCurrBoard", board });
+        });
+      });
+  },
+  destroyed() {
+    if (sessionStorage.user) {
+      const user = JSON.parse(sessionStorage.user);
+      this.currBoard.members.filter(member => member._id === user._id);
+      this.$store.dispatch({ type: "updateBoard", board: this.currBoard });
     }
-    SocketService.emit("load board", this.$store.getters.currBoard);
-    SocketService.on("board updated", board => {
-      this.$store.commit({ type: "setCurrBoard", board });
-    });
+    SocketService.emit("exit board");
   }
 };
 </script>

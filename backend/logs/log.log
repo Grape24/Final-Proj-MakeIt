@@ -466,6 +466,7 @@ Wed, 04 Dec 2019 19:50:37 GMT - Info - Server is running on port: 3000
 Wed, 04 Dec 2019 19:51:18 GMT - Info - Server is running on port: 3000
 Wed, 04 Dec 2019 19:51:37 GMT - Info - Server is running on port: 3000
 Thu, 05 Dec 2019 06:19:29 GMT - Info - Server is running on port: 3000
+<<<<<<< HEAD
 
 Thu, 05 Dec 2019 07:13:12 GMT - Info - Server is running on port: 3000
 Thu, 05 Dec 2019 10:41:06 GMT - Info - Server is running on port: 3000
@@ -485,3 +486,14 @@ Thu, 05 Dec 2019 15:17:22 GMT - Debug - auth.service - signup with email: eavvss
 Thu, 05 Dec 2019 15:17:23 GMT - Debug - auth.route - new account created: {"email":"eavvss@gmail.com","password":"$2b$10$mFQ5.RYQpKIEn2BRBUBRmO6bL5IdnoLq3BQnsMb61Tp7XTixnSnVK","username":"ee","_id":"5de91f82b24aa457748156ac"}
 Thu, 05 Dec 2019 15:17:23 GMT - Debug - auth.service - login with email: eavvss@gmail.com
 Sat, 07 Dec 2019 09:42:45 GMT - Info - Server is running on port: 3000
+=======
+<<<<<<< HEAD
+Thu, 05 Dec 2019 10:30:31 GMT - Info - Server is running on port: 3000
+Thu, 05 Dec 2019 10:31:33 GMT - Info - Server is running on port: 3000
+=======
+>>>>>>> 1934a2c273819dbab16b42ff0b97601c77f1da3a
+>>>>>>> 116458260845ad859ec9eae7886340715f262252
+>>>>>>> 78a98546ace32ad3b6477567dc4ca3051e01ae11
+
+Sat, 07 Dec 2019 09:43:10 GMT - Info - Server is running on port: 3000
+Sat, 07 Dec 2019 09:46:59 GMT - Debug - auth.service - login with email: rgeert
