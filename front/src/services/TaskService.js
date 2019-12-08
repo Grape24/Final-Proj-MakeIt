@@ -11,10 +11,7 @@ export default {
 async function remove(boardId, taskId, topicName) {
     let board = await BoardService.getById(boardId)
     let task = await getTaskById(boardId, taskId)
-    var user;
-    if (sessionStorage.user) user = JSON.parse(sessionStorage.user)
-    else user = { username: 'guest' }
-
+    var user = (sessionStorage.user) ? JSON.parse(sessionStorage.user) : { username: 'guest' }
     board.topicTasksMap[topicName] = board.topicTasksMap[topicName].filter(task => task.id !== taskId)
     board.activites.push({
         task: task.title,
@@ -30,9 +27,7 @@ async function remove(boardId, taskId, topicName) {
 
 async function edit(boardId, task, topicName) {
     let board = await BoardService.getById(boardId)
-    var user;
-    if (sessionStorage.user) user = JSON.parse(sessionStorage.user)
-    else user = { username: 'guest' }
+    var user = (sessionStorage.user) ? JSON.parse(sessionStorage.user) : { username: 'guest' }
     let idx = board.topicTasksMap[topicName].findIndex(todo => todo.id === task.id)
     board.activites.push({
         task: task.title,
@@ -62,9 +57,7 @@ async function add(boardId, task, topicName) {
     let board = await BoardService.getById(boardId)
     task.id = _makeId()
     task.createdById = null
-    var user;
-    if (sessionStorage.user) user = JSON.parse(sessionStorage.user)
-    else user = { username: 'guest' }
+    var user = (sessionStorage.user) ? JSON.parse(sessionStorage.user) : { username: 'guest' }
     board.topicTasksMap[topicName].push(task)
     board.activites.push({
         task: task.title,

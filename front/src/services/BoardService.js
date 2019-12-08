@@ -26,7 +26,7 @@ async function getById(id) {
 }
 
 async function remove(boardId) {
-    await HttpService.delete('board/', boardId)
+    await HttpService.delete(`board/${boardId}`, boardId)
 
 }
 

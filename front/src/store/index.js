@@ -57,9 +57,10 @@ export default new Vuex.Store({
       }
       const currBoard = JSON.parse(JSON.stringify(context.state.currBoard))
       if (currBoard) {
-        currBoard.members.filter(member => {
-          return member._id === user._id
-        })
+        let idx = this.currBoard.members.findIndex(
+          member => member._id === user._id
+        );
+        this.currBoard.members.splice(idx, 1);
         const board = BoardService.edit(currBoard)
         context.commit({ type: 'setCurrBoard', board })
       }
@@ -113,8 +114,6 @@ export default new Vuex.Store({
       await BoardService.edit(board)
       context.commit({ type: 'setCurrBoard', board })
       SocketService.emit('update board', board)
-
-
     },
     async setBoard(context, { board }) {
       context.commit({ type: 'setCurrBoard', board })
@@ -136,7 +135,6 @@ export default new Vuex.Store({
       const board = await BoardService.edit(currBoard)
       context.commit({ type: 'setCurrBoard', board })
       SocketService.emit('update board', board)
-
 
     }
 
