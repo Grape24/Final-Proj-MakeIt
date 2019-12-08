@@ -40,7 +40,8 @@
 
 
 .topics-container{
-  max-height: calc(100vh - (50px + 120.81px))
+  max-height: calc(100vh - (50px + 108.81px));
+  overflow-x: scroll;
 }
 
 .topic-list-container{
