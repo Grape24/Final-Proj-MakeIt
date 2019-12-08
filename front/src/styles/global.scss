@@ -1,3 +1,5 @@
+
+
 // SETUP
 @import 'setup/variables';
 @import 'setup/mixins';
@@ -18,4 +20,8 @@
 @import 'components/boardList';
 
 // PAGES
-@import 'pages/editTask'
+@import 'pages/editTask';
+
+
+// MEDIA QUERIES
+@import 'basics/mediaQueries';

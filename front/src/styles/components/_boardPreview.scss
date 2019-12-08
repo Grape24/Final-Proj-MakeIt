@@ -16,9 +16,11 @@
 
 
 
+
 .board-name{
     padding: rem(20px);
 }
+
 
 
 
@@ -34,7 +36,7 @@
 }
 
 .add-board-input-container{
-    position: absolute;
+    position: fixed;
     border-radius: 2px;
     background-color: $clr1;
     left: 50%;

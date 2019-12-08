@@ -1,0 +1,32 @@
+@media (max-width: $break-wide){
+    .hero-img{
+        width:100%;
+    }
+    .hero-container{
+        flex-direction: column;
+    }
+    .labels-due-date-container{
+        flex-direction: column;
+    }
+    .labels-container-display{
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: $break-normal){
+    .edit-container{
+        flex-direction: column;
+    }
+    .edit-modal{
+        width: 80%;
+    }
+}
+
+@media (max-width: $break-iphone5){
+    .task-title{
+        overflow: hidden;
+    }
+    .date-picker-preview{
+        margin: rem(5px) 0 rem(5px) 0;
+    }
+}

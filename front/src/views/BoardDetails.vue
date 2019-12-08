@@ -20,8 +20,8 @@
       Show Activities
     </button>
     <LogActivities @menuClosed="activitiesLogIsOpen=false" v-if="activitiesLogIsOpen"></LogActivities>
-    <div class="topics-container flex">
-    <div v-if="topics">
+   <div class="topics-container flex">
+    <div class="topic-list-container-1" v-if="topics">
       <topics-list
         :topics="topics"
         :topicsAsArr="topicsAsArr"
@@ -31,7 +31,6 @@
         :currBoardId="currBoard._id"
       ></topics-list>
     </div>
-    <!-- <div class="modal-mask" v-if="isAddingTopic" @click="isAddingTopic=false"></div> -->
     <div class="add-topic-input-container" :class="{'adding-topic': isAddingTopic}">
       <input
         class="add-topic-input"
@@ -47,7 +46,7 @@
         </button>
       </div>
     </div>
-    </div>
+   </div>
   </section>
 </template>
  

@@ -11,6 +11,10 @@
     font-family: $font1;
 }
 
+.topics-list{
+    max-height:100%;
+}
+
 .adding-topic-selected{
     background-color: white;
     outline: none;
@@ -51,4 +55,7 @@
     cursor:pointer;
     outline: none;
 
+}
+.draggable-list{
+    max-height:100%;
 }

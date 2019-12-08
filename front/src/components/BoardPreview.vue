@@ -4,7 +4,7 @@
       <div class="board-card flex align-center justify-center">
         <i class="fas fa-tasks"></i>
       </div>
-      <div class="align-center">{{board.name}}</div>
+      <div class="board-title align-center">{{board.name}}</div>
     </router-link>
     
   </section>

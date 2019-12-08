@@ -12,7 +12,7 @@
         <i class="fas fa-sticky-note"></i>
         <input class="task-title" type="text" v-model="task.title" placeholder="Enter the title" />
       </div>
-      <div class="flex space-between">
+      <div class="edit-container flex space-between">
         <div class="main-edit-container">
           <div class="in-list">In List : {{topicName}}</div>
             <div class="labels-due-date-container flex">

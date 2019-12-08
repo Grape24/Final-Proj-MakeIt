@@ -4,9 +4,9 @@
       <router-link class="home-icon-container" to="/">
         <i class="fas fa-home"></i>
       </router-link>
-      <div class="logo">
+      <router-link to="/" class="logo">
         <i class="fas fa-check-double"></i>MakeIt
-      </div>
+      </router-link>
       <div class="nav-links-container flex">
         <avatar class="nav-avatar"
                 v-if="loggedinUser"
