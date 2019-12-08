@@ -26,7 +26,7 @@
           </div>
           <img :class="{'rotated': task.imgIsRotated}" :src="task.imgUrl" />
           {{task.title}}
-          <div v-if="task.dueDate">
+          <div class="due-date-display" v-if="task.dueDate">
             <i class="far fa-clock"></i>
             {{convertTimeStampFormat(task.dueDate)}}
           </div>

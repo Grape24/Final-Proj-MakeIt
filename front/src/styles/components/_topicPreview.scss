@@ -15,7 +15,7 @@
     border-bottom: 1px solid darken($clr5, 20%);
     cursor: pointer;
     &:hover{
-        background-color: lighten($clr3, 2%);
+        background-color: lighten($clr3, 20%);
     }
 }
 
@@ -99,4 +99,9 @@
     margin: rem(2px);
     width: rem(20px);
     height: rem(10px);
+}
+
+.due-date-display{
+    color: lighten($clr2, 20%);
+    font-size: rem(14px);
 }
