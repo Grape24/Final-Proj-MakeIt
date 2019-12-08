@@ -114,27 +114,10 @@ export default {
       type: "getCurrBoard",
       id: this.boardId
     });
-    if (this.$store.store.getters.loggedinUser) {
-      const user = this.$store.store.getters.loggedinUser;
-      let board = this.$store.store.getters.currBoard;
-      if (!board.members.find(member => member._id === user._id)) {
-        this.$store.store.dispatch({ type: "addMembers", user });
-      }
-    }
+    this.$store.store.dispatch({ type: "addMembers" });
     SocketService.emit("load board", this.$store.store.getters.currBoard);
   },
   destroyed() {
-    if (this.$store.store.getters.loggedinUser) {
-      let user = this.$store.store.getters.loggedinUser;
-      let idx = this.currBoard.members.findIndex(
-        member => member._id === user._id
-      );
-      this.currBoard.members.splice(idx, 1);
-      this.$store.store.dispatch({
-        type: "updateBoard",
-        board: this.currBoard
-      });
-    }
     SocketService.emit("exit board");
   }
 };

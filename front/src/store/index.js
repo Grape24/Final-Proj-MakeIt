@@ -70,12 +70,15 @@ const store = new Vuex.Store({
       }
       sessionStorage.clear();
     },
-    async addMembers(context, { user }) {
-      const currBoard = JSON.parse(JSON.stringify(context.state.currBoard))
-      currBoard.members.push(user)
-      const board = await BoardService.edit(currBoard)
-      context.commit({ type: 'setCurrBoard', board })
-      SocketService.emit('update board', board)
+    async addMembers(context) {
+      const user = store.state.userStore.loggedinUser
+      if (user && !store.state.currBoard.members.find(member => member._id === user._id)) {
+        const currBoard = JSON.parse(JSON.stringify(store.state.currBoard))
+        currBoard.members.push(user)
+        const board = await BoardService.edit(currBoard)
+        context.commit({ type: 'setCurrBoard', board })
+        SocketService.emit('update board', board)
+      }
     },
     async updateBoard(context, { board }) {
       await BoardService.edit(board)
