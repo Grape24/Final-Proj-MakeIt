@@ -38,9 +38,13 @@ export default {
     },
     async loggedOut(context) {
       await UserService.logout()
-      context.commit({ type: 'setUser', user: null })
-      sessionStorage.clear();
-
+      try {
+        context.commit({ type: 'setUser', user: null })
+        sessionStorage.clear();
+      }
+      catch (err) {
+        console.log(err)
+      } 
     },
 
   }

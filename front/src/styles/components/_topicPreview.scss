@@ -1,13 +1,18 @@
 .topic-list-container{
+    max-height:100%;
     overflow-y: scroll;
     overflow-x: hidden;
     background-color: $clr3;
     margin: 0 rem(20px);
     padding: rem(10px);
     width: rem(250px);
-    max-height: 100vh;
 }
 
+.topic-preview{
+    max-height: 100vh;
+    display:flex;
+    flex-direction: column;
+}
 
 .list-group-item{
     background-color: $clr5;

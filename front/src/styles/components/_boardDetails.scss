@@ -38,14 +38,20 @@
   border-radius: 50%;
 }
 
-.board-container{
-  height: 100vh;
-  overflow: auto;
-}
 
 .topics-container{
-  overflow: scroll;
+  max-height: calc(100vh - (50px + 120.81px))
 }
+
+.topic-list-container{
+  max-height:100%;
+  overflow-y: auto;
+  background-color: $clr3;
+  margin: 0 rem(20px);
+  padding: rem(10px);
+  width: rem(250px);
+}
+
 
 .member-avatar{
   margin: rem(5px);

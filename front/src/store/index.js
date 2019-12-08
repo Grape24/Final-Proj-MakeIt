@@ -7,10 +7,9 @@ import SocketService from "../services/SocketService.js";
 import { stat } from 'fs';
 
 
-
 Vue.use(Vuex)
 
-let store = new Vuex.Store({
+const store = new Vuex.Store({
   state: {
     boards: [],
     currBoard: null

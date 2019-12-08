@@ -1,7 +1,7 @@
 <template>
   <section>
     <div v-if="loading">
-      <img src="spinner-icon-gif-10.png" alt="">
+      <img src="spinner-icon-gif-10.png" alt />
     </div>
     <div v-else class="home">
       <board-list :boards="boards" @addBoard="addBoard"></board-list>

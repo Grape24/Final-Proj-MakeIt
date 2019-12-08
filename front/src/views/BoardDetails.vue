@@ -22,7 +22,7 @@
     </button>
     <LogActivities @menuClosed="activitiesLogIsOpen=false" v-if="activitiesLogIsOpen"></LogActivities>
     <div class="topics-container flex">
-      <div v-if="topics">
+      <div class="topic-list-container-1" v-if="topics">
         <topics-list
           :topics="topics"
           :topicsAsArr="topicsAsArr"
@@ -37,7 +37,7 @@
           v-model="createdTopicName"
           :class="{'adding-topic-selected': isAddingTopic}"
           placeholder="+ Add another list"
-          @focus="toggleAddingTopic()"
+          @focus="toggleAddingTopic"
         />
         <div v-if="isAddingTopic" class="flex">
           <button @click="addList()" class="add-topic-btn">Add list</button>

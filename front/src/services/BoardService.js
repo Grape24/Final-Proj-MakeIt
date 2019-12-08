@@ -31,7 +31,7 @@ async function remove(boardId) {
 }
 
 async function add(board) {
-    const updatedBoards = await HttpService.post('/', board)
+    const updatedBoards = await HttpService.post('board/', board)
     return updatedBoards
 }
 

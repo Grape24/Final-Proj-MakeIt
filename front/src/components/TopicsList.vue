@@ -1,7 +1,7 @@
 <template>
   <section class="flex topics-list">
     <draggable
-      class="flex"
+      class="flex draggable-list"
       ghost-class="ghost"
       :list="topicsAsArr"
       @start="dragging = true"
