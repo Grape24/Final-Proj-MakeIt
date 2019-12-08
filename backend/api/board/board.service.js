@@ -49,7 +49,7 @@ async function getById(boardId) {
 async function remove(boardId) {
     const collection = await dbService.getCollection('boards')
     try {
-        const boards = await collection.deleteOne({ "_id": ObjectId(boardId) })
+        const board = await collection.deleteOne({ "_id": ObjectId(boardId) })
     } catch (err) {
         throw err;
     }
