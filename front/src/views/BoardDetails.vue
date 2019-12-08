@@ -1,41 +1,52 @@
 <template>
   <section class="board-container">
-    <h2 class="board-name" v-if="currBoard">{{currBoard.name}}</h2>
-    <div v-if="currBoard">
-      <img v-for="member in currBoard.members" :key="member._id" :src="member.imgUrl" />
+    <div class="flex">
+      <h2 class="board-name" v-if="currBoard">{{currBoard.name}}</h2>
+      <button class="delete-board-btn" @click="removeBoard">Delete board</button>
+      <div class="flex align-center" v-if="currBoard">
+        <div class="board-members-title">Board Members:</div>
+        <avatar class="member-avatar"
+                :username="member.userName"
+                v-for="member in currBoard.members"
+                :key="member._id"
+                :src="member.imgUrl"
+                :size="50">
+        </avatar>
+      </div>
     </div>
-    <button @click="removeBoard">Delete board</button>
-    <button class="activites-menu" @click="activitiesLogIsOpen = !activitiesLogIsOpen">
+
+    <button class="activites-menu-btn" @click="activitiesLogIsOpen = !activitiesLogIsOpen">
       <i class="fas fa-ellipsis-h"></i>
       Show Activities
     </button>
     <LogActivities @menuClosed="activitiesLogIsOpen=false" v-if="activitiesLogIsOpen"></LogActivities>
-    <div class="flex">
-      <div v-if="topics">
-        <topics-list
-          :topics="topics"
-          :topicsAsArr="topicsAsArr"
-          @updateList="updateList"
-          @removeList="removeList"
-          @topicsChanged="topicsChanged"
-          :currBoardId="currBoard._id"
-        ></topics-list>
+    <div class="topics-container flex">
+    <div v-if="topics">
+      <topics-list
+        :topics="topics"
+        :topicsAsArr="topicsAsArr"
+        @updateList="updateList"
+        @removeList="removeList"
+        @topicsChanged="topicsChanged"
+        :currBoardId="currBoard._id"
+      ></topics-list>
+    </div>
+    <!-- <div class="modal-mask" v-if="isAddingTopic" @click="isAddingTopic=false"></div> -->
+    <div class="add-topic-input-container" :class="{'adding-topic': isAddingTopic}">
+      <input
+        class="add-topic-input"
+        v-model="createdTopicName"
+        :class="{'adding-topic-selected': isAddingTopic}"
+        placeholder="+ Add another list"
+        @focus="openTransition()"
+      />
+      <div v-if="isAddingTopic" class="flex">
+        <button @click="addList()" class="add-topic-btn">Add list</button>
+        <button class="close-modal-btn" @click="isAddingTopic=false">
+          <i class="fas fa-times"></i>
+        </button>
       </div>
-      <div class="add-topic-input-container" :class="{'adding-topic': isAddingTopic}">
-        <input
-          class="add-topic-input"
-          v-model="createdTopicName"
-          :class="{'adding-topic-selected': isAddingTopic}"
-          placeholder="+ Add another list"
-          @focus="openTransition()"
-        />
-        <div v-if="isAddingTopic" class="flex">
-          <button @click="addList()" class="add-topic-btn">Add list</button>
-          <button class="close-modal-btn" @click="isAddingTopic=false">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-      </div>
+    </div>
     </div>
   </section>
 </template>
@@ -45,11 +56,13 @@
 import TopicsList from "../components/TopicsList.vue";
 import SocketService from "../services/SocketService.js";
 import LogActivities from "../components/LogActivities";
+import Avatar from 'vue-avatar';
 
 export default {
   components: {
     TopicsList,
-    LogActivities
+    LogActivities,
+    Avatar
   },
   data() {
     return {

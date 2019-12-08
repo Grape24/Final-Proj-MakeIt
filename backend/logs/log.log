@@ -1,5 +1,6 @@
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Mon, 02 Dec 2019 16:09:11 GMT - Info - Server is running on port: 3000
 Mon, 02 Dec 2019 17:40:31 GMT - Info - Server is running on port: 3000
 Mon, 02 Dec 2019 17:40:35 GMT - Info - Server is running on port: 3000
@@ -518,3 +519,10 @@ Sun, 08 Dec 2019 06:50:22 GMT - Info - Server is running on port: 3000
 Sun, 08 Dec 2019 06:50:44 GMT - Info - Server is running on port: 3000
 Sun, 08 Dec 2019 06:50:52 GMT - Info - Server is running on port: 3000
 Sun, 08 Dec 2019 07:08:30 GMT - Debug - auth.service - login with email: nevonoam@gmail.com
+=======
+Sun, 08 Dec 2019 06:21:54 GMT - Info - Server is running on port: 3000
+Sun, 08 Dec 2019 06:29:23 GMT - Info - Server is running on port: 3000
+Sun, 08 Dec 2019 06:29:46 GMT - Debug - auth.service - login with email: eavs772@gmail.com
+>>>>>>> e1ea8107ff5d934aaf99fb28bc172a9aa18ffa81
+
+Sun, 08 Dec 2019 07:18:34 GMT - Info - Server is running on port: 3000

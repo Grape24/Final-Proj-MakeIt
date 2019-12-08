@@ -1,5 +1,5 @@
 <template>
-  <section class="flex">
+  <section class="flex topics-list">
     <draggable
       class="flex"
       ghost-class="ghost"

@@ -8,17 +8,28 @@
         <i class="fas fa-check-double"></i>MakeIt
       </div>
       <div class="nav-links-container flex">
-        <div class="flex" v-if="loggedinUser" @click="logout">logout</div>
-        <h2 class="flex" v-if="loggedinUser">user name:{{loggedinUser.username}}</h2>
-        <router-link class="flex" to="/login" v-else>login</router-link>
-        <router-link class="flex" to="/signup" v-if="!loggedinUser">singup</router-link>
+        <avatar class="nav-avatar"
+                v-if="loggedinUser"
+                :username="loggedinUser.userName"
+                :src="loggedinUser.imgUrl"
+                :size="50">
+        </avatar>
+        <div class="flex align-center username-nav" v-if="loggedinUser">Hi, {{loggedinUser.username}}!</div>
+        <div class="flex align-center logout-nav" v-if="loggedinUser" @click="logout">Logout</div>
+        
+        <router-link class="flex" to="/login" v-else>Login</router-link>
+        <router-link class="flex" to="/signup" v-if="!loggedinUser">Singup</router-link>
       </div>
     </div>
   </section>
 </template>
 <script>
+import Avatar from 'vue-avatar';
 export default {
   name: "Header",
+  components:{
+    Avatar
+  },
   data() {
     return {
       filterTxt: ""

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header @loggedOut="loggedOut"></Header>
+   <Header @loggedOut="loggedOut"></Header>
     <router-view />
   </div>
 </template>
