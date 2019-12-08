@@ -2,7 +2,7 @@
     position: absolute;
     background-color: darken(white, 3%);
     right:0;
-    height: 100vh;
+    max-height: calc(100vh - 50px);
     overflow: scroll;
     width: rem(350px);
     top: rem(50px);
