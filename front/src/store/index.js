@@ -114,8 +114,6 @@ export default new Vuex.Store({
       await BoardService.edit(board)
       context.commit({ type: 'setCurrBoard', board })
       SocketService.emit('update board', board)
-
-
     },
     async setBoard(context, { board }) {
       context.commit({ type: 'setCurrBoard', board })
@@ -137,7 +135,6 @@ export default new Vuex.Store({
       const board = await BoardService.edit(currBoard)
       context.commit({ type: 'setCurrBoard', board })
       SocketService.emit('update board', board)
-
 
     }
 

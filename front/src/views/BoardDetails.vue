@@ -99,12 +99,6 @@ export default {
     updateList(topics) {
       let board = JSON.parse(JSON.stringify(this.currBoard));
       board.topicTasksMap = topics;
-      board.activites.push({
-        task: "lists",
-        activity: "updated",
-        inTopic: "",
-        DoneAt: Date.now()
-      });
       this.$store.dispatch({ type: "setBoard", board });
     },
     push(id) {

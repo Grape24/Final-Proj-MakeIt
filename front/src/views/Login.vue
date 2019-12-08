@@ -28,9 +28,6 @@ export default {
       await this.$store.dispatch({ type: "login", userCred: cred });
       this.loginCred = {};
       this.$router.push("/");
-    },
-    doLogout() {
-      this.$store.dispatch({ type: "logout" });
     }
   }
 };
