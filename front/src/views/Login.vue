@@ -25,7 +25,7 @@ export default {
       if (!cred.email || !cred.password) {
         return (this.msg = "Please enter user/password");
       }
-      await this.$store.dispatch({ type: "login", userCred: cred });
+      await this.$store.store.dispatch({ type: "login", userCred: cred });
       this.loginCred = {};
       this.$router.push("/");
     }

@@ -31,7 +31,7 @@ export default {
   },
   computed: {
     activities() {
-      return this.$store.getters.activities;
+      return this.$store.store.getters.activities;
     }
   }
 };

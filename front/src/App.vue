@@ -15,7 +15,7 @@ export default {
   },
   methods: {
     loggedOut() {
-      this.$store.dispatch("loggedOut");
+      this.$store.store.dispatch("loggedOut");
     }
   }
 };

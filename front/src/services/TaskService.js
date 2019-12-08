@@ -3,20 +3,19 @@ import BoardService from './BoardService.js'
 
 export default {
     remove,
-    getTaskById,
     add,
     edit
 }
 
-async function remove(boardId, taskId, topicName) {
+async function remove(boardId, taskId, topic) {
     let board = await BoardService.getById(boardId)
-    let task = await getTaskById(boardId, taskId)
+    const task = board.topicTasksMap[topic].find(task => task.id === taskId)
     var user = (sessionStorage.user) ? JSON.parse(sessionStorage.user) : { username: 'guest' }
-    board.topicTasksMap[topicName] = board.topicTasksMap[topicName].filter(task => task.id !== taskId)
+    board.topicTasksMap[topic] = board.topicTasksMap[topic].filter(task => task.id !== taskId)
     board.activites.push({
         task: task.title,
         activity: 'removed',
-        inTopic: topicName,
+        inTopic: topic,
         DoneAt: Date.now(),
         by: user.username
     }
@@ -25,34 +24,22 @@ async function remove(boardId, taskId, topicName) {
     return board
 }
 
-async function edit(boardId, task, topicName) {
+async function edit(boardId, task, topic) {
     let board = await BoardService.getById(boardId)
     var user = (sessionStorage.user) ? JSON.parse(sessionStorage.user) : { username: 'guest' }
-    let idx = board.topicTasksMap[topicName].findIndex(todo => todo.id === task.id)
+    let idx = board.topicTasksMap[topic].findIndex(todo => todo.id === task.id)
     board.activites.push({
         task: task.title,
         activity: 'updated',
-        inTopic: topicName,
+        inTopic: topic,
         DoneAt: Date.now(),
         by: user.username
     })
-    board.topicTasksMap[topicName].splice(idx, 1, task)
+    board.topicTasksMap[topic].splice(idx, 1, task)
     return board
 }
 
-async function getTaskById(boardId, taskId) {
-    const board = await BoardService.getById(boardId);
-    const mat = Object.values(board.topicTasksMap);
-    for (let i = 0; i < mat.length; i++) {
-        for (let j = 0; j < mat[i].length; j++) {
-            let task = (mat[i][j])
-            if (task.id === taskId) {
-                return task
-            }
-        }
-    }
-}
-
+// async function save(board) {
 async function add(boardId, task, topicName) {
     let board = await BoardService.getById(boardId)
     task.id = _makeId()

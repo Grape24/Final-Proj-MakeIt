@@ -10,7 +10,7 @@ import { stat } from 'fs';
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
+let store = new Vuex.Store({
   state: {
     boards: [],
     currBoard: null
@@ -35,6 +35,11 @@ export default new Vuex.Store({
       })
       return res
     },
+    topics(state) {
+      if (!state.currBoard) return null;
+      return state.currBoard.topicTasksMap
+
+    }
   },
   mutations: {
     setCurrBoard(state, { board }) {
@@ -140,3 +145,12 @@ export default new Vuex.Store({
 
   }
 })
+
+
+SocketService.on("board updated", board => {
+  store.commit({ type: "setCurrBoard", board });
+});
+
+export default {
+  store
+}

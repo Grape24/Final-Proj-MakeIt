@@ -50,7 +50,7 @@ export default {
       const cred = this.signupCred;
       if (!cred.email || !cred.password || !cred.username || !cred.imgUrl)
         return (this.msg = "Please fill up the form");
-      this.$store.dispatch({ type: "signup", userCred: cred });
+      this.$store.store.dispatch({ type: "signup", userCred: cred });
       this.$router.push("/");
     }
   }

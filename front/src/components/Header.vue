@@ -8,15 +8,19 @@
         <i class="fas fa-check-double"></i>MakeIt
       </div>
       <div class="nav-links-container flex">
-        <avatar class="nav-avatar"
-                v-if="loggedinUser"
-                :username="loggedinUser.userName"
-                :src="loggedinUser.imgUrl"
-                :size="50">
-        </avatar>
-        <div class="flex align-center username-nav" v-if="loggedinUser">Hi, {{loggedinUser.username}}!</div>
+        <avatar
+          class="nav-avatar"
+          v-if="loggedinUser"
+          :username="loggedinUser.userName"
+          :src="loggedinUser.imgUrl"
+          :size="50"
+        ></avatar>
+        <div
+          class="flex align-center username-nav"
+          v-if="loggedinUser"
+        >Hi, {{loggedinUser.username}}!</div>
         <div class="flex align-center logout-nav" v-if="loggedinUser" @click="logout">Logout</div>
-        
+
         <router-link class="flex" to="/login" v-else>Login</router-link>
         <router-link class="flex" to="/signup" v-if="!loggedinUser">Singup</router-link>
       </div>
@@ -24,10 +28,10 @@
   </section>
 </template>
 <script>
-import Avatar from 'vue-avatar';
+import Avatar from "vue-avatar";
 export default {
   name: "Header",
-  components:{
+  components: {
     Avatar
   },
   data() {
@@ -42,8 +46,8 @@ export default {
   },
   computed: {
     loggedinUser() {
-      return this.$store.getters.loggedinUser;
+      return this.$store.store.getters.loggedinUser;
     }
   }
-}
+};
 </script>

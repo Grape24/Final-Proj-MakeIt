@@ -20,15 +20,15 @@ export default {
   },
   methods: {
     getBoards() {
-      this.$store.dispatch({ type: "loadBoards" });
+      this.$store.store.dispatch({ type: "loadBoards" });
     },
     addBoard(board) {
-      this.$store.dispatch({ type: "addBoard", board });
+      this.$store.store.dispatch({ type: "addBoard", board });
     }
   },
   computed: {
     boards() {
-      return this.$store.getters.boards;
+      return this.$store.store.getters.boards;
     }
   },
   created() {

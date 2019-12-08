@@ -141,7 +141,7 @@ export default {
     },
     async saveTask() {
       if (this.task.id) {
-        await this.$store.dispatch({
+        await this.$store.store.dispatch({
           type: "updateTask",
           boardId: this.currBoardId,
           task: this.task,
@@ -152,7 +152,7 @@ export default {
           labels: this.labels
         });
       } else {
-        await this.$store.dispatch({
+        await this.$store.store.dispatch({
           type: "addTask",
           boardId: this.currBoardId,
           task: this.task,
@@ -166,7 +166,7 @@ export default {
       this.closeEdit();
     },
     async remove() {
-      await this.$store.dispatch({
+      await this.$store.store.dispatch({
         type: "removeTask",
         boardId: this.currBoardId,
         taskId: this.task.id,
@@ -195,7 +195,10 @@ export default {
     this.currBoardId = this.$route.params._id;
     const taskId = this.$route.params.taskId;
     if (taskId !== "null") {
-      let task = await TaskService.getTaskById(this.currBoardId, taskId);
+      let board = this.$store.store.getters.currBoard;
+      let task = board.topicTasksMap[this.topicName].find(task => {
+        return task.id === taskId;
+      });
       this.task = JSON.parse(JSON.stringify(task));
     }
   },

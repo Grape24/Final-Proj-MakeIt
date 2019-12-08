@@ -42,7 +42,7 @@ export default {
       for (var i = 0; i < keys.length; i++) {
         map[keys[i]] = values[i].flat();
       }
-      this.$emit("topicsChanged", map);
+      this.$emit("updateList", map);
     },
     deleteList(topicName) {
       this.$emit("removeList", topicName);
