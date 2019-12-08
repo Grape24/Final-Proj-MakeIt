@@ -1,3 +1,22 @@
+.hero-img{
+   width: 60%;
+}
+
 header{
-    background-color: white;
+    background-color: #f8fef5;
+}
+
+
+.hero-title {
+    color:#007afd;
+    text-shadow: 5px 3px 0px #f8cfc4, 2px 2px 0px #f8cfc4;
+    margin: rem(70px);
+    font-size: rem(60px);
+}
+
+.hero-description{
+    font-size: rem(25px);
+    color: darken(#007afd, 5%);
+    text-shadow: 1px 1px 0px #f8cfc4;
+
 }

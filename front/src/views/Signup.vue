@@ -3,7 +3,7 @@
     <form @submit.prevent="doSignup">
       <input type="text" v-model="signupCred.email" placeholder="Email" />
       <br />
-      <input type="text" v-model="signupCred.password" placeholder="Password" />
+      <input type="password" v-model="signupCred.password" placeholder="Password" />
       <br />
       <input type="text" v-model="signupCred.username" placeholder="Username" />
       <br />

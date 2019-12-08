@@ -26,3 +26,14 @@
     margin:auto;
 }
 
+.nav-avatar{
+    margin: 0 rem(5px) 0 rem(5px);
+}
+
+.username-nav, .logout-nav{
+    margin: 0 rem(5px) 0 rem(5px);
+    color: white;
+}
+.logout-nav{
+    cursor: pointer;
+}

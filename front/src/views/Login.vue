@@ -3,7 +3,7 @@
     <form @submit.prevent="doLogin">
       <input type="text" v-model="loginCred.email" placeholder="Email" />
       <br />
-      <input type="text" v-model="loginCred.password" placeholder="Password" />
+      <input type="password" v-model="loginCred.password" placeholder="Password" />
       <br />
       <button>Login</button>
     </form>

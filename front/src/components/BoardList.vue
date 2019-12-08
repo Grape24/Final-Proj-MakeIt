@@ -1,8 +1,13 @@
 <template>
   <section>
     <header>
-      <h1 class="align-center">Get your work done. Togather.</h1>
-      <div class="align-center">Project management and collabroation made easy with MakeIt.</div>
+      <div class="flex space-between">
+        <img class="hero-img" src="https://cdn.dribbble.com/users/19849/screenshots/7881231/media/30e27e4e72f899c124c25566b7224dbc.png"/>
+        <div class="flex column align-center justify-center">
+          <h1 class="hero-title align-center">Get your work done. <div>Togather.</div></h1>
+          <div class="hero-description align-center">Project management and collabroation made easy with MakeIt.</div>
+        </div>
+      </div>
     </header>
     <div class="flex wrap">
       <board-preview v-for="board in boards" :key="board._id" :board="board"></board-preview>

@@ -5,7 +5,8 @@
       <button class="delete-board-btn" @click="removeBoard">Delete board</button>
       <div class="flex align-center" v-if="currBoard">
         <div class="board-members-title">Board Members:</div>
-        <avatar username="Darth Vader"
+        <avatar class="member-avatar"
+                :username="member.userName"
                 v-for="member in currBoard.members"
                 :key="member._id"
                 :src="member.imgUrl"
@@ -145,8 +146,8 @@ export default {
       });
   },
   destroyed() {
-    if (sessionStorage.user) {
-      const user = JSON.parse(sessionStorage.user);
+    if (this.$store.getters.loggedinUser) {
+      const user = this.$store.getters.loggedinUser;
       this.currBoard.members.filter(member => member._id === user._id);
       this.$store.dispatch({ type: "updateBoard", board: this.currBoard });
     }
