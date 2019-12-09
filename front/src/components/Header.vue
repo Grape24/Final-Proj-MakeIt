@@ -1,17 +1,42 @@
 <template>
-  <div class="header flex space-between align-center">
-    <router-link class="home-icon-container" to="/"><i class="fas fa-home"></i></router-link>
-    <div class="logo">MakeIt</div>
-    <div class="nav-links-container flex ">
-      <router-link class="flex" to="/">logout</router-link>
-      <router-link class="flex" to="/login">login</router-link>
-      <router-link class="flex" to="/singup">singup</router-link>
+  <section>
+    <div class="header flex space-between align-center">
+      <router-link class="home-icon-container" to="/">
+        <i class="fas fa-home"></i>
+      </router-link>
+      <div class="logo">
+        <i class="fas fa-check-double"></i>MakeIt
+      </div>
+      <div class="nav-links-container flex">
+        <div class="flex" v-if="loggedinUser" @click="logout">logout</div>
+        <h2 class="flex" v-if="loggedinUser">user name:{{loggedinUser.username}}</h2>
+        <router-link class="flex" to="/login" v-else>login</router-link>
+        <router-link class="flex" to="/signup" v-if="!loggedinUser">singup</router-link>
+      </div>
     </div>
-  </div>
+  </section>
 </template>
-
 <script>
 export default {
-  name: "Header"
+  name: "Header",
+  data() {
+    return {
+      filterTxt: ""
+    };
+  },
+  methods: {
+    logout() {
+      sessionStorage.clear();
+      this.$emit("loggedOut");
+      this.$router.push("/");
+    }
+  },
+  computed: {
+    loggedinUser() {
+      if (sessionStorage.user) {
+        return JSON.parse(sessionStorage.user);
+      } else return null;
+    }
+  }
 };
 </script>

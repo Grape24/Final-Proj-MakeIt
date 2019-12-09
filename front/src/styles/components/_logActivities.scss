@@ -1,0 +1,40 @@
+.activities-menu{
+    position: absolute;
+    background-color: darken(white, 3%);
+    right:0;
+    height: 100vh;
+    overflow: scroll;
+    width: rem(350px);
+    top: rem(59px);
+    padding: rem(10px);
+    z-index: 2;
+    border-left: 1px solid $clr3;
+    .fa-times{
+        cursor: pointer;
+        padding: rem(21px);
+    }
+}
+
+.activities-menu-title{
+    width:100%;
+    text-align: center;
+    padding: rem(20px);
+    font-size: rem(17px);
+    font-weight: 700;
+}
+
+.activities-header{
+    border-bottom: 1px solid darken($clr1, 10%);
+}
+
+.activity{
+    padding: rem(5px) rem(10px);
+    .time{
+        font-size: rem(13px);
+        color: darken($clr3, 30%);
+    }
+}
+
+.side-nav-container{
+    transition: all 0.3s ease-out;
+}

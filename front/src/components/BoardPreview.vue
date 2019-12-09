@@ -3,6 +3,7 @@
     <router-link :to="currboardLink">
       <div class="board-card flex align-center justify-center">{{board.name}}</div>
     </router-link>
+    
   </section>
 </template>
 

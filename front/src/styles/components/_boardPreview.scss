@@ -10,3 +10,8 @@
 .board-name{
     padding: rem(20px);
 }
+
+.board-container{
+    overflow: scroll;
+    height:100vh;
+}
