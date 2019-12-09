@@ -1,12 +1,21 @@
 <template>
   <section>
-    <form @submit.prevent="doLogin">
-      <input type="text" v-model="loginCred.email" placeholder="Email" />
-      <br />
-      <input type="password" v-model="loginCred.password" placeholder="Password" />
-      <br />
-      <button>Login</button>
-    </form>
+    <div class="account-form">
+      <form @submit.prevent="doLogin">
+        <h2>Login</h2>
+        <br />
+        <input type="text" v-model="loginCred.email" placeholder="Email" required />
+        <br />
+        <input type="password" v-model="loginCred.password" placeholder="Password" required />
+        <span>
+          <i class="fa fa-lock"></i>
+        </span>
+        <br />
+        <button type="submit">
+          <i class="fa fa-long-arrow-right"></i>
+        </button>
+      </form>
+    </div>
   </section>
 </template>
 

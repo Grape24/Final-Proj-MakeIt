@@ -11,13 +11,16 @@
 export default {
   data() {
     return {
-      id: this.$route.params._id
+      id: null
     };
   },
   computed: {
     taskEditLink() {
       return `/task/edit/${this.id}`;
     }
+  },
+  created() {
+    this.id = this.$route.params._id;
   }
 };
 </script>

@@ -24,3 +24,5 @@ Sun, 08 Dec 2019 13:00:51 GMT - Info - Server is running on port: 3000
 Sun, 08 Dec 2019 13:09:20 GMT - Info - Server is running on port: 3000
 Sun, 08 Dec 2019 13:52:43 GMT - Info - Server is running on port: 3000
 Sun, 08 Dec 2019 13:52:48 GMT - Debug - auth.service - login with email: nevonoam@gmail.com
+Mon, 09 Dec 2019 08:30:13 GMT - Debug - auth.service - login with email: nevonoam@gmail.com
+Mon, 09 Dec 2019 09:22:35 GMT - Info - Server is running on port: 3000

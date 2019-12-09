@@ -1,11 +1,11 @@
 <template>
   <section class="topic-preview">
     <div class="topic-header flex space-between">
-        <div class="topic-name">{{topicName}}</div>
-        <button class="delete-list-btn" @click="deleteList()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
+      <div class="topic-name">{{topicName}}</div>
+      <button class="delete-list-btn" @click="deleteList()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
     <div class="topic-list-container flex column">
       <draggable
         class="dragArea list-group"
@@ -14,27 +14,29 @@
         @start="start"
         @end="end"
       >
-        <div
-          v-if="task"
-          class="list-group-item column"
-          v-for="task in topicList"
-          :key="task.id"
-          @click="push(task.id)"
-        >
-          <div class="flex">
-            <div :class="`${label}-task-label`" :key="index" v-for="(label, index) in task.labels"></div>
-          </div>
-          <img :class="{'rotated': task.imgIsRotated}" :src="task.imgUrl" />
-          {{task.title}}
-          <div class="due-date-display" v-if="task.dueDate">
-            <i class="far fa-clock"></i>
-            {{convertTimeStampFormat(task.dueDate)}}
-          </div>
+        <div v-if="task" class="list-group-item column" v-for="task in topicList" :key="task.id">
+          <router-link :to="`/board/${currBoardId}/task/edit/${task.id}/${topicName}`">
+            <div class="flex">
+              <div
+                :class="`${label}-task-label`"
+                :key="index"
+                v-for="(label, index) in task.labels"
+              ></div>
+            </div>
+            <img :class="{'rotated': task.imgIsRotated}" :src="task.imgUrl" />
+            {{task.title}}
+            <div class="due-date-display" v-if="task.dueDate">
+              <i class="far fa-clock"></i>
+              {{convertTimeStampFormat(task.dueDate)}}
+            </div>
+          </router-link>
         </div>
       </draggable>
       <rawDisplayer class="col-3" :value="topicList" title="List 1" />
-      </div>
-      <button class="add-task-btn" @click="push(null)">+ Add another task</button>
+    </div>
+    <button class="add-task-btn">
+      <router-link :to="`/board/${currBoardId}/task/edit/${null}/${topicName}`">+ Add another task</router-link>
+    </button>
   </section>
 </template>
 
@@ -83,11 +85,6 @@ export default {
     },
     start({ originalEvent }) {
       this.controlOnStart = originalEvent.ctrlKey;
-    },
-    push(id) {
-      this.$router.push(
-        `/board/${this.currBoardId}/task/edit/${id}/${this.topicName}`
-      );
     },
     deleteList() {
       this.$emit("deletList", this.topicName);

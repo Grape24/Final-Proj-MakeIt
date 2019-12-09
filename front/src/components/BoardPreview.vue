@@ -6,7 +6,6 @@
       </div>
       <div class="board-title align-center">{{board.name}}</div>
     </router-link>
-    
   </section>
 </template>
 
@@ -20,8 +19,7 @@ export default {
     currboardLink() {
       return "/board/" + this.board._id;
     }
-  },
-  
+  }
 };
 </script>
 

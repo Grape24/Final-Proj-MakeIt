@@ -2,23 +2,14 @@
   <section>
     <div class="labels-title">Labels</div>
     <div class="labels-container">
-      <div @click="selectLabel('green')" class="green flex align-center">
-        <i v-if="selected('green')" class="fas fa-check"></i>
-      </div>
-      <div @click="selectLabel('yellow')" class="yellow flex align-center">
-        <i v-if="selected('yellow')" class="fas fa-check"></i>
-      </div>
-      <div @click="selectLabel('orange')" class="orange flex align-center">
-        <i v-if="selected('orange')" class="fas fa-check"></i>
-      </div>
-      <div @click="selectLabel('red')" class="red flex align-center">
-        <i v-if="selected('red')" class="fas fa-check"></i>
-      </div>
-      <div @click="selectLabel('purple')" class="purple flex align-center">
-        <i v-if="selected('purple')" class="fas fa-check"></i>
-      </div>
-      <div @click="selectLabel('blue')" class="blue flex align-center">
-        <i v-if="selected('blue')" class="fas fa-check"></i>
+      <div
+        v-for="color in colors"
+        :key="color"
+        @click="selectLabel(color)"
+        :class="color"
+        class="flex align-center"
+      >
+        <i v-if="selected(color)" class="fas fa-check"></i>
       </div>
     </div>
   </section>
@@ -26,6 +17,9 @@
 
 <script>
 export default {
+  data() {
+    return { colors: ["green", "yellow", "orange", "red", " purple", "blue"] };
+  },
   props: {
     task: Object
   },

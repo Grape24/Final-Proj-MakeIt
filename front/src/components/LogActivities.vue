@@ -16,10 +16,6 @@
 <script>
 import moment from "moment";
 export default {
-  props: {
-    topics: Object,
-    currBoardId: String
-  },
   methods: {
     closeMenu() {
       this.$emit("menuClosed");
