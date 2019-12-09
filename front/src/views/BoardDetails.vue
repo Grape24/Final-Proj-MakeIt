@@ -4,15 +4,17 @@
       <h2 class="board-name" v-if="currBoard">{{currBoard.name}}</h2>
       <button class="delete-board-btn" @click="removeBoard">Delete board</button>
       <div class="flex align-center" v-if="currBoard">
-        <div class="board-members-title">Board Members:</div>
-        <avatar
-          class="member-avatar"
-          :username="member.userName"
-          v-for="member in currBoard.members"
-          :key="member._id"
-          :src="member.imgUrl"
-          :size="50"
-        ></avatar>
+        <div class="board-members-title">Board Members</div>
+        <div class="avatars-container flex justify-center">
+          <avatar
+            class="member-avatar"
+            :username="member.userName"
+            v-for="member in currBoard.members"
+            :key="member._id"
+            :src="member.imgUrl"
+            :size="50"
+          ></avatar>
+        </div>
       </div>
     </div>
 
