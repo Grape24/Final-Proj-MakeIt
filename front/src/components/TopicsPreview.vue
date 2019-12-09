@@ -18,7 +18,10 @@
           v-for="task in topicList"
           :key="task.id"
           @click="push(task.id)"
-        >{{ task.title }}</div>
+        >
+          <img :src="task.imgUrl" />
+          {{ task.title }}
+        </div>
       </draggable>
       <rawDisplayer class="col-3" :value="topicList" title="List 1" />
       <button @click="deleteList()">Delete list</button>
@@ -80,6 +83,7 @@ export default {
 
     deleteList() {
       this.$store.dispatch({ type: "removeList", topicName: this.topicName });
+      this.$emit("deletList");
     }
   },
 

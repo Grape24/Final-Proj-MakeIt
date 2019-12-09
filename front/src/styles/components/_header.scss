@@ -1,5 +1,5 @@
 .header {
- background-color: $clr1;
+ background-color: rgba(0, 0, 0, 0.39);
 }
 
 .nav-links-container{
@@ -9,7 +9,13 @@
         align-self: center;
     }
 }
-.logo{
-    width: 150px;
-    padding: rem(20px);
+
+.home-icon-container{
+    background-color: rgba(255, 255, 255, 0.26);
+    align-self: center;
+    color: white;
+    border-radius: 3px;
+    padding: rem(10px);
+    margin: rem(5px);
 }
+
