@@ -1,8 +1,8 @@
 <template>
   <section>
-    <router-link :to="currboardLink">
+    <router-link class="flex column align-center" :to="currboardLink">
+      <div class="board-title">{{board.name}}</div>
       <div class="board-card flex align-center justify-center">
-        {{board.name}}
       </div>
     </router-link>
   </section>

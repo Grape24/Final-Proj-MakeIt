@@ -30,10 +30,13 @@
        display:none;
    }
    .activites-menu-btn{
+        top: 60px;
         width: 80px;
         height: 80px;
         background-color: white;
         border-radius: 50%;
+        color: $clr2;
+        border: 1px solid $clr2;
    }
 }
 

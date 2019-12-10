@@ -11,8 +11,11 @@
     </header>
     <div class="board-cards-container flex wrap justify-center">
       <board-preview v-for="board in boards" :key="board._id" :board="board"></board-preview>
-      <div @click="isAddingBoard=true" class="add-board-btn flex align-center justify-center">
-        <i class="fas fa-plus"></i>
+      <div class="flex column align-center justify-center">
+        <div class="board-title">Create a new board!</div>
+        <div @click="isAddingBoard=true" class="add-board-btn flex align-center justify-center">
+          <i class="fas fa-plus"></i>
+        </div>
       </div>
     </div>
     <div class="modal-mask" v-if="isAddingBoard" @click="isAddingBoard=false"></div>
