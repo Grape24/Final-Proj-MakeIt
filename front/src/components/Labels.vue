@@ -30,7 +30,7 @@ export default {
         this.$emit("addLabel", color);
         return true;
       } else {
-        this.$emit("removeLabel", color);
+        this.$emit("removeLabel", {color, idx});
         return false;
       }
     },
