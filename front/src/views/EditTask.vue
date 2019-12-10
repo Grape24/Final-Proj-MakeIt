@@ -8,13 +8,13 @@
         </router-link>
       </div>
       <form class="edit-form flex column" @submit.prevent="saveTask">
-      <div class="flex align-center">
-        <i class="fas fa-sticky-note"></i>
-        <input class="task-title" type="text" v-model="task.title" placeholder="Enter the title" />
-      </div>
-      <div class="edit-container flex space-between">
-        <div class="main-edit-container">
-          <div class="in-list">In List : {{topicName}}</div>
+        <div class="flex align-center">
+          <i class="fas fa-sticky-note"></i>
+          <input class="task-title" type="text" v-model="task.title" placeholder="Enter the title" />
+        </div>
+        <div class="edit-container flex space-between">
+          <div class="main-edit-container">
+            <div class="in-list">In List : {{topicName}}</div>
             <div class="labels-due-date-container flex">
               <div>
                 <div class="labels-title-display" v-if="task.labels">labels</div>
@@ -185,7 +185,7 @@ export default {
       this.task.labels.push(color);
       return true;
     },
-    removeLabel({color , idx}) {
+    removeLabel(idx) {
       this.task.labels.splice(idx, 1);
       return false;
     }
