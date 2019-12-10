@@ -1,19 +1,17 @@
 <template>
-  <section>
-    <form @submit.prevent="doSignup">
-      <input type="text" v-model="signupCred.email" placeholder="Email" />
-      <br />
-      <input type="password" v-model="signupCred.password" placeholder="Password" />
-      <br />
-      <input type="text" v-model="signupCred.username" placeholder="Username" />
-      <br />
+  <section class="account-form">
+    <form class="flex column align-center" @submit.prevent="doSignup">
+      <h2 class="align-center">Signup to MakeIt</h2>
+      <input class="email-cred" type="text" v-model="signupCred.email" placeholder="Enter email" />
+      <input class="pass-cred" type="password" v-model="signupCred.password" placeholder="Enter password" />
+      <input class="username-cred" type="text" v-model="signupCred.username" placeholder="Enter username" />
       <div
         @click="imgAttachmentSelected = false"
         class="transparent-modal-mask"
         v-if="imgAttachmentSelected"
       ></div>
-      <div @click="imgAttachmentSelected = !imgAttachmentSelected" class="img-attachment">
-        <i class="fas fa-image"></i>Image Attachment
+      <div @click="imgAttachmentSelected = !imgAttachmentSelected" class="img-attachment-signup">
+        <i class="fas fa-image"></i>Add a profile picture
       </div>
       <div class="img-uploader" v-if="imgAttachmentSelected">
         <div>Attach and Image</div>
@@ -25,7 +23,7 @@
       </div>
       <img v-if="signupCred.imgUrl" :src="signupCred.imgUrl" />
 
-      <button>Signup</button>
+      <button class="login-btn">Signup</button>
     </form>
   </section>
 </template>

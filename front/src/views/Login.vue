@@ -1,18 +1,12 @@
 <template>
   <section>
     <div class="account-form">
-      <form @submit.prevent="doLogin">
-        <h2>Login</h2>
-        <br />
-        <input type="text" v-model="loginCred.email" placeholder="Email" required />
-        <br />
-        <input type="password" v-model="loginCred.password" placeholder="Password" required />
-        <span>
-          <i class="fa fa-lock"></i>
-        </span>
-        <br />
-        <button type="submit">
-          <i class="fa fa-long-arrow-right"></i>
+      <form class="flex column align-center" @submit.prevent="doLogin">
+        <h2>Log in to MakeIt</h2>
+        <input class="email-cred" type="text" v-model="loginCred.email" placeholder="Enter email" required />
+        <input class="pass-cred" type="password" v-model="loginCred.password" placeholder="Enter password" required />
+        <button class="login-btn" type="submit">
+          Log In
         </button>
       </form>
     </div>
