@@ -11,30 +11,69 @@ export default {
 }
 
 function getById(userId) {
-    return HttpService.get(`user/${userId}`)
+    try {
+        return HttpService.get(`user/${userId}`)
+    }
+    catch (err) {
+        console.log(err)
+    }
 }
 function remove(userId) {
-    return HttpService.delete(`user/${userId}`)
+    try {
+        return HttpService.delete(`user/${userId}`)
+    }
+    catch (err) {
+        console.log(err)
+    }
+
 }
 
 function update(user) {
-    return HttpService.put(`user/${user._id}`, user)
+    try {
+        return HttpService.put(`user/${user._id}`, user)
+    }
+    catch (err) {
+        console.log(err)
+    }
 }
 
 async function login(userCred) {
-    const user = await HttpService.post('auth/login', userCred)
-    return _handleLogin(user)
+    try {
+        const user = await HttpService.post('auth/login', userCred)
+        return _handleLogin(user)
+    }
+    catch (err) {
+        console.log(err)
+    }
 }
+
 async function signup(userCred) {
-    const user = await HttpService.post('auth/signup', userCred)
-    return _handleLogin(user)
+    try {
+        const user = await HttpService.post('auth/signup', userCred)
+        return _handleLogin(user)
+    }
+    catch (err) {
+        console.log(err)
+    }
 }
+
 async function logout() {
-    await HttpService.post('auth/logout');
-    sessionStorage.clear();
+    try {
+        await HttpService.post('auth/logout');
+        sessionStorage.clear();
+    }
+    catch (err) {
+        console.log(err)
+    }
 }
+
 function getUsers() {
-    return HttpService.get('user')
+    try {
+        return HttpService.get('user')
+    }
+    catch (err) {
+        console.log(err)
+    }
 }
 
 function _handleLogin(user) {

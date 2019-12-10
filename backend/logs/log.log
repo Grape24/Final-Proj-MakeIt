@@ -24,6 +24,7 @@ Sun, 08 Dec 2019 13:00:51 GMT - Info - Server is running on port: 3000
 Sun, 08 Dec 2019 13:09:20 GMT - Info - Server is running on port: 3000
 Sun, 08 Dec 2019 13:52:43 GMT - Info - Server is running on port: 3000
 Sun, 08 Dec 2019 13:52:48 GMT - Debug - auth.service - login with email: nevonoam@gmail.com
+<<<<<<< HEAD
 Mon, 09 Dec 2019 08:25:28 GMT - Info - Server is running on port: 3000
 Mon, 09 Dec 2019 08:38:52 GMT - Debug - 453453@gmail.com, 342424, 34243,http://res.cloudinary.com/dwlyhuwyk/image/upload/v1575880709/pgowa5ws5mdsrf4a8tw6.png
 Mon, 09 Dec 2019 08:38:52 GMT - Debug - auth.service - signup with email: 453453@gmail.com, username: 342424
@@ -33,3 +34,9 @@ Mon, 09 Dec 2019 08:39:51 GMT - Debug - eere, rte, ertert,http://res.cloudinary.
 Mon, 09 Dec 2019 08:39:51 GMT - Debug - auth.service - signup with email: eere, username: rte
 Mon, 09 Dec 2019 08:39:51 GMT - Debug - auth.route - new account created: {"email":"eere","password":"$2b$10$yKMWp35SBB89IlYp9xPvtOyzNFHSr2LsvMWzdYo2TQVEV.VpfX0za","username":"rte","imgUrl":"http://res.cloudinary.com/dwlyhuwyk/image/upload/v1575880765/quhvfmkqjgjk00e284li.png","_id":"5dee0857617c5f7e4f22cac1"}
 Mon, 09 Dec 2019 08:39:51 GMT - Debug - auth.service - login with email: eere
+=======
+Mon, 09 Dec 2019 08:30:13 GMT - Debug - auth.service - login with email: nevonoam@gmail.com
+Mon, 09 Dec 2019 09:22:35 GMT - Info - Server is running on port: 3000
+>>>>>>> 296a8c404632839767719dc1c25e919296f21e1a
+
+Tue, 10 Dec 2019 13:14:26 GMT - Info - Server is running on port: 3000

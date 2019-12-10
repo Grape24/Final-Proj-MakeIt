@@ -20,7 +20,6 @@
           v-if="loggedinUser"
         >Hi, {{loggedinUser.username}}!</div>
         <div class="flex align-center logout-nav" v-if="loggedinUser" @click="logout">Logout</div>
-
         <router-link class="flex" to="/login" v-else>Login</router-link>
         <router-link class="flex" to="/signup" v-if="!loggedinUser">Singup</router-link>
       </div>
@@ -33,11 +32,6 @@ export default {
   name: "Header",
   components: {
     Avatar
-  },
-  data() {
-    return {
-      filterTxt: ""
-    };
   },
   methods: {
     logout() {
