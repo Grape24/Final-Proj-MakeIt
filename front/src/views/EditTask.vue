@@ -185,7 +185,7 @@ export default {
       this.task.labels.push(color);
       return true;
     },
-    removeLabel(color) {
+    removeLabel({color , idx}) {
       this.task.labels.splice(idx, 1);
       return false;
     }
