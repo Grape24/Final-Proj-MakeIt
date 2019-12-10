@@ -4,6 +4,8 @@
     margin: rem(20px);
     border-radius: 5px;
     font-size: rem(20px);
+    background-image: url(https://i.ibb.co/MBtxTcb/Screen-Shot-2019-12-09-at-16-32-27.png);
+    background-size: cover;
     cursor: pointer;
     color: $clr2; 
     &:hover{
@@ -19,10 +21,14 @@
 
 .board-name{
     padding: rem(20px);
+    color:white;
 }
 
 
+.board-title{
+    color: #b2eaf0;
 
+}
 
 .add-board-btn{
     width: 12.5rem;
@@ -31,7 +37,7 @@
     border-radius: 5px;
     font-size: 1.25rem;
     cursor: pointer;
-    color: #172b4d;
+    color: #b2eaf0;
     border: 2px dashed;
 }
 

@@ -1,26 +1,31 @@
 .hero-img{
-   width: 60%;
+   width: 45%;
 }
 
 header{
-    background-color: #f8fef5;
+    background-color: #221b55;
 }
 
 
 .hero-title {
-    color:#007afd;
-    text-shadow: 5px 3px 0px #f8cfc4, 2px 2px 0px #f8cfc4;
+    color:#b2eaf0;
+    text-shadow: 1px 1px 0px white;
     margin: rem(70px);
     font-size: rem(60px);
 }
 
 .hero-description{
     font-size: rem(25px);
-    color: darken(#007afd, 5%);
-    text-shadow: 1px 1px 0px #f8cfc4;
+    color: #b2eaf0;
+    text-shadow: 1px 1px 0px white;
 
 }
 
 .board-cards-container{
     margin: 0 0 rem(100px) 0;
+}
+
+
+.text-hero-container{
+    width: 65%;
 }

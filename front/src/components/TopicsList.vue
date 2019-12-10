@@ -3,6 +3,7 @@
     <draggable
       class="flex draggable-list"
       ghost-class="ghost"
+      handle=".topic-header"
       :list="topicsAsArr"
       @start="dragging = true"
       @end="doneDragging"
@@ -49,7 +50,8 @@ export default {
     },
     updateList(topics) {
       this.$emit("updateList", topics);
-    }
+    },
+    
   },
   components: {
     TopicsPreview,

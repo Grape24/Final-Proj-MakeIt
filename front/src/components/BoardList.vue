@@ -1,9 +1,9 @@
 <template>
   <section>
     <header>
-      <div class="hero-container flex space-between">
-        <img class="hero-img" src="https://cdn.dribbble.com/users/19849/screenshots/7881231/media/30e27e4e72f899c124c25566b7224dbc.png"/>
-        <div class="flex column align-center justify-center">
+      <div class="hero-container flex">
+        <img class="hero-img" src="https://cdn.dribbble.com/users/3014280/screenshots/6043082/kanban-2.jpg"/>
+        <div class="flex column align-center justify-center text-hero-container">
           <h1 class="hero-title align-center">Get your work done. <div>Together.</div></h1>
           <div class="hero-description align-center">Project management and collabroation made easy with MakeIt.</div>
         </div>

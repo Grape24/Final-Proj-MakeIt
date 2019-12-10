@@ -11,6 +11,9 @@
     .labels-container-display{
         flex-wrap: wrap;
     }
+    .text-hero-container{
+        width: 100%;
+    }
 }
 
 @media (max-width: $break-normal){
@@ -20,31 +23,17 @@
     .edit-modal{
         width: 80%;
     }
-    .avatars-container{
-        z-index: 3;
-        display:none;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
+   .members-container{
+       display:none;
+   }
+   .username-nav{
+       display:none;
+   }
+   .activites-menu-btn{
+        width: 80px;
+        height: 80px;
         background-color: white;
-        padding: 0.625rem;
-        border-radius: 5px;
-        border: 1px solid #d9d9d9;
-    }
-    .board-members-title{
-        border: none;
-        background-color: rgba(0, 0, 0, 0.116);
-        border-radius: 4px;
-        margin: 1.25rem;
-        padding: 0.9375rem;
-        font-size: 0.9375rem;
-        color: gray;
-        cursor: pointer;
-        outline: none;
-        -ms-flex-item-align: center;
-        align-self: center;
-    }
+   }
 }
 
 @media (max-width: $break-iphone5){

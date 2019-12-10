@@ -3,7 +3,7 @@
     <div class="flex">
       <h2 class="board-name" v-if="currBoard">{{currBoard.name}}</h2>
       <button class="delete-board-btn" @click="removeBoard">Delete board</button>
-      <div class="flex align-center" v-if="currBoard">
+      <div class="members-container flex align-center" v-if="currBoard">
         <div class="board-members-title">Board Members</div>
         <div class="avatars-container flex justify-center">
           <avatar
@@ -70,7 +70,7 @@ export default {
       activitiesLogIsOpen: false,
       boardId: null,
       isAddingTopic: false,
-      createdTopicName: ""
+      createdTopicName: "",
     };
   },
   computed: {
@@ -108,7 +108,7 @@ export default {
         boardId: this.boardId
       });
       this.$router.push("/");
-    }
+    },
   },
   async created() {
     this.boardId = this.$route.params._id;

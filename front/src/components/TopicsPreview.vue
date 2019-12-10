@@ -91,6 +91,9 @@ export default {
     },
     deleteList() {
       this.$emit("deletList", this.topicName);
+    },
+    func(ev){
+      console.log(ev)
     }
   }
 };
